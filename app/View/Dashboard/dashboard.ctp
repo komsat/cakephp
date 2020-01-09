@@ -27,6 +27,9 @@
               color: #fff;
               opacity: 0.8;
             }
+            table, th, td {
+              border: 1px solid black;
+            }
         </style>
     </head>
     <body>
@@ -57,11 +60,18 @@
                 echo "<td>".$row["title"]."</td>";
                 echo "<td>".$row["description"]."</td>";
                 echo "<td>".$row["tags"]."</td>";
-                echo "<td><table><tr><td>".$row["images"]."</td>";
-                echo "<td>".$row["images"]."</td>";
-                echo "<td>".$row["images"]."</td>";
-                echo "<td>".$row["images"]."</td>";
-                echo "<td>".$row["images"]."</td></tr></table></td></tr>";
+                echo "<td><table><tr>";
+                foreach (json_decode($row["images"]) as $img):
+//                    $temp = $this->Image->getImage($img);
+                    echo "<td>".$img."</td>";
+//                    echo "<td>".echo $this->Html->image('upload/'.$temp, ['alt' => 'CakePHP']);."</td>";
+                endforeach;
+//                echo "<td>".$row["images"]."</td>";
+//                echo "<td>".$row["images"]."</td>";
+//                echo "<td>".$row["images"]."</td>";
+//                echo "<td>".$row["images"]."</td>";
+//                echo "<td>".$row["images"]."</td>";
+                echo "</tr></table></td></tr>";
             endforeach;
         ?>
         </table>

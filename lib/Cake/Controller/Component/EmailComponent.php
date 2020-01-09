@@ -2,18 +2,19 @@
 /**
  * Email Component
  *
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Controller.Component
  * @since         CakePHP(tm) v 1.2.0.3467
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 App::uses('Component', 'Controller');
@@ -27,9 +28,9 @@ App::uses('CakeEmail', 'Network/Email');
  * based on the standard outlined in http://www.rfc-editor.org/rfc/rfc2822.txt
  *
  * @package       Cake.Controller.Component
- * @link          https://book.cakephp.org/2.0/en/core-libraries/components/email.html
- * @link          https://book.cakephp.org/2.0/en/core-utility-libraries/email.html
- * @deprecated    3.0.0 Will be removed in 3.0. Use Network/CakeEmail instead
+ * @link http://book.cakephp.org/2.0/en/core-libraries/components/email.html
+ * @link http://book.cakephp.org/2.0/en/core-utility-libraries/email.html
+ * @deprecated Use Network/CakeEmail
  */
 class EmailComponent extends Component {
 
@@ -238,7 +239,7 @@ class EmailComponent extends Component {
  * it be handled by sendmail (or similar) or a string
  * to completely override the Message-ID.
  *
- * If you are sending Email from a shell, be sure to set this value. As you
+ * If you are sending Email from a shell, be sure to set this value.  As you
  * could encounter delivery issues if you do not.
  *
  * @var mixed
@@ -282,12 +283,11 @@ class EmailComponent extends Component {
  *  If you are rendering a template this variable will be sent to the templates as `$content`
  * @param string $template Template to use when sending email
  * @param string $layout Layout to use to enclose email body
- * @return array Success
+ * @return boolean Success
  */
 	public function send($content = null, $template = null, $layout = null) {
 		$lib = new CakeEmail();
 		$lib->charset = $this->charset;
-		$lib->headerCharset = $this->charset;
 
 		$lib->from($this->_formatAddresses((array)$this->from));
 		if (!empty($this->to)) {
@@ -305,19 +305,18 @@ class EmailComponent extends Component {
 		if (!empty($this->return)) {
 			$lib->returnPath($this->_formatAddresses((array)$this->return));
 		}
-		if (!empty($this->readReceipt)) {
+		if (!empty($readReceipt)) {
 			$lib->readReceipt($this->_formatAddresses((array)$this->readReceipt));
 		}
 
-		$lib->subject($this->subject);
-		$lib->messageID($this->messageId);
+		$lib->subject($this->subject)->messageID($this->messageId);
 		$lib->helpers($this->_controller->helpers);
 
 		$headers = array('X-Mailer' => $this->xMailer);
 		foreach ($this->headers as $key => $value) {
 			$headers['X-' . $key] = $value;
 		}
-		if ($this->date) {
+		if ($this->date != false) {
 			$headers['Date'] = $this->date;
 		}
 		$lib->setHeaders($headers);
@@ -406,7 +405,7 @@ class EmailComponent extends Component {
  * Find the specified attachment in the list of file paths
  *
  * @param string $attachment Attachment file name to find
- * @return string|null Path to located file
+ * @return string Path to located file
  */
 	protected function _findFiles($attachment) {
 		if (file_exists($attachment)) {
@@ -424,7 +423,7 @@ class EmailComponent extends Component {
 /**
  * Format addresses to be an array with email as key and alias as value
  *
- * @param array $addresses Address to format.
+ * @param array $addresses
  * @return array
  */
 	protected function _formatAddresses($addresses) {
@@ -445,11 +444,11 @@ class EmailComponent extends Component {
  * Helps prevent header injection / manipulation on user content.
  *
  * @param string $value Value to strip
- * @param bool $message Set to true to indicate main message content
+ * @param boolean $message Set to true to indicate main message content
  * @return string Stripped value
  */
 	protected function _strip($value, $message = false) {
-		$search = '%0a|%0d|Content-(?:Type|Transfer-Encoding)\:';
+		$search  = '%0a|%0d|Content-(?:Type|Transfer-Encoding)\:';
 		$search .= '|charset\=|mime-version\:|multipart/mixed|(?:[^a-z]to|b?cc)\:.*';
 
 		if ($message !== true) {

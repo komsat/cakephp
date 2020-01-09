@@ -2,20 +2,20 @@
 /**
  * RssHelperTest file
  *
- * CakePHP(tm) Tests <https://book.cakephp.org/2.0/en/development/testing.html>
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP 5
+ *
+ * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
  * @package       Cake.Test.Case.View.Helper
  * @since         CakePHP(tm) v 1.2.0.4206
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
 App::uses('View', 'View');
 App::uses('RssHelper', 'View/Helper');
 App::uses('TimeHelper', 'View/Helper');
@@ -91,7 +91,7 @@ class RssHelperTest extends CakeTestCase {
  */
 	public function testChannel() {
 		$attrib = array('a' => '1', 'b' => '2');
-		$elements = array('title' => 'Title');
+		$elements = array('title' => 'title');
 		$content = 'content';
 
 		$result = $this->Rss->channel($attrib, $elements, $content);
@@ -101,7 +101,30 @@ class RssHelperTest extends CakeTestCase {
 				'b' => '2'
 			),
 			'<title',
-			'Title',
+			'title',
+			'/title',
+			'<link',
+			$this->Rss->url('/', true),
+			'/link',
+			'<description',
+			'content',
+			'/channel'
+		);
+		$this->assertTags($result, $expected);
+
+		$this->View->pageTitle = 'title';
+		$attrib = array('a' => '1', 'b' => '2');
+		$elements = array();
+		$content = 'content';
+
+		$result = $this->Rss->channel($attrib, $elements, $content);
+		$expected = array(
+			'channel' => array(
+				'a' => '1',
+				'b' => '2'
+			),
+			'<title',
+			'title',
 			'/title',
 			'<link',
 			$this->Rss->url('/', true),
@@ -245,11 +268,7 @@ class RssHelperTest extends CakeTestCase {
 			array('title' => 'title3', 'guid' => 'http://www.example.com/guid3', 'link' => 'http://www.example.com/link3', 'description' => 'description3')
 		);
 
-		$result = $this->Rss->items($items, function ($v) {
-			$v['title'] = $v['title'] . '-transformed';
-
-			return $v;
-		});
+		$result = $this->Rss->items($items, create_function('$v', '$v[\'title\'] = $v[\'title\'] . \'-transformed\'; return $v;'));
 		$expected = array(
 			'<item',
 				'<title', 'title1-transformed', '/title',
@@ -589,7 +608,7 @@ class RssHelperTest extends CakeTestCase {
 
 		$this->assertTrue($File->write('123'), 'Could not write to ' . $tmpFile);
 
-		if (PHP_VERSION_ID >= 50300) {
+		if (50300 <= PHP_VERSION_ID) {
 			clearstatcache(true, $tmpFile);
 		} else {
 			clearstatcache();
@@ -623,12 +642,13 @@ class RssHelperTest extends CakeTestCase {
 			)
 		);
 		$result = $this->Rss->item(null, $item);
-		if (!function_exists('mime_content_type')) {
-			$type = null;
+		if (!function_exists('finfo_open') &&
+			(function_exists('mime_content_type') && false === mime_content_type($tmpFile))
+		) {
+			$type = false;
 		} else {
-			$type = mime_content_type($tmpFile);
+			$type = 'text/plain';
 		}
-
 		$expected = array(
 			'<item',
 			'<title',
@@ -659,9 +679,6 @@ class RssHelperTest extends CakeTestCase {
 			'/category',
 			'/item'
 		);
-		if ($type === null) {
-			unset($expected['enclosure']['type']);
-		}
 		$this->assertTags($result, $expected);
 
 		$File->delete();
@@ -724,36 +741,36 @@ class RssHelperTest extends CakeTestCase {
 
 	public function testElementNamespaceWithPrefix() {
 		$item = array(
-			'title' => 'Title',
-			'dc:creator' => 'Alex',
-			'dc:description' => 'descriptive words'
-		);
+				'title'   => 'Title',
+				'dc:creator' => 'Alex',
+				'xy:description' => 'descriptive words'
+			);
 		$attributes = array(
-			'namespace' => array(
-				'prefix' => 'dc',
-				'url' => 'http://link.com'
-			)
+				'namespace' => array(
+						'prefix' => 'dc',
+						'url' => 'http://link.com'
+				)
 		);
 		$result = $this->Rss->item($attributes, $item);
 		$expected = array(
 			'item' => array(
-				'xmlns:dc' => 'http://link.com'
+					'xmlns:dc' => 'http://link.com'
 			),
 			'title' => array(
-				'xmlns:dc' => 'http://link.com'
+					'xmlns:dc' => 'http://link.com'
 			),
 			'Title',
 			'/title',
 			'dc:creator' => array(
-				'xmlns:dc' => 'http://link.com'
+					'xmlns:dc' => 'http://link.com'
 			),
 			'Alex',
 			'/dc:creator',
-			'dc:description' => array(
-				'xmlns:dc' => 'http://link.com'
+			'description' => array(
+					'xmlns:dc' => 'http://link.com'
 			),
 			'descriptive words',
-			'/dc:description',
+			'/description',
 			'/item'
 		);
 		$this->assertTags($result, $expected, true);

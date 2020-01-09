@@ -33,7 +33,7 @@ class UsersController extends AppController{
         $this->Session->setFlash('Your stuff has been saved.');
 //        $this->Session->write('user', $data['User']['username']);
 //        $this->redirect(array('controller' => 'dashboards', 'action' => 'dashboard'));
-        $this->redirect('http://localhost/cakephp/index.php/dashboards/dashboard');
+        $this->redirect('http://localhost/cakephp/dashboard');
         
         Configure::write('Session', array(
             'defaults' => 'php',

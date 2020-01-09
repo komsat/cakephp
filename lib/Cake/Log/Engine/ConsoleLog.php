@@ -2,25 +2,26 @@
 /**
  * Console Logging
  *
- * CakePHP(tm) :  Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP 5
+ *
+ * CakePHP(tm) :  Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://www.cakefoundation.org/projects/info/cakephp CakePHP(tm) Project
  * @package       Cake.Log.Engine
  * @since         CakePHP(tm) v 2.2
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 App::uses('BaseLog', 'Log/Engine');
 App::uses('ConsoleOutput', 'Console');
 
 /**
- * Console logging. Writes logs to console output.
+ * Console logging.  Writes logs to console output.
  *
  * @package       Cake.Log.Engine
  */
@@ -48,9 +49,7 @@ class ConsoleLog extends BaseLog {
  */
 	public function __construct($config = array()) {
 		parent::__construct($config);
-		if ((DS === '\\' && !(bool)env('ANSICON') && env('ConEmuANSI') !== 'ON') ||
-			(function_exists('posix_isatty') && !posix_isatty($this->_output))
-		) {
+		if (DS == '\\' && !(bool)env('ANSICON')) {
 			$outputAs = ConsoleOutput::PLAIN;
 		} else {
 			$outputAs = ConsoleOutput::COLOR;
@@ -77,7 +76,7 @@ class ConsoleLog extends BaseLog {
  *
  * @param string $type The type of log you are making.
  * @param string $message The message you want to log.
- * @return bool success of write.
+ * @return boolean success of write.
  */
 	public function write($type, $message) {
 		$output = date('Y-m-d H:i:s') . ' ' . ucfirst($type) . ': ' . $message . "\n";

@@ -25,7 +25,7 @@ echo $this->Form->end();
 <?php 
 echo "Already a user?";
 //echo $this->Html->link('users', '/login');
-echo $this->Html->link('Login', '/users/login', array('class' => 'button'));
+echo $this->Html->link('Login', '/login', array('class' => 'button'));
 
 //$this->redire
 //    'controller' => 'myController',
@@ -43,14 +43,14 @@ echo $this->Html->link('Login', '/users/login', array('class' => 'button'));
 //        alert('fbvdfnnd');
        $('#ajax-loader-full').show();
         $.ajax({
-            url: 'http://localhost/cakephp/index.php/users/registerUser',
+            url: 'http://localhost/cakephp/users/registerUser',
             data: $("#UserRegisterForm").serialize(),
             type: "POST",
             dataType: 'json',
             success: function(response){
                 if(response['status'] == 1){
                 alert(response['message']);
-                window.location.href = "http://localhost/cakephp/index.php/login"
+                window.location.href = "http://localhost/cakephp/login";
             }else{
                 alert('Failed to register');
             }

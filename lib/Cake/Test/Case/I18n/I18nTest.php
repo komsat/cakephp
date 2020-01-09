@@ -2,22 +2,21 @@
 /**
  * I18nTest file
  *
- * CakePHP(tm) Tests <https://book.cakephp.org/2.0/en/development/testing.html>
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP 5
+ *
+ * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
  * @package       Cake.Test.Case.I18n
  * @since         CakePHP(tm) v 1.2.0.5432
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
 App::uses('I18n', 'I18n');
-App::uses('CakeSession', 'Model/Datasource');
 
 /**
  * I18nTest class
@@ -51,7 +50,6 @@ class I18nTest extends CakeTestCase {
 		parent::tearDown();
 
 		Cache::delete('object_map', '_cake_core_');
-		CakeSession::destroy();
 		App::build();
 		CakePlugin::unload();
 	}
@@ -76,15 +74,15 @@ class I18nTest extends CakeTestCase {
 		$this->assertEquals('Dom 1 Foo', I18n::translate('dom1.foo', false, 'dom1'));
 		$this->assertEquals('Dom 1 Bar', I18n::translate('dom1.bar', false, 'dom1'));
 		$domains = I18n::domains();
-		$this->assertEquals('Dom 1 Foo', $domains['dom1']['cache_test_po']['LC_MESSAGES']['dom1.foo']['']);
+		$this->assertEquals('Dom 1 Foo', $domains['dom1']['cache_test_po']['LC_MESSAGES']['dom1.foo']);
 
 		// reset internally stored entries
 		I18n::clear();
 
 		// now only dom1 should be in cache
 		$cachedDom1 = Cache::read('dom1_' . $lang, '_cake_core_');
-		$this->assertEquals('Dom 1 Foo', $cachedDom1['LC_MESSAGES']['dom1.foo']['']);
-		$this->assertEquals('Dom 1 Bar', $cachedDom1['LC_MESSAGES']['dom1.bar']['']);
+		$this->assertEquals('Dom 1 Foo', $cachedDom1['LC_MESSAGES']['dom1.foo']);
+		$this->assertEquals('Dom 1 Bar', $cachedDom1['LC_MESSAGES']['dom1.bar']);
 		// dom2 not in cache
 		$this->assertFalse(Cache::read('dom2_' . $lang, '_cake_core_'));
 
@@ -93,11 +91,11 @@ class I18nTest extends CakeTestCase {
 
 		// verify dom2 was cached through manual read from cache
 		$cachedDom2 = Cache::read('dom2_' . $lang, '_cake_core_');
-		$this->assertEquals('Dom 2 Foo', $cachedDom2['LC_MESSAGES']['dom2.foo']['']);
-		$this->assertEquals('Dom 2 Bar', $cachedDom2['LC_MESSAGES']['dom2.bar']['']);
+		$this->assertEquals('Dom 2 Foo', $cachedDom2['LC_MESSAGES']['dom2.foo']);
+		$this->assertEquals('Dom 2 Bar', $cachedDom2['LC_MESSAGES']['dom2.bar']);
 
 		// modify cache entry manually to verify that dom1 entries now will be read from cache
-		$cachedDom1['LC_MESSAGES']['dom1.foo'][''] = 'FOO';
+		$cachedDom1['LC_MESSAGES']['dom1.foo'] = 'FOO';
 		Cache::write('dom1_' . $lang, $cachedDom1, '_cake_core_');
 		$this->assertEquals('FOO', I18n::translate('dom1.foo', false, 'dom1'));
 	}
@@ -108,10 +106,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function testDefaultStrings() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 1', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 = 0 or > 1', $plurals));
 		$this->assertTrue(in_array('1 = 1', $plurals));
 		$this->assertTrue(in_array('2 = 0 or > 1', $plurals));
@@ -139,10 +137,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 = 0 or > 1', $plurals));
 		$this->assertTrue(in_array('25 = 0 or > 1', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 1 (from core)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 = 0 or > 1 (from core)', $corePlurals));
 		$this->assertTrue(in_array('1 = 1 (from core)', $corePlurals));
 		$this->assertTrue(in_array('2 = 0 or > 1 (from core)', $corePlurals));
@@ -194,13 +192,13 @@ class I18nTest extends CakeTestCase {
 /**
  * Assertions for rules zero.
  *
- * @return void
+ * @return
  */
 	public function assertRulesZero() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 0 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 ends with any # (translated)', $plurals));
 		$this->assertTrue(in_array('1 ends with any # (translated)', $plurals));
 		$this->assertTrue(in_array('2 ends with any # (translated)', $plurals));
@@ -228,10 +226,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 ends with any # (translated)', $plurals));
 		$this->assertTrue(in_array('25 ends with any # (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 0 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 ends with any # (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('1 ends with any # (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('2 ends with any # (from core translated)', $corePlurals));
@@ -286,10 +284,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function assertRulesOne() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 1 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 = 0 or > 1 (translated)', $plurals));
 		$this->assertTrue(in_array('1 = 1 (translated)', $plurals));
 		$this->assertTrue(in_array('2 = 0 or > 1 (translated)', $plurals));
@@ -317,10 +315,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 = 0 or > 1 (translated)', $plurals));
 		$this->assertTrue(in_array('25 = 0 or > 1 (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 1 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 = 0 or > 1 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('1 = 1 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('2 = 0 or > 1 (from core translated)', $corePlurals));
@@ -375,10 +373,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function assertRulesTwo() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 2 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 = 0 or 1 (translated)', $plurals));
 		$this->assertTrue(in_array('1 = 0 or 1 (translated)', $plurals));
 		$this->assertTrue(in_array('2 > 1 (translated)', $plurals));
@@ -406,10 +404,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 > 1 (translated)', $plurals));
 		$this->assertTrue(in_array('25 > 1 (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 2 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 = 0 or 1 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('1 = 0 or 1 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('2 > 1 (from core translated)', $corePlurals));
@@ -464,10 +462,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function assertRulesThree() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 3 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 = 0 (translated)', $plurals));
 		$this->assertTrue(in_array('1 ends 1 but not 11 (translated)', $plurals));
 		$this->assertTrue(in_array('2 everything else (translated)', $plurals));
@@ -495,10 +493,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('25 everything else (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 3 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 = 0 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('1 ends 1 but not 11 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('2 everything else (from core translated)', $corePlurals));
@@ -553,10 +551,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function assertRulesFour() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 4 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('1 = 1 (translated)', $plurals));
 		$this->assertTrue(in_array('2 = 2 (translated)', $plurals));
@@ -584,10 +582,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('25 everything else (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 4 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 everything else (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('1 = 1 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('2 = 2 (from core translated)', $corePlurals));
@@ -642,10 +640,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function assertRulesFive() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 5 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 = 0 or ends in 01-19 (translated)', $plurals));
 		$this->assertTrue(in_array('0 = 0 or ends in 01-19 (translated)', $plurals));
 		$this->assertTrue(in_array('1 = 1 (translated)', $plurals));
@@ -674,10 +672,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('25 everything else (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 5 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 = 0 or ends in 01-19 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('0 = 0 or ends in 01-19 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('1 = 1 (from core translated)', $corePlurals));
@@ -733,10 +731,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function assertRulesSix() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 6 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 ends in 0 or ends in 10-20 (translated)', $plurals));
 		$this->assertTrue(in_array('1 ends in 1, not 11 (translated)', $plurals));
 		$this->assertTrue(in_array('2 everything else (translated)', $plurals));
@@ -764,10 +762,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('25 everything else (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 6 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 ends in 0 or ends in 10-20 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('1 ends in 1, not 11 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('2 everything else (from core translated)', $corePlurals));
@@ -822,10 +820,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function assertRulesSeven() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 7 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('1 ends in 1, not 11 (translated)', $plurals));
 		$this->assertTrue(in_array('2 ends in 2-4, not 12-14 (translated)', $plurals));
@@ -853,10 +851,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 ends in 2-4, not 12-14 (translated)', $plurals));
 		$this->assertTrue(in_array('25 everything else (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 7 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 everything else (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('1 ends in 1, not 11 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('2 ends in 2-4, not 12-14 (from core translated)', $corePlurals));
@@ -911,10 +909,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function assertRulesEight() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 8 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('1 is 1 (translated)', $plurals));
 		$this->assertTrue(in_array('2 is 2-4 (translated)', $plurals));
@@ -942,10 +940,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('25 everything else (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 8 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 everything else (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('1 is 1 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('2 is 2-4 (from core translated)', $corePlurals));
@@ -1000,10 +998,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function assertRulesNine() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 9 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('0 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('1 is 1 (translated)', $plurals));
@@ -1032,10 +1030,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 ends in 2-4, not 12-14 (translated)', $plurals));
 		$this->assertTrue(in_array('25 everything else (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 9 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 everything else (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('0 everything else (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('0 everything else (from core translated)', $corePlurals));
@@ -1092,10 +1090,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function assertRulesTen() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 10 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('0 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('1 ends in 1 (translated)', $plurals));
@@ -1124,10 +1122,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('25 everything else (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 10 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 everything else (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('0 everything else (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('1 ends in 1 (from core translated)', $corePlurals));
@@ -1183,10 +1181,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function assertRulesEleven() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 11 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('1 is 1 (translated)', $plurals));
 		$this->assertTrue(in_array('2 is 2 (translated)', $plurals));
@@ -1214,10 +1212,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('25 everything else (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 11 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 everything else (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('1 is 1 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('2 is 2 (from core translated)', $corePlurals));
@@ -1272,10 +1270,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function assertRulesTwelve() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 12 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 is 0 or 3-10 (translated)', $plurals));
 		$this->assertTrue(in_array('1 is 1 (translated)', $plurals));
 		$this->assertTrue(in_array('2 is 2 (translated)', $plurals));
@@ -1303,10 +1301,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('25 everything else (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 12 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 is 0 or 3-10 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('1 is 1 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('2 is 2 (from core translated)', $corePlurals));
@@ -1361,10 +1359,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function assertRulesThirteen() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 13 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 is 0 or ends in 01-10 (translated)', $plurals));
 		$this->assertTrue(in_array('1 is 1 (translated)', $plurals));
 		$this->assertTrue(in_array('2 is 0 or ends in 01-10 (translated)', $plurals));
@@ -1392,10 +1390,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('25 everything else (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 13 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 is 0 or ends in 01-10 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('1 is 1 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('2 is 0 or ends in 01-10 (from core translated)', $corePlurals));
@@ -1450,10 +1448,10 @@ class I18nTest extends CakeTestCase {
  * @return void
  */
 	public function assertRulesFourteen() {
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Plural Rule 14 (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('1 ends in 1 (translated)', $plurals));
 		$this->assertTrue(in_array('2 ends in 2 (translated)', $plurals));
@@ -1481,10 +1479,10 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('24 everything else (translated)', $plurals));
 		$this->assertTrue(in_array('25 everything else (translated)', $plurals));
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertEquals('Plural Rule 14 (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertTrue(in_array('0 everything else (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('1 ends in 1 (from core translated)', $corePlurals));
 		$this->assertTrue(in_array('2 ends in 2 (from core translated)', $corePlurals));
@@ -1514,137 +1512,16 @@ class I18nTest extends CakeTestCase {
 	}
 
 /**
- * testMoRulesFifteen method
- *
- * @return void
- */
-	public function testMoRulesFifteen() {
-		Configure::write('Config.language', 'rule_15_mo');
-		$this->assertRulesFifteen();
-	}
-
-/**
- * testPoRulesFifteen method
- *
- * @return void
- */
-	public function testPoRulesFifteen() {
-		Configure::write('Config.language', 'rule_15_po');
-		$this->assertRulesFifteen();
-	}
-
-/**
- * Assertions for plural rules fifteen
- *
- * @return void
- */
-	public function assertRulesFifteen() {
-		$singular = $this->_singular();
-		$this->assertEquals('Plural Rule 15 (translated)', $singular);
-
-		$plurals = $this->_plural(111);
-		$this->assertTrue(in_array('0 is 0 (translated)', $plurals));
-		$this->assertTrue(in_array('1 is 1 (translated)', $plurals));
-		$this->assertTrue(in_array('2 is 2 (translated)', $plurals));
-		$this->assertTrue(in_array('3 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('4 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('5 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('6 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('7 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('8 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('9 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('10 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('11 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('12 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('13 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('14 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('15 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('16 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('17 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('18 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('19 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('20 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('31 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('42 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('53 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('64 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('75 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('86 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('97 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('98 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('99 ends with 11-99 (translated)', $plurals));
-		$this->assertTrue(in_array('100 everything else (translated)', $plurals));
-		$this->assertTrue(in_array('101 everything else (translated)', $plurals));
-		$this->assertTrue(in_array('102 everything else (translated)', $plurals));
-		$this->assertTrue(in_array('103 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('104 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('105 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('106 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('107 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('108 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('109 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('110 ends with 03-10 (translated)', $plurals));
-		$this->assertTrue(in_array('111 ends with 11-99 (translated)', $plurals));
-
-		$coreSingular = $this->_singularFromCore();
-		$this->assertEquals('Plural Rule 15 (from core translated)', $coreSingular);
-
-		$corePlurals = $this->_pluralFromCore(111);
-		$this->assertTrue(in_array('0 is 0 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('1 is 1 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('2 is 2 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('3 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('4 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('5 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('6 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('7 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('8 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('9 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('10 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('11 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('12 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('13 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('14 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('15 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('16 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('17 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('18 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('19 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('20 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('31 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('42 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('53 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('64 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('75 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('86 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('97 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('98 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('99 ends with 11-99 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('100 everything else (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('101 everything else (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('102 everything else (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('103 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('104 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('105 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('106 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('107 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('108 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('109 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('110 ends with 03-10 (from core translated)', $corePlurals));
-		$this->assertTrue(in_array('111 ends with 11-99 (from core translated)', $corePlurals));
-	}
-
-/**
  * testSetLanguageWithSession method
  *
  * @return void
  */
 	public function testSetLanguageWithSession() {
-		CakeSession::write('Config.language', 'po');
-		$singular = $this->_singular();
+		$_SESSION['Config']['language'] = 'po';
+		$singular = $this->__singular();
 		$this->assertEquals('Po (translated)', $singular);
 
-		$plurals = $this->_plural();
+		$plurals = $this->__plural();
 		$this->assertTrue(in_array('0 everything else (po translated)', $plurals));
 		$this->assertTrue(in_array('1 is 1 (po translated)', $plurals));
 		$this->assertTrue(in_array('2 is 2-4 (po translated)', $plurals));
@@ -1671,7 +1548,7 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('23 everything else (po translated)', $plurals));
 		$this->assertTrue(in_array('24 everything else (po translated)', $plurals));
 		$this->assertTrue(in_array('25 everything else (po translated)', $plurals));
-		CakeSession::delete('Config.language');
+		unset($_SESSION['Config']['language']);
 	}
 
 /**
@@ -1681,13 +1558,13 @@ class I18nTest extends CakeTestCase {
  */
 	public function testNoCoreTranslation() {
 		Configure::write('Config.language', 'po');
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Po (translated)', $singular);
 
-		$coreSingular = $this->_singularFromCore();
+		$coreSingular = $this->__singularFromCore();
 		$this->assertNotEquals('Po (from core translated)', $coreSingular);
 
-		$corePlurals = $this->_pluralFromCore();
+		$corePlurals = $this->__pluralFromCore();
 		$this->assertFalse(in_array('0 everything else (from core translated)', $corePlurals));
 		$this->assertFalse(in_array('1 is 1 (from core translated)', $corePlurals));
 		$this->assertFalse(in_array('2 is 2-4 (from core translated)', $corePlurals));
@@ -1727,10 +1604,10 @@ class I18nTest extends CakeTestCase {
 		));
 
 		Configure::write('Config.language', 'po');
-		$singular = $this->_domainSingular();
+		$singular = $this->__domainSingular();
 		$this->assertEquals('Plural Rule 1 (from plugin)', $singular);
 
-		$plurals = $this->_domainPlural();
+		$plurals = $this->__domainPlural();
 		$this->assertTrue(in_array('0 = 0 or > 1 (from plugin)', $plurals));
 		$this->assertTrue(in_array('1 = 1 (from plugin)', $plurals));
 		$this->assertTrue(in_array('2 = 0 or > 1 (from plugin)', $plurals));
@@ -1757,30 +1634,6 @@ class I18nTest extends CakeTestCase {
 		$this->assertTrue(in_array('23 = 0 or > 1 (from plugin)', $plurals));
 		$this->assertTrue(in_array('24 = 0 or > 1 (from plugin)', $plurals));
 		$this->assertTrue(in_array('25 = 0 or > 1 (from plugin)', $plurals));
-	}
-
-/**
- * Test that Configure::read('I18n.preferApp') will prefer app.
- *
- * @return void
- */
-	public function testPluginTranslationPreferApp() {
-		// Reset internally stored entries
-		I18n::clear();
-		Cache::clear(false, '_cake_core_');
-
-		Configure::write('I18n.preferApp', true);
-
-		App::build(array(
-			'Plugin' => array(CAKE . 'Test' . DS . 'test_app' . DS . 'Plugin' . DS)
-		));
-
-		Configure::write('Config.language', 'po');
-		$singular = $this->_domainSingular();
-		$this->assertEquals('Plural Rule 1', $singular);
-
-		$plurals = $this->_domainPlural();
-		$this->assertTrue(in_array('0 = 0 or > 1', $plurals));
 	}
 
 /**
@@ -1906,11 +1759,7 @@ class I18nTest extends CakeTestCase {
  */
 	public function testCategory() {
 		Configure::write('Config.language', 'po');
-		// Test with default (I18n constant) category.
-		$category = $this->_category();
-		$this->assertEquals('Monetary Po (translated)', $category);
-		// Test with category number represenation.
-		$category = $this->_category(3);
+		$category = $this->__category();
 		$this->assertEquals('Monetary Po (translated)', $category);
 	}
 
@@ -1922,10 +1771,10 @@ class I18nTest extends CakeTestCase {
 	public function testPluginCategory() {
 		Configure::write('Config.language', 'po');
 
-		$singular = $this->_domainCategorySingular();
+		$singular = $this->__domainCategorySingular();
 		$this->assertEquals('Monetary Plural Rule 1 (from plugin)', $singular);
 
-		$plurals = $this->_domainCategoryPlural();
+		$plurals = $this->__domainCategoryPlural();
 		$this->assertTrue(in_array('Monetary 0 = 0 or > 1 (from plugin)', $plurals));
 		$this->assertTrue(in_array('Monetary 1 = 1 (from plugin)', $plurals));
 	}
@@ -1937,10 +1786,10 @@ class I18nTest extends CakeTestCase {
  */
 	public function testCategoryThenSingular() {
 		Configure::write('Config.language', 'po');
-		$category = $this->_category();
+		$category = $this->__category();
 		$this->assertEquals('Monetary Po (translated)', $category);
 
-		$singular = $this->_singular();
+		$singular = $this->__singular();
 		$this->assertEquals('Po (translated)', $singular);
 	}
 
@@ -1994,70 +1843,13 @@ class I18nTest extends CakeTestCase {
 	public function testTranslateLanguageParam() {
 		Configure::write('Config.language', 'rule_0_po');
 
-		$result = I18n::translate('Plural Rule 1', null, null, I18n::LC_MESSAGES);
+		$result = I18n::translate('Plural Rule 1', null, null, 6);
 		$expected = 'Plural Rule 0 (translated)';
 		$this->assertEquals($expected, $result);
 
-		$result = I18n::translate('Plural Rule 1', null, null, I18n::LC_MESSAGES, null, 'rule_1_po');
+		$result = I18n::translate('Plural Rule 1', null, null, 6, null, 'rule_1_po');
 		$expected = 'Plural Rule 1 (translated)';
 		$this->assertEquals($expected, $result);
-	}
-
-/**
- * Test that the '' domain causes exceptions.
- *
- * @expectedException CakeException
- * @return void
- */
-	public function testTranslateEmptyDomain() {
-		I18n::translate('Plural Rule 1', null, '');
-	}
-
-/**
- * testLoadLocaleDefinition method
- *
- * @return void
- */
-	public function testLoadLocaleDefinition() {
-		$path = current(App::path('locales'));
-		$result = I18n::loadLocaleDefinition($path . 'nld' . DS . 'LC_TIME');
-		$expected = array('zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag');
-		$this->assertSame($expected, $result['day']);
-	}
-
-/**
- * Test basic context support
- *
- * @return void
- */
-	public function testContext() {
-		Configure::write('Config.language', 'nld');
-
-		$this->assertSame("brief", __x('mail', 'letter'));
-		$this->assertSame("letter", __x('character', 'letter'));
-		$this->assertSame("bal", __x('spherical object', 'ball'));
-		$this->assertSame("danspartij", __x('social gathering', 'ball'));
-		$this->assertSame("balans", __('balance'));
-		$this->assertSame("saldo", __x('money', 'balance'));
-	}
-
-/**
- * Test basic context support using mo files.
- *
- * @return void
- */
-	public function testContextMoFile() {
-		Configure::write('Config.language', 'nld_mo');
-
-		$this->assertSame("brief", __x('mail', 'letter'));
-		$this->assertSame("letter", __x('character', 'letter'));
-		$this->assertSame("bal", __x('spherical object', 'ball'));
-		$this->assertSame("danspartij", __x('social gathering', 'ball'));
-		$this->assertSame("balans", __('balance'));
-		$this->assertSame("saldo", __x('money', 'balance'));
-
-		// MO file is sorted by msgid, 'zoo' should be last
-		$this->assertSame("dierentuin", __('zoo'));
 	}
 
 /**
@@ -2065,7 +1857,7 @@ class I18nTest extends CakeTestCase {
  *
  * @return void
  */
-	protected function _domainCategorySingular($domain = 'test_plugin', $category = 3) {
+	private function __domainCategorySingular($domain = 'test_plugin', $category = 3) {
 		$singular = __dc($domain, 'Plural Rule 1', $category);
 		return $singular;
 	}
@@ -2075,7 +1867,7 @@ class I18nTest extends CakeTestCase {
  *
  * @return void
  */
-	protected function _domainCategoryPlural($domain = 'test_plugin', $category = 3) {
+	private function __domainCategoryPlural($domain = 'test_plugin', $category = 3) {
 		$plurals = array();
 		for ($number = 0; $number <= 25; $number++) {
 			$plurals[] = sprintf(__dcn($domain, '%d = 1', '%d = 0 or > 1', (float)$number, $category), (float)$number);
@@ -2088,7 +1880,7 @@ class I18nTest extends CakeTestCase {
  *
  * @return void
  */
-	protected function _domainSingular($domain = 'test_plugin') {
+	private function __domainSingular($domain = 'test_plugin') {
 		$singular = __d($domain, 'Plural Rule 1');
 		return $singular;
 	}
@@ -2098,10 +1890,10 @@ class I18nTest extends CakeTestCase {
  *
  * @return void
  */
-	protected function _domainPlural($domain = 'test_plugin') {
+	private function __domainPlural($domain = 'test_plugin') {
 		$plurals = array();
 		for ($number = 0; $number <= 25; $number++) {
-			$plurals[] = sprintf(__dn($domain, '%d = 1', '%d = 0 or > 1', (float)$number), (float)$number);
+			$plurals[] = sprintf(__dn($domain, '%d = 1', '%d = 0 or > 1', (float)$number), (float)$number );
 		}
 		return $plurals;
 	}
@@ -2111,7 +1903,7 @@ class I18nTest extends CakeTestCase {
  *
  * @return void
  */
-	protected function _category($category = I18n::LC_MONETARY) {
+	private function __category($category = 3) {
 		$singular = __c('Plural Rule 1', $category);
 		return $singular;
 	}
@@ -2121,7 +1913,7 @@ class I18nTest extends CakeTestCase {
  *
  * @return void
  */
-	protected function _singular() {
+	private function __singular() {
 		$singular = __('Plural Rule 1');
 		return $singular;
 	}
@@ -2129,12 +1921,11 @@ class I18nTest extends CakeTestCase {
 /**
  * Plural method
  *
- * @param int $upTo For numbers upto (default to 25)
  * @return void
  */
-	protected function _plural($upTo = 25) {
+	private function __plural() {
 		$plurals = array();
-		for ($number = 0; $number <= $upTo; $number++) {
+		for ($number = 0; $number <= 25; $number++) {
 			$plurals[] = sprintf(__n('%d = 1', '%d = 0 or > 1', (float)$number), (float)$number);
 		}
 		return $plurals;
@@ -2145,7 +1936,7 @@ class I18nTest extends CakeTestCase {
  *
  * @return void
  */
-	protected function _singularFromCore() {
+	private function __singularFromCore() {
 		$singular = __('Plural Rule 1 (from core)');
 		return $singular;
 	}
@@ -2153,13 +1944,12 @@ class I18nTest extends CakeTestCase {
 /**
  * pluralFromCore method
  *
- * @param int $upTo For numbers upto (default to 25)
  * @return void
  */
-	protected function _pluralFromCore($upTo = 25) {
+	private function __pluralFromCore() {
 		$plurals = array();
-		for ($number = 0; $number <= $upTo; $number++) {
-			$plurals[] = sprintf(__n('%d = 1 (from core)', '%d = 0 or > 1 (from core)', (float)$number), (float)$number);
+		for ($number = 0; $number <= 25; $number++) {
+			$plurals[] = sprintf(__n('%d = 1 (from core)', '%d = 0 or > 1 (from core)', (float)$number), (float)$number );
 		}
 		return $plurals;
 	}

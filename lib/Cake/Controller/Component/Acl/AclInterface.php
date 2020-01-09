@@ -1,24 +1,23 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
- * @package       Cake.Controller.Component.Acl
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       Cake.Controller.Component
  * @since         CakePHP(tm) v 0.10.0.1076
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 /**
  * Access Control List interface.
  * Implementing classes are used by AclComponent to perform ACL checks in Cake.
  *
- * @package       Cake.Controller.Component.Acl
+ * @package       Cake.Controller.Component
  */
 interface AclInterface {
 
@@ -28,7 +27,6 @@ interface AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
- * @return bool Success
  */
 	public function check($aro, $aco, $action = "*");
 
@@ -38,7 +36,7 @@ interface AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
- * @return bool Success
+ * @return boolean Success
  */
 	public function allow($aro, $aco, $action = "*");
 
@@ -48,7 +46,7 @@ interface AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
- * @return bool Success
+ * @return boolean Success
  */
 	public function deny($aro, $aco, $action = "*");
 
@@ -58,15 +56,14 @@ interface AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
- * @return bool Success
+ * @return boolean Success
  */
 	public function inherit($aro, $aco, $action = "*");
 
 /**
  * Initialization method for the Acl implementation
  *
- * @param Component $component The AclComponent instance.
- * @return void
+ * @param AclComponent $component
  */
 	public function initialize(Component $component);
 

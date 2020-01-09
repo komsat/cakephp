@@ -30,4 +30,21 @@ class Post extends Model{
 //            return false;
 //        }
 //    }
+    
+    public function postUpload($title, $description, $tags, $images){
+        $data = array();
+        $data['title'] = $title;
+        $data['description'] = $description;
+        $data['tags'] = $tags;
+        $data['images'] = $images;
+        
+        print_r($data);
+        
+        $userDetails = $this->save($data);
+        if(!empty($userDetails)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

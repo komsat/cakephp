@@ -4,18 +4,19 @@
  *
  * Routes for test app
  *
- * CakePHP : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP versions 4 and 5
+ *
+ * CakePHP : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc.
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP Project
- * @package       Cake.Test.TestApp.Config
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc.
+ * @link          http://cakephp.org CakePHP Project
+ * @package       Cake.Test.test_app.Config
  * @since         CakePHP v 2.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 Router::parseExtensions('json');

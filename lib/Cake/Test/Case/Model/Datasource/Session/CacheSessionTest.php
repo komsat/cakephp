@@ -2,29 +2,25 @@
 /**
  * CacheSessionTest
  *
- * CakePHP(tm) Tests <https://book.cakephp.org/2.0/en/development/testing.html>
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP 5
+ *
+ * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Test.Case.Model.Datasource.Session
  * @since         CakePHP(tm) v 2.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 App::uses('CakeSession', 'Model/Datasource');
 App::uses('CacheSession', 'Model/Datasource/Session');
 class_exists('CakeSession');
 
-/**
- * CacheSessionTest
- *
- * @package       Cake.Test.Case.Model.Datasource.Session
- */
 class CacheSessionTest extends CakeTestCase {
 
 	protected static $_sessionBackup;
@@ -39,7 +35,7 @@ class CacheSessionTest extends CakeTestCase {
 			'engine' => 'File',
 			'prefix' => 'session_test_'
 		));
-		static::$_sessionBackup = Configure::read('Session');
+		self::$_sessionBackup = Configure::read('Session');
 
 		Configure::write('Session.handler.config', 'session_test');
 	}
@@ -53,7 +49,7 @@ class CacheSessionTest extends CakeTestCase {
 		Cache::clear(false, 'session_test');
 		Cache::drop('session_test');
 
-		Configure::write('Session', static::$_sessionBackup);
+		Configure::write('Session', self::$_sessionBackup);
 	}
 
 /**
@@ -104,8 +100,6 @@ class CacheSessionTest extends CakeTestCase {
 	public function testRead() {
 		$this->storage->write('test_one', 'Some other value');
 		$this->assertEquals('Some other value', $this->storage->read('test_one'), 'Incorrect value.');
-		$this->storage->write('test_two', 0);
-		$this->assertEquals(0, $this->storage->read('test_two'));
 	}
 
 /**

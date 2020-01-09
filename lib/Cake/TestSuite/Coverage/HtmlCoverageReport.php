@@ -1,19 +1,20 @@
 <?php
 /**
+ * Generates code coverage reports in HTML from data obtained from PHPUnit
+ *
  * PHP5
  *
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.TestSuite.Coverage
  * @since         CakePHP(tm) v 2.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 App::uses('BaseCoverageReport', 'TestSuite/Coverage');
@@ -26,23 +27,9 @@ App::uses('BaseCoverageReport', 'TestSuite/Coverage');
 class HtmlCoverageReport extends BaseCoverageReport {
 
 /**
- * Holds the total number of processed rows.
+ * Generates report html to display.
  *
- * @var int
- */
-	protected $_total = 0;
-
-/**
- * Holds the total number of covered rows.
- *
- * @var int
- */
-	protected $_covered = 0;
-
-/**
- * Generates report HTML to display.
- *
- * @return string Compiled HTML report.
+ * @return string compiled html report.
  */
 	public function report() {
 		$pathFilter = $this->getPathFilter();
@@ -60,12 +47,6 @@ HTML;
 			$fileData = file($file);
 			$output .= $this->generateDiff($file, $fileData, $coverageData);
 		}
-
-		$percentCovered = 100;
-		if ($this->_total > 0) {
-			$percentCovered = round(100 * $this->_covered / $this->_total, 2);
-		}
-		$output .= '<div class="total">Overall coverage: <span class="coverage">' . $percentCovered . '%</span></div>';
 		return $output;
 	}
 
@@ -87,8 +68,6 @@ HTML;
 		$diff = array();
 
 		list($covered, $total) = $this->_calculateCoveredLines($fileLines, $coverageData);
-		$this->_covered += $covered;
-		$this->_total += $total;
 
 		//shift line numbers forward one;
 		array_unshift($fileLines, ' ');
@@ -125,9 +104,9 @@ HTML;
 	}
 
 /**
- * Guess the class name the test was for based on the test case filename.
+ * Guess the classname the test was for based on the test case filename.
  *
- * @param ReflectionClass $testReflection The class to reflect
+ * @param ReflectionClass $testReflection.
  * @return string Possible test subject name.
  */
 	protected function _guessSubjectName($testReflection) {
@@ -141,13 +120,9 @@ HTML;
 	}
 
 /**
- * Renders the HTML for a single line in the HTML diff.
+ * Renders the html for a single line in the html diff.
  *
- * @param string $line The line content.
- * @param int $linenumber The line number
- * @param string $class The classname to use.
- * @param array $coveringTests The tests covering the line.
- * @return string
+ * @return void
  */
 	protected function _paintLine($line, $linenumber, $class, $coveringTests) {
 		$coveredBy = '';
@@ -170,21 +145,21 @@ HTML;
 /**
  * generate some javascript for the coverage report.
  *
- * @return string
+ * @return void
  */
 	public function coverageScript() {
 		return <<<HTML
 		<script type="text/javascript">
 		function coverage_show_hide(selector) {
 			var element = document.getElementById(selector);
-			element.style.display = (element.style.display === 'none') ? '' : 'none';
+			element.style.display = (element.style.display == 'none') ? '' : 'none';
 		}
 		function coverage_toggle_all() {
 			var divs = document.querySelectorAll('div.coverage-container');
 			var i = divs.length;
 			while (i--) {
 				if (divs[i] && divs[i].className.indexOf('primary') == -1) {
-					divs[i].style.display = (divs[i].style.display === 'none') ? '' : 'none';
+					divs[i].style.display = (divs[i].style.display == 'none') ? '' : 'none';
 				}
 			}
 		}
@@ -195,24 +170,21 @@ HTML;
 /**
  * Generate an HTML snippet for coverage headers
  *
- * @param string $filename The file name being covered
- * @param string $percent The percentage covered
- * @return string
+ * @return void
  */
 	public function coverageHeader($filename, $percent) {
-		$hash = md5($filename);
 		$filename = basename($filename);
-		list($file) = explode('.', $filename);
+		list($file, $ext) = explode('.', $filename);
 		$display = in_array($file, $this->_testNames) ? 'block' : 'none';
-		$primary = $display === 'block' ? 'primary' : '';
+		$primary = $display == 'block' ? 'primary' : '';
 		return <<<HTML
 	<div class="coverage-container $primary" style="display:$display;">
 	<h4>
-		<a href="#coverage-$filename-$hash" onclick="coverage_show_hide('coverage-$filename-$hash');">
+		<a href="#coverage-$filename" onclick="coverage_show_hide('coverage-$filename');">
 			$filename Code coverage: $percent%
 		</a>
 	</h4>
-	<div class="code-coverage-results" id="coverage-$filename-$hash" style="display:none;">
+	<div class="code-coverage-results" id="coverage-$filename" style="display:none;">
 	<pre>
 HTML;
 	}

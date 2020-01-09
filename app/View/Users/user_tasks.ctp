@@ -21,7 +21,13 @@
 	?>
 <head>
     <style>
-        body {font-family: Arial, Helvetica, sans-serif;}
+        body {font-family: Arial, Helvetica, sans-serif;
+/*              background-image: url('http://localhost/cakephp/app/webroot/img/backgroundImage.jpg');
+              background-repeat: no-repeat;
+              background-attachment: fixed;  
+              background-size: cover;*/
+              backgroung-color: #efefef;
+        }
         form {border: 3px solid #f1f1f1; 
               padding: 25px 33px;
               margin: 18px 0;}
@@ -48,9 +54,12 @@
         }
         .imgcontainer {
             text-align: center;
-            margin: 24px 0 12px 0;
+            /*margin: 24px 0 12px 0;*/
+            width: 40%;
+            border-radius: 50%;
+            /*height: 400px;*/
         }
-        img.avatar {
+        .avatar {
             width: 40%;
             border-radius: 50%;
         }
@@ -61,6 +70,11 @@
             text-align: center;
             margin: 24px 0 12px 0;
         }
+        #UserUserTasksForm{
+            align: center;
+            /*margin: 24px 0 12px 0;*/
+            width: 40%;
+        }
     </style>
 </head>
 <body>
@@ -70,7 +84,7 @@
 		</div>
 		<div id="content">
                     <div class="imgcontainer">
-                        <img src="imagesLogin.png" alt="Avatar" class="avatar">
+                        <img src="http://localhost/cakephp/app/webroot/img/imagesLogin.png" alt="Avatar" class="avatar">
                     </div>
                     <?php
                         echo $this->Form->create('User',array('url' => array('action' => 'login')));
@@ -79,7 +93,7 @@
                         echo $this->Form->end('Login');
                         echo "New User?";
 //                        echo $this->Html->link('users', '/register');
-                        echo $this->Html->link('Register', '/users/register', array('class' => 'button'));
+                        echo $this->Html->link('Register', '/register', array('class' => 'button'));
                     ?>
 		</div>
 	</div>

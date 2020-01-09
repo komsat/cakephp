@@ -1,17 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Cache
  * @since         CakePHP(tm) v 1.2.0.4933
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 /**
@@ -30,10 +29,10 @@ abstract class CacheEngine {
 
 /**
  * Contains the compiled string with all groups
- * prefixes to be prepended to every key in this cache engine
+ * prefixes to be prepeded to every key in this cache engine
  *
  * @var string
- */
+ **/
 	protected $_groupPrefix = null;
 
 /**
@@ -42,7 +41,7 @@ abstract class CacheEngine {
  * Called automatically by the cache frontend
  *
  * @param array $settings Associative array of parameters for the engine
- * @return bool True if the engine has been successfully initialized, false if not
+ * @return boolean True if the engine has been successfully initialized, false if not
  */
 	public function init($settings = array()) {
 		$settings += $this->settings + array(
@@ -66,8 +65,8 @@ abstract class CacheEngine {
  * Garbage collection
  *
  * Permanently remove all expired and deleted data
- *
- * @param int $expires [optional] An expires timestamp, invalidating all data before.
+ * 
+ * @param integer $expires [optional] An expires timestamp, invalidataing all data before.
  * @return void
  */
 	public function gc($expires = null) {
@@ -78,21 +77,10 @@ abstract class CacheEngine {
  *
  * @param string $key Identifier for the data
  * @param mixed $value Data to be cached
- * @param int $duration How long to cache for.
- * @return bool True if the data was successfully cached, false on failure
+ * @param integer $duration How long to cache for.
+ * @return boolean True if the data was successfully cached, false on failure
  */
 	abstract public function write($key, $value, $duration);
-
-/**
- * Write value for a key into cache if it doesn't already exist
- *
- * @param string $key Identifier for the data
- * @param mixed $value Data to be cached
- * @param int $duration How long to cache for.
- * @return bool True if the data was successfully cached, false on failure
- */
-	public function add($key, $value, $duration) {
-	}
 
 /**
  * Read a key from the cache
@@ -106,7 +94,7 @@ abstract class CacheEngine {
  * Increment a number under the key and return incremented value
  *
  * @param string $key Identifier for the data
- * @param int $offset How much to add
+ * @param integer $offset How much to add
  * @return New incremented value, false otherwise
  */
 	abstract public function increment($key, $offset = 1);
@@ -115,7 +103,7 @@ abstract class CacheEngine {
  * Decrement a number under the key and return decremented value
  *
  * @param string $key Identifier for the data
- * @param int $offset How much to subtract
+ * @param integer $offset How much to subtract
  * @return New incremented value, false otherwise
  */
 	abstract public function decrement($key, $offset = 1);
@@ -124,25 +112,25 @@ abstract class CacheEngine {
  * Delete a key from the cache
  *
  * @param string $key Identifier for the data
- * @return bool True if the value was successfully deleted, false if it didn't exist or couldn't be removed
+ * @return boolean True if the value was successfully deleted, false if it didn't exist or couldn't be removed
  */
 	abstract public function delete($key);
 
 /**
  * Delete all keys from the cache
  *
- * @param bool $check if true will check expiration, otherwise delete all
- * @return bool True if the cache was successfully cleared, false otherwise
+ * @param boolean $check if true will check expiration, otherwise delete all
+ * @return boolean True if the cache was successfully cleared, false otherwise
  */
 	abstract public function clear($check);
 
 /**
- * Clears all values belonging to a group. Is up to the implementing engine
- * to decide whether actually delete the keys or just simulate it to achieve
+ * Clears all values belonging to a group. Is upt to the implementing engine
+ * to decide whether actually deete the keys or just simulate it to acheive
  * the same result.
  *
- * @param string $group name of the group to be cleared
- * @return bool
+ * @param string $groups name of the group to be cleared
+ * @return boolean
  */
 	public function clearGroup($group) {
 		return false;
@@ -181,10 +169,11 @@ abstract class CacheEngine {
 
 		$prefix = '';
 		if (!empty($this->_groupPrefix)) {
-			$prefix = md5(implode('_', $this->groups()));
+			$prefix = vsprintf($this->_groupPrefix, $this->groups());
 		}
 
 		$key = preg_replace('/[\s]+/', '_', strtolower(trim(str_replace(array(DS, '/', '.'), '_', strval($key)))));
 		return $prefix . $key;
 	}
+
 }

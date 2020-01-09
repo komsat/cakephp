@@ -4,17 +4,18 @@
  *
  * Implementation of a Cake Shell to show CakePHP core method signatures.
  *
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
  * @since         CakePHP(tm) v 1.2.0.5012
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 App::uses('AppShell', 'Console/Command');
@@ -72,13 +73,12 @@ class ApiShell extends AppShell {
 			$path = $this->paths['core'];
 		}
 
-		$count = count($this->args);
-		if ($count > 1) {
-			$file = Inflector::underscore($this->args[1]);
-			$class = Inflector::camelize($this->args[1]);
-		} elseif ($count) {
+		if (count($this->args) == 1) {
 			$file = $type;
 			$class = Inflector::camelize($type);
+		} elseif (count($this->args) > 1) {
+			$file = Inflector::underscore($this->args[1]);
+			$class = Inflector::camelize($this->args[1]);
 		}
 		$objects = App::objects('class', $path);
 		if (in_array($class, $objects)) {
@@ -98,7 +98,7 @@ class ApiShell extends AppShell {
 			if (isset($this->params['method'])) {
 				if (!isset($parsed[$this->params['method']])) {
 					$this->err(__d('cake_console', '%s::%s() could not be found', $class, $this->params['method']));
-					return $this->_stop();
+					$this->_stop();
 				}
 				$method = $parsed[$this->params['method']];
 				$this->out($class . '::' . $method['method'] . $method['parameters']);
@@ -137,24 +137,20 @@ class ApiShell extends AppShell {
 	}
 
 /**
- * Gets the option parser instance and configures it.
+ * Get and configure the optionparser.
  *
  * @return ConsoleOptionParser
  */
 	public function getOptionParser() {
 		$parser = parent::getOptionParser();
-
-		$parser->description(
-			__d('cake_console', 'Lookup doc block comments for classes in CakePHP.')
-		)->addArgument('type', array(
+		$parser->addArgument('type', array(
 			'help' => __d('cake_console', 'Either a full path or type of class (model, behavior, controller, component, view, helper)')
 		))->addArgument('className', array(
 			'help' => __d('cake_console', 'A CakePHP core class name (e.g: Component, HtmlHelper).')
 		))->addOption('method', array(
 			'short' => 'm',
 			'help' => __d('cake_console', 'The specific method you want help on.')
-		));
-
+		))->description(__d('cake_console', 'Lookup doc block comments for classes in CakePHP.'));
 		return $parser;
 	}
 
@@ -164,7 +160,7 @@ class ApiShell extends AppShell {
  * @return void
  */
 	public function help() {
-		$head = "Usage: cake api [<type>] <className> [-m <method>]\n";
+		$head  = "Usage: cake api [<type>] <className> [-m <method>]\n";
 		$head .= "-----------------------------------------------\n";
 		$head .= "Parameters:\n\n";
 

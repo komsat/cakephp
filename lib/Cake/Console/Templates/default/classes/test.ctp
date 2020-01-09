@@ -2,20 +2,21 @@
 /**
  * Test Case bake template
  *
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ *
+ * PHP 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Console.Templates.default.classes
  * @since         CakePHP(tm) v 1.3
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
 echo "<?php\n";
 ?>
 <?php foreach ($uses as $dependency): ?>
@@ -24,6 +25,7 @@ App::uses('<?php echo $dependency[0]; ?>', '<?php echo $dependency[1]; ?>');
 
 /**
  * <?php echo $fullClassName; ?> Test Case
+ *
  */
 <?php if ($type === 'Controller'): ?>
 class <?php echo $fullClassName; ?>Test extends ControllerTestCase {
@@ -74,7 +76,6 @@ class <?php echo $fullClassName; ?>Test extends CakeTestCase {
  * @return void
  */
 	public function test<?php echo Inflector::camelize($method); ?>() {
-		$this->markTestIncomplete('test<?php echo Inflector::camelize($method); ?> not implemented.');
 	}
 
 <?php endforeach; ?>

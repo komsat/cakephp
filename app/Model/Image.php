@@ -7,18 +7,23 @@
  */
 App::uses('Model', 'Model');
 class Image extends Model{
-public function postUpload($imgName, $path, $postId){
-        echo 'postid             '.$postId;
+    public function postUpload($imgName, $path, $postId){
+//        echo 'postid'.$postId;
         $data = array();
-        $data['imgname'] = $imgName;
+        $data['name'] = $imgName;
         $data['path'] = $path;
         $data['postid'] = $postId;
         
-        $postDetails = $this->save($data);
+        $postDetails = $this->create($data);
+        $this->save();
         if(!empty($postDetails)){
-            return true;
+            return $this->getLastInsertId();
         }else{
             return false;
         }
+    }
+    public function getImage($img){
+        $res = findById($img);
+        return $res['name'];
     }
 }

@@ -2,18 +2,19 @@
 /**
  * Xcache storage engine for cache.
  *
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Cache.Engine
  * @since         CakePHP(tm) v 1.2.0.4947
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 /**
@@ -41,10 +42,10 @@ class XcacheEngine extends CacheEngine {
  * To reinitialize the settings call Cache::engine('EngineName', [optional] settings = array());
  *
  * @param array $settings array of setting for the engine
- * @return bool True if the engine has been successfully initialized, false if not
+ * @return boolean True if the engine has been successfully initialized, false if not
  */
 	public function init($settings = array()) {
-		if (PHP_SAPI !== 'cli') {
+		if (php_sapi_name() !== 'cli') {
 			parent::init(array_merge(array(
 				'engine' => 'Xcache',
 				'prefix' => Inflector::slug(APP_DIR) . '_',
@@ -62,8 +63,8 @@ class XcacheEngine extends CacheEngine {
  *
  * @param string $key Identifier for the data
  * @param mixed $value Data to be cached
- * @param int $duration How long to cache the data, in seconds
- * @return bool True if the data was successfully cached, false on failure
+ * @param integer $duration How long to cache the data, in seconds
+ * @return boolean True if the data was successfully cached, false on failure
  */
 	public function write($key, $value, $duration) {
 		$expires = time() + $duration;
@@ -80,7 +81,7 @@ class XcacheEngine extends CacheEngine {
 	public function read($key) {
 		if (xcache_isset($key)) {
 			$time = time();
-			$cachetime = (int)xcache_get($key . '_expires');
+			$cachetime = intval(xcache_get($key . '_expires'));
 			if ($cachetime < $time || ($time + $this->settings['duration']) < $cachetime) {
 				return false;
 			}
@@ -94,7 +95,7 @@ class XcacheEngine extends CacheEngine {
  * If the cache key is not an integer it will be treated as 0
  *
  * @param string $key Identifier for the data
- * @param int $offset How much to increment
+ * @param integer $offset How much to increment
  * @return New incremented value, false otherwise
  */
 	public function increment($key, $offset = 1) {
@@ -106,7 +107,7 @@ class XcacheEngine extends CacheEngine {
  * If the cache key is not an integer it will be treated as 0
  *
  * @param string $key Identifier for the data
- * @param int $offset How much to subtract
+ * @param integer $offset How much to subtract
  * @return New decremented value, false otherwise
  */
 	public function decrement($key, $offset = 1) {
@@ -117,7 +118,7 @@ class XcacheEngine extends CacheEngine {
  * Delete a key from the cache
  *
  * @param string $key Identifier for the data
- * @return bool True if the value was successfully deleted, false if it didn't exist or couldn't be removed
+ * @return boolean True if the value was successfully deleted, false if it didn't exist or couldn't be removed
  */
 	public function delete($key) {
 		return xcache_unset($key);
@@ -126,9 +127,8 @@ class XcacheEngine extends CacheEngine {
 /**
  * Delete all keys from the cache
  *
- * @param bool $check If true no deletes will occur and instead CakePHP will rely
- *   on key TTL values.
- * @return bool True if the cache was successfully cleared, false otherwise
+ * @param boolean $check
+ * @return boolean True if the cache was successfully cleared, false otherwise
  */
 	public function clear($check) {
 		$this->_auth();
@@ -146,7 +146,7 @@ class XcacheEngine extends CacheEngine {
  * the group accordingly.
  *
  * @return array
- */
+ **/
 	public function groups() {
 		$result = array();
 		foreach ($this->settings['groups'] as $group) {
@@ -164,9 +164,8 @@ class XcacheEngine extends CacheEngine {
  * Increments the group value to simulate deletion of all keys under a group
  * old values will remain in storage until they expire.
  *
- * @param string $group The group to clear.
- * @return bool success
- */
+ * @return boolean success
+ **/
 	public function clearGroup($group) {
 		return (bool)xcache_inc($this->settings['prefix'] . $group, 1);
 	}
@@ -178,7 +177,7 @@ class XcacheEngine extends CacheEngine {
  * This has to be done because xcache_clear_cache() needs to pass Basic Http Auth
  * (see xcache.admin configuration settings)
  *
- * @param bool $reverse Revert changes
+ * @param boolean $reverse Revert changes
  * @return void
  */
 	protected function _auth($reverse = false) {
@@ -206,22 +205,5 @@ class XcacheEngine extends CacheEngine {
 				}
 			}
 		}
-	}
-
-/**
- * Write data for key into cache if it doesn't exist already.
- * If it already exists, it fails and returns false.
- *
- * @param string $key Identifier for the data.
- * @param mixed $value Data to be cached.
- * @param int $duration How long to cache the data, in seconds.
- * @return bool True if the data was successfully cached, false on failure.
- */
-	public function add($key, $value, $duration) {
-		$cachedValue = $this->read($key);
-		if ($cachedValue === false) {
-			return $this->write($key, $value, $duration);
-		}
-		return false;
 	}
 }

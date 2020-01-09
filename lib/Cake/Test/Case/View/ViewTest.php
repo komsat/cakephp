@@ -2,28 +2,27 @@
 /**
  * ViewTest file
  *
- * CakePHP(tm) Tests <https://book.cakephp.org/2.0/en/development/testing.html>
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP 5
+ *
+ * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
  * @package       Cake.Test.Case.View
  * @since         CakePHP(tm) v 1.2.0.4206
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 App::uses('View', 'View');
 App::uses('Helper', 'View');
 App::uses('Controller', 'Controller');
 App::uses('CacheHelper', 'View/Helper');
-App::uses('HtmlHelper', 'View/Helper');
 App::uses('ErrorHandler', 'Error');
-App::uses('CakeEventManager', 'Event');
-App::uses('CakeEventListener', 'Event');
+
 
 /**
  * ViewPostsController class
@@ -35,14 +34,14 @@ class ViewPostsController extends Controller {
 /**
  * name property
  *
- * @var string
+ * @var string 'Posts'
  */
 	public $name = 'Posts';
 
 /**
  * uses property
  *
- * @var mixed
+ * @var mixed null
  */
 	public $uses = null;
 
@@ -78,6 +77,13 @@ class ViewPostsController extends Controller {
  */
 class ThemePostsController extends Controller {
 
+/**
+ * name property
+ *
+ * @var string 'ThemePosts'
+ */
+	public $name = 'ThemePosts';
+
 	public $theme = null;
 
 /**
@@ -106,7 +112,7 @@ class TestThemeView extends View {
  *
  * @param string $name
  * @param array $params
- * @return string The given name
+ * @return void
  */
 	public function renderElement($name, $params = array()) {
 		return $name;
@@ -115,8 +121,8 @@ class TestThemeView extends View {
 /**
  * getViewFileName method
  *
- * @param string $name Controller action to find template filename for
- * @return string Template filename
+ * @param string $name
+ * @return void
  */
 	public function getViewFileName($name = null) {
 		return $this->_getViewFileName($name);
@@ -125,8 +131,8 @@ class TestThemeView extends View {
 /**
  * getLayoutFileName method
  *
- * @param string $name The name of the layout to find.
- * @return string Filename for layout file (.ctp).
+ * @param string $name
+ * @return void
  */
 	public function getLayoutFileName($name = null) {
 		return $this->_getLayoutFileName($name);
@@ -144,8 +150,8 @@ class TestView extends View {
 /**
  * getViewFileName method
  *
- * @param string $name Controller action to find template filename for
- * @return string Template filename
+ * @param string $name
+ * @return void
  */
 	public function getViewFileName($name = null) {
 		return $this->_getViewFileName($name);
@@ -154,8 +160,8 @@ class TestView extends View {
 /**
  * getLayoutFileName method
  *
- * @param string $name The name of the layout to find.
- * @return string Filename for layout file (.ctp).
+ * @param string $name
+ * @return void
  */
 	public function getLayoutFileName($name = null) {
 		return $this->_getLayoutFileName($name);
@@ -164,9 +170,9 @@ class TestView extends View {
 /**
  * paths method
  *
- * @param string $plugin Optional plugin name to scan for view files.
- * @param bool $cached Set to true to force a refresh of view paths.
- * @return array paths
+ * @param string $plugin
+ * @param boolean $cached
+ * @return void
  */
 	public function paths($plugin = null, $cached = true) {
 		return $this->_paths($plugin, $cached);
@@ -184,23 +190,22 @@ class TestView extends View {
 }
 
 /**
- * TestBeforeAfterHelper class
+ * TestAfterHelper class
  *
  * @package       Cake.Test.Case.View
  */
-class TestBeforeAfterHelper extends Helper {
+class TestAfterHelper extends Helper {
 
 /**
  * property property
  *
- * @var string
+ * @var string ''
  */
 	public $property = '';
 
 /**
  * beforeLayout method
  *
- * @param string $viewFile
  * @return void
  */
 	public function beforeLayout($viewFile) {
@@ -210,7 +215,6 @@ class TestBeforeAfterHelper extends Helper {
 /**
  * afterLayout method
  *
- * @param string $layoutFile
  * @return void
  */
 	public function afterLayout($layoutFile) {
@@ -219,81 +223,6 @@ class TestBeforeAfterHelper extends Helper {
 
 }
 
-/**
- * TestObjectWithToString
- *
- * An object with the magic method __toString() for testing with view blocks.
- */
-class TestObjectWithToString {
-
-	public function __toString() {
-		return "I'm ObjectWithToString";
-	}
-
-}
-
-/**
- * TestObjectWithoutToString
- *
- * An object without the magic method __toString() for testing with view blocks.
- */
-class TestObjectWithoutToString {
-}
-
-/**
- * TestViewEventListener
- *
- * An event listener to test cakePHP events
- */
-class TestViewEventListener implements CakeEventListener {
-
-/**
- * type of view before rendering has occurred
- *
- * @var string
- */
-	public $beforeRenderViewType;
-
-/**
- * type of view after rendering has occurred
- *
- * @var string
- */
-	public $afterRenderViewType;
-
-/**
- * implementedEvents method
- *
- * @return array
- */
-	public function implementedEvents() {
-		return array(
-				'View.beforeRender' => 'beforeRender',
-				'View.afterRender' => 'afterRender'
-				);
-	}
-
-/**
- * beforeRender method
- *
- * @param CakeEvent $event the event being sent
- * @return void
- */
-	public function beforeRender($event) {
-		$this->beforeRenderViewType = $event->subject()->getCurrentType();
-	}
-
-/**
- * afterRender method
- *
- * @param CakeEvent $event the event being sent
- * @return void
- */
-	public function afterRender($event) {
-		$this->afterRenderViewType = $event->subject()->getCurrentType();
-	}
-
-}
 
 /**
  * ViewTest class
@@ -358,7 +287,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test getViewFileName method
+ * testGetTemplate method
  *
  * @return void
  */
@@ -370,7 +299,7 @@ class ViewTest extends CakeTestCase {
 		$this->Controller->params['pass'] = array('home');
 
 		$ThemeView = new TestThemeView($this->Controller);
-		$ThemeView->theme = 'test_theme';
+		$ThemeView->theme = 'TestTheme';
 		$expected = CAKE . 'Test' . DS . 'test_app' . DS . 'View' . DS . 'Pages' . DS . 'home.ctp';
 		$result = $ThemeView->getViewFileName('home');
 		$this->assertEquals($expected, $result);
@@ -379,7 +308,6 @@ class ViewTest extends CakeTestCase {
 		$result = $ThemeView->getViewFileName('/Posts/index');
 		$this->assertEquals($expected, $result);
 
-		$ThemeView->theme = 'TestTheme';
 		$expected = CAKE . 'Test' . DS . 'test_app' . DS . 'View' . DS . 'Themed' . DS . 'TestTheme' . DS . 'Layouts' . DS . 'default.ctp';
 		$result = $ThemeView->getLayoutFileName();
 		$this->assertEquals($expected, $result);
@@ -396,27 +324,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test that plugin files with absolute file paths are scoped
- * to the plugin and do now allow any file path.
- *
- * @expectedException MissingViewException
- * @return void
- */
-	public function testPluginGetTemplateAbsoluteFail() {
-		$this->Controller->viewPath = 'Pages';
-		$this->Controller->action = 'display';
-		$this->Controller->params['pass'] = array('home');
-
-		$view = new TestThemeView($this->Controller);
-		$expected = CAKE . 'Test' . DS . 'test_app' . DS . 'Plugin' . DS . 'Company' . DS . 'TestPluginThree' . DS . 'View' . DS . 'Pages' . DS . 'index.ctp';
-		$result = $view->getViewFileName('Company/TestPluginThree./Pages/index');
-		$this->assertPathEquals($expected, $result);
-
-		$view->getViewFileName('Company/TestPluginThree./etc/passwd');
-	}
-
-/**
- * Test getLayoutFileName method on plugin
+ * testPluginGetTemplate method
  *
  * @return void
  */
@@ -438,7 +346,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test getViewFileName method on plugin
+ * testPluginGetTemplate method
  *
  * @return void
  */
@@ -464,7 +372,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test that plugin/$plugin_name is only appended to the paths it should be.
+ * test that plugin/$plugin_name is only appended to the paths it should be.
  *
  * @return void
  */
@@ -492,7 +400,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test that CamelCase'd plugins still find their view files.
+ * test that CamelCase plugins still find their view files.
  *
  * @return void
  */
@@ -519,7 +427,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test getViewFileName method
+ * testGetTemplate method
  *
  * @return void
  */
@@ -612,7 +520,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test for missing views
+ * testMissingView method
  *
  * @expectedException MissingViewException
  * @return void
@@ -625,16 +533,9 @@ class ViewTest extends CakeTestCase {
 		$this->Controller->params['pass'] = array('home');
 
 		$View = new TestView($this->Controller);
-		$View->getViewFileName('does_not_exist');
-	}
+		ob_start();
+		$result = $View->getViewFileName('does_not_exist');
 
-/**
- * Test for missing theme views
- *
- * @expectedException MissingViewException
- * @return void
- */
-	public function testMissingThemeView() {
 		$this->ThemeController->plugin = null;
 		$this->ThemeController->name = 'Pages';
 		$this->ThemeController->viewPath = 'Pages';
@@ -644,11 +545,15 @@ class ViewTest extends CakeTestCase {
 		$this->ThemeController->params['pass'] = array('home');
 
 		$View = new TestThemeView($this->ThemeController);
-		$View->getViewFileName('does_not_exist');
+		ob_start();
+		$result = $View->getViewFileName('does_not_exist');
+		$expected = ob_get_clean();
+		$this->assertRegExp("/PagesController::/", $expected);
+		$this->assertRegExp("/views(\/|\\\)themed(\/|\\\)my_theme(\/|\\\)pages(\/|\\\)does_not_exist.ctp/", $expected);
 	}
 
 /**
- * Test for missing layouts
+ * testMissingLayout method
  *
  * @expectedException MissingLayoutException
  * @return void
@@ -660,16 +565,10 @@ class ViewTest extends CakeTestCase {
 		$this->Controller->layout = 'whatever';
 
 		$View = new TestView($this->Controller);
-		$View->getLayoutFileName();
-	}
+		ob_start();
+		$result = $View->getLayoutFileName();
+		$expected = ob_get_clean();
 
-/**
- * Test for missing theme layouts
- *
- * @expectedException MissingLayoutException
- * @return void
- */
-	public function testMissingThemeLayout() {
 		$this->ThemeController->plugin = null;
 		$this->ThemeController->name = 'Posts';
 		$this->ThemeController->viewPath = 'posts';
@@ -677,11 +576,15 @@ class ViewTest extends CakeTestCase {
 		$this->ThemeController->theme = 'my_theme';
 
 		$View = new TestThemeView($this->ThemeController);
-		$View->getLayoutFileName();
+		ob_start();
+		$result = $View->getLayoutFileName();
+		$expected = ob_get_clean();
+		$this->assertRegExp("/Missing Layout/", $expected);
+		$this->assertRegExp("/views(\/|\\\)themed(\/|\\\)my_theme(\/|\\\)layouts(\/|\\\)whatever.ctp/", $expected);
 	}
 
 /**
- * Test viewVars method
+ * testViewVars method
  *
  * @return void
  */
@@ -690,7 +593,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test generation of UUIDs method
+ * testUUIDGeneration method
  *
  * @return void
  */
@@ -704,7 +607,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test addInlineScripts method
+ * testAddInlineScripts method
  *
  * @return void
  */
@@ -719,30 +622,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test elementExists method
- *
- * @return void
- */
-	public function testElementExists() {
-		$result = $this->View->elementExists('test_element');
-		$this->assertTrue($result);
-
-		$result = $this->View->elementExists('TestPlugin.plugin_element');
-		$this->assertTrue($result);
-
-		$result = $this->View->elementExists('non_existent_element');
-		$this->assertFalse($result);
-
-		$result = $this->View->elementExists('TestPlugin.element');
-		$this->assertFalse($result);
-
-		$this->View->plugin = 'TestPlugin';
-		$result = $this->View->elementExists('test_plugin_element');
-		$this->assertTrue($result);
-	}
-
-/**
- * Test element method
+ * testElement method
  *
  * @return void
  */
@@ -759,62 +639,41 @@ class ViewTest extends CakeTestCase {
 		$result = $this->View->element('TestPlugin.plugin_element');
 		$this->assertEquals('this is the plugin element using params[plugin]', $result);
 
+		$result = $this->View->element('test_plugin.plugin_element');
+		$this->assertRegExp('/Not Found:/', $result);
+		$this->assertRegExp('/test_plugin.plugin_element/', $result);
+
 		$this->View->plugin = 'TestPlugin';
 		$result = $this->View->element('test_plugin_element');
 		$this->assertEquals('this is the test set using View::$plugin plugin element', $result);
+
+		$result = $this->View->element('non_existent_element');
+		$this->assertRegExp('/Not Found:/', $result);
+		$this->assertRegExp('/non_existent_element/', $result);
+
+		$result = $this->View->element('TestPlugin.plugin_element', array(), array('plugin' => 'test_plugin'));
+		$this->assertRegExp('/Not Found:/', $result);
+		$this->assertRegExp('/TestPlugin.plugin_element/', $result);
 	}
 
 /**
- * Test elementInexistent method
+ * test that elements can have callbacks
  *
- * @expectedException PHPUnit_Framework_Error_Notice
- * @return void
- */
-	public function testElementInexistent() {
-		$this->View->element('non_existent_element');
-	}
-
-/**
- * Test elementInexistent2 method
- *
- * @expectedException PHPUnit_Framework_Error_Notice
- * @return void
- */
-	public function testElementInexistent2() {
-		$this->View->element('TestPlugin.plugin_element', array(), array('plugin' => 'test_plugin'));
-	}
-
-/**
- * Test elementInexistent3 method
- *
- * @expectedException PHPUnit_Framework_Error_Notice
- * @return void
- */
-	public function testElementInexistent3() {
-		$this->View->element('test_plugin.plugin_element');
-	}
-
-/**
- * Test that elements can have callbacks
- *
- * @return void
  */
 	public function testElementCallbacks() {
-		$Helper = $this->getMock('Helper', array(), array($this->View), 'ElementCallbackMockHtmlHelper');
+		$this->getMock('HtmlHelper', array(), array($this->View), 'ElementCallbackMockHtmlHelper');
 		$this->View->helpers = array('ElementCallbackMockHtml');
 		$this->View->loadHelpers();
-
-		$this->View->Helpers->set('ElementCallbackMockHtml', $Helper);
-		$this->View->ElementCallbackMockHtml = $Helper;
 
 		$this->View->ElementCallbackMockHtml->expects($this->at(0))->method('beforeRender');
 		$this->View->ElementCallbackMockHtml->expects($this->at(1))->method('afterRender');
 
 		$this->View->element('test_element', array(), array('callbacks' => true));
+		$this->mockObjects[] = $this->View->ElementCallbackMockHtml;
 	}
 
 /**
- * Test that additional element viewVars don't get overwritten with helpers.
+ * test that additional element viewVars don't get overwritten with helpers.
  *
  * @return void
  */
@@ -832,20 +691,20 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test elementCacheHelperNoCache method
+ * testElementCacheHelperNoCache method
  *
  * @return void
  */
 	public function testElementCacheHelperNoCache() {
 		$Controller = new ViewPostsController();
 		$View = new TestView($Controller);
-		$View->loadHelpers();
+		$helpers = $View->loadHelpers();
 		$result = $View->element('test_element', array('ram' => 'val', 'test' => array('foo', 'bar')));
 		$this->assertEquals('this is the test element', $result);
 	}
 
 /**
- * Test elementCache method
+ * testElementCache method
  *
  * @return void
  */
@@ -866,16 +725,16 @@ class ViewTest extends CakeTestCase {
 		$expected = 'this is the test element';
 		$this->assertEquals($expected, $result);
 
-		$result = Cache::read('element__test_element_cache_callbacks', 'test_view');
+		$result = Cache::read('element__test_element_cache', 'test_view');
 		$this->assertEquals($expected, $result);
 
 		$result = $View->element('test_element', array('param' => 'one', 'foo' => 'two'), array('cache' => true));
 		$this->assertEquals($expected, $result);
 
-		$result = Cache::read('element__test_element_cache_callbacks_param_foo', 'test_view');
+		$result = Cache::read('element__test_element_cache_param_foo', 'test_view');
 		$this->assertEquals($expected, $result);
 
-		$View->element('test_element', array(
+		$result = $View->element('test_element', array(
 			'param' => 'one',
 			'foo' => 'two'
 		), array(
@@ -885,13 +744,13 @@ class ViewTest extends CakeTestCase {
 		$this->assertEquals($expected, $result);
 
 		$View->elementCache = 'default';
-		$View->element('test_element', array(
+		$result = $View->element('test_element', array(
 			'param' => 'one',
 			'foo' => 'two'
 		), array(
 			'cache' => array('config' => 'test_view'),
 		));
-		$result = Cache::read('element__test_element_cache_callbacks_param_foo', 'test_view');
+		$result = Cache::read('element__test_element_cache_param_foo', 'test_view');
 		$this->assertEquals($expected, $result);
 
 		Cache::clear(true, 'test_view');
@@ -899,31 +758,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test element events
- *
- * @return void
- */
-	public function testViewEvent() {
-		$View = new View($this->PostsController);
-		$View->autoLayout = false;
-		$listener = new TestViewEventListener();
-
-		$View->getEventManager()->attach($listener);
-
-		$View->render('index');
-		$this->assertEquals(View::TYPE_VIEW, $listener->beforeRenderViewType);
-		$this->assertEquals(View::TYPE_VIEW, $listener->afterRenderViewType);
-
-		$this->assertEquals($View->getCurrentType(), View::TYPE_VIEW);
-		$View->element('test_element', array(), array('callbacks' => true));
-		$this->assertEquals($View->getCurrentType(), View::TYPE_VIEW);
-
-		$this->assertEquals(View::TYPE_ELEMENT, $listener->beforeRenderViewType);
-		$this->assertEquals(View::TYPE_ELEMENT, $listener->afterRenderViewType);
-	}
-
-/**
- * Test __get allowing access to helpers.
+ * test __get allowing access to helpers.
  *
  * @return void
  */
@@ -934,7 +769,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test that ctp is used as a fallback file extension for elements
+ * test that ctp is used as a fallback file extension for elements
  *
  * @return void
  */
@@ -949,7 +784,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test loadHelpers method
+ * testLoadHelpers method
  *
  * @return void
  */
@@ -964,7 +799,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test lazy loading helpers
+ * test lazy loading helpers
  *
  * @return void
  */
@@ -977,7 +812,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test the correct triggering of helper callbacks
+ * test the correct triggering of helper callbacks
  *
  * @return void
  */
@@ -1060,24 +895,24 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test beforeLayout method
+ * testBeforeLayout method
  *
  * @return void
  */
 	public function testBeforeLayout() {
-		$this->PostsController->helpers = array('Session', 'TestBeforeAfter', 'Html');
+		$this->PostsController->helpers = array('Session', 'TestAfter', 'Html');
 		$View = new View($this->PostsController);
 		$View->render('index');
-		$this->assertEquals('Valuation', $View->Helpers->TestBeforeAfter->property);
+		$this->assertEquals('Valuation', $View->Helpers->TestAfter->property);
 	}
 
 /**
- * Test afterLayout method
+ * testAfterLayout method
  *
  * @return void
  */
 	public function testAfterLayout() {
-		$this->PostsController->helpers = array('Session', 'TestBeforeAfter', 'Html');
+		$this->PostsController->helpers = array('Session', 'TestAfter', 'Html');
 		$this->PostsController->set('variable', 'values');
 
 		$View = new View($this->PostsController);
@@ -1090,7 +925,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test renderLoadHelper method
+ * testRenderLoadHelper method
  *
  * @return void
  */
@@ -1101,7 +936,7 @@ class ViewTest extends CakeTestCase {
 		$result = $View->render('index', false);
 		$this->assertEquals('posts index', $result);
 
-		$attached = $View->Helpers->loaded();
+		$attached = $View->Helpers->attached();
 		$this->assertEquals(array('Session', 'Html', 'Form', 'Number'), $attached);
 
 		$this->PostsController->helpers = array('Html', 'Form', 'Number', 'TestPlugin.PluggedHelper');
@@ -1110,13 +945,13 @@ class ViewTest extends CakeTestCase {
 		$result = $View->render('index', false);
 		$this->assertEquals('posts index', $result);
 
-		$attached = $View->Helpers->loaded();
+		$attached = $View->Helpers->attached();
 		$expected = array('Html', 'Form', 'Number', 'PluggedHelper');
 		$this->assertEquals($expected, $attached, 'Attached helpers are wrong.');
 	}
 
 /**
- * Test render method
+ * testRender method
  *
  * @return void
  */
@@ -1134,7 +969,7 @@ class ViewTest extends CakeTestCase {
 		$this->PostsController->set('url', 'flash');
 		$this->PostsController->set('message', 'yo what up');
 		$this->PostsController->set('pause', 3);
-		$this->PostsController->set('pageTitle', 'yo what up');
+		$this->PostsController->set('page_title', 'yo what up');
 
 		$View = new TestView($this->PostsController);
 		$result = $View->render(false, 'flash');
@@ -1142,7 +977,7 @@ class ViewTest extends CakeTestCase {
 		$this->assertRegExp("/<title>yo what up<\/title>/", $result);
 		$this->assertRegExp("/<p><a href=\"flash\">yo what up<\/a><\/p>/", $result);
 
-		$this->assertNull($View->render(false, 'flash'));
+		$this->assertTrue($View->render(false, 'flash'));
 
 		$this->PostsController->helpers = array('Session', 'Cache', 'Html');
 		$this->PostsController->constructClasses();
@@ -1159,7 +994,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test that View::$view works
+ * test that View::$view works
  *
  * @return void
  */
@@ -1190,7 +1025,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test that view vars can replace the local helper variables
+ * test that view vars can replace the local helper variables
  * and not overwrite the $this->Helper references
  *
  * @return void
@@ -1207,7 +1042,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test getViewFileName method
+ * testGetViewFileName method
  *
  * @return void
  */
@@ -1235,7 +1070,7 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test renderCache method
+ * testRenderCache method
  *
  * @return void
  */
@@ -1265,9 +1100,7 @@ class ViewTest extends CakeTestCase {
 
 		$this->assertRegExp('/^some cacheText/', $result);
 
-		if (file_exists($path)) {
-			unlink($path);
-		}
+		@unlink($path);
 	}
 
 /**
@@ -1383,42 +1216,6 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test block with startIfEmpty
- *
- * @return void
- */
-	public function testBlockCaptureStartIfEmpty() {
-		$this->View->startIfEmpty('test');
-		echo "Block content 1";
-		$this->View->end();
-
-		$this->View->startIfEmpty('test');
-		echo "Block content 2";
-		$this->View->end();
-
-		$result = $this->View->fetch('test');
-		$this->assertEquals('Block content 1', $result);
-	}
-
-/**
- * Test block with startIfEmpty
- *
- * @return void
- */
-	public function testBlockCaptureStartStartIfEmpty() {
-		$this->View->start('test');
-		echo "Block content 1";
-		$this->View->end();
-
-		$this->View->startIfEmpty('test');
-		echo "Block content 2";
-		$this->View->end();
-
-		$result = $this->View->fetch('test');
-		$this->assertEquals('Block content 1', $result);
-	}
-
-/**
  * Test appending to a block with capturing output.
  *
  * @return void
@@ -1448,144 +1245,16 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test resetting a block's content.
- *
- * @return void
- */
-	public function testBlockReset() {
-		$this->View->assign('test', '');
-		$result = $this->View->fetch('test', 'This should not be returned');
-		$this->assertSame('', $result);
-	}
-
-/**
- * Test checking a block's existance.
- *
- * @return void
- */
-	public function testBlockExist() {
-		$this->assertFalse($this->View->exists('test'));
-		$this->View->assign('test', 'Block content');
-		$this->assertTrue($this->View->exists('test'));
-	}
-
-/**
- * Test setting a block's content to null
- *
- * @return void
- */
-	public function testBlockSetNull() {
-		$this->View->assign('testWithNull', null);
-		$result = $this->View->fetch('testWithNull');
-		$this->assertSame('', $result);
-	}
-
-/**
- * Test setting a block's content to an object with __toString magic method
- *
- * @return void
- */
-	public function testBlockSetObjectWithToString() {
-		$objectWithToString = new TestObjectWithToString();
-		$this->View->assign('testWithObjectWithToString', $objectWithToString);
-		$result = $this->View->fetch('testWithObjectWithToString');
-		$this->assertSame("I'm ObjectWithToString", $result);
-	}
-
-/**
- * Test setting a block's content to an object without __toString magic method
- *
- * @return void
- */
-	public function testBlockSetObjectWithoutToString() {
-		$this->_checkException(
-			'Object of class TestObjectWithoutToString could not be converted to string'
-		);
-
-		$objectWithToString = new TestObjectWithoutToString();
-		$this->View->assign('testWithObjectWithoutToString', $objectWithToString);
-	}
-
-/**
- * Test setting a block's content to a decimal
- *
- * @return void
- */
-	public function testBlockSetDecimal() {
-		$this->View->assign('testWithDecimal', 1.23456789);
-		$result = $this->View->fetch('testWithDecimal');
-		$this->assertEquals('1.23456789', $result);
-	}
-
-/**
- * Data provider for block related tests.
- *
- * @return array
- */
-	public static function blockValueProvider() {
-		return array(
-			'string' => array('A string value'),
-			'decimal' => array(1.23456),
-			'object with __toString' => array(new TestObjectWithToString()),
-		);
-	}
-
-/**
  * Test appending to a block with append.
  *
- * @dataProvider blockValueProvider
  * @return void
  */
-	public function testBlockAppend($value) {
-		$this->View->assign('testBlock', 'Block');
-		$this->View->append('testBlock', $value);
-
-		$result = $this->View->fetch('testBlock');
-		$this->assertSame('Block' . $value, $result);
-	}
-
-/**
- * Test appending an object without __toString magic method to a block with append.
- *
- * @return void
- */
-	public function testBlockAppendObjectWithoutToString() {
-		$this->_checkException(
-			'Object of class TestObjectWithoutToString could not be converted to string'
-		);
-
-		$object = new TestObjectWithoutToString();
-		$this->View->assign('testBlock', 'Block ');
-		$this->View->append('testBlock', $object);
-	}
-
-/**
- * Test prepending to a block with prepend.
- *
- * @dataProvider blockValueProvider
- * @return void
- */
-	public function testBlockPrepend($value) {
+	public function testBlockAppend() {
 		$this->View->assign('test', 'Block');
-		$this->View->prepend('test', $value);
+		$this->View->append('test', ' content');
 
 		$result = $this->View->fetch('test');
-		$this->assertEquals($value . 'Block', $result);
-	}
-
-/**
- * Test prepending an object without __toString magic method to a block with prepend.
- *
- * @return void
- */
-	public function testBlockPrependObjectWithoutToString() {
-		$this->_checkException(
-			'Object of class TestObjectWithoutToString could not be converted to string'
-		);
-
-		$object = new TestObjectWithoutToString();
-		$this->View->assign('test', 'Block ');
-		$this->View->prepend('test', $object);
+		$this->assertEquals('Block content', $result);
 	}
 
 /**
@@ -1600,14 +1269,23 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * You should be able to prepend to undefined blocks.
+ * setting an array should cause an exception.
  *
+ * @expectedException CakeException
  * @return void
  */
-	public function testBlockPrependUndefined() {
-		$this->View->prepend('test', 'Unknown');
-		$result = $this->View->fetch('test');
-		$this->assertEquals('Unknown', $result);
+	public function testBlockSetArrayException() {
+		$this->View->assign('test', array(1, 2, 3));
+	}
+
+/**
+ * Appending an array should cause an exception.
+ *
+ * @expectedException CakeException
+ * @return void
+ */
+	public function testBlockAppendArrayException() {
+		$this->View->append('test', array(1, 2, 3));
 	}
 
 /**
@@ -1641,35 +1319,14 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
- * Test that starting the same block twice throws an exception
- *
- * @return void
- */
-	public function testStartBlocksTwice() {
-		try {
-			$this->View->start('first');
-			$this->View->start('first');
-			$this->fail('No exception');
-		} catch (CakeException $e) {
-			ob_end_clean();
-			$this->assertTrue(true);
-		}
-	}
-
-/**
  * Test that an exception gets thrown when you leave a block open at the end
  * of a view.
  *
+ * @expectedException CakeException
  * @return void
  */
 	public function testExceptionOnOpenBlock() {
-		try {
-			$this->View->render('open_block');
-			$this->fail('No exception');
-		} catch (CakeException $e) {
-			ob_end_clean();
-			$this->assertContains('The "no_close" block was left open', $e->getMessage());
-		}
+		$this->View->render('open_block');
 	}
 
 /**
@@ -1692,33 +1349,23 @@ TEXT;
 /**
  * Make sure that extending the current view with itself causes an exception
  *
+ * @expectedException LogicException
  * @return void
  */
 	public function testExtendSelf() {
-		try {
-			$this->View->layout = false;
-			$this->View->render('extend_self');
-			$this->fail('No exception');
-		} catch (LogicException $e) {
-			ob_end_clean();
-			$this->assertContains('cannot have views extend themselves', $e->getMessage());
-		}
+		$this->View->layout = false;
+		$this->View->render('extend_self');
 	}
 
 /**
  * Make sure that extending in a loop causes an exception
  *
+ * @expectedException LogicException
  * @return void
  */
 	public function testExtendLoop() {
-		try {
-			$this->View->layout = false;
-			$this->View->render('extend_loop');
-			$this->fail('No exception');
-		} catch (LogicException $e) {
-			ob_end_clean();
-			$this->assertContains('cannot have views extend in a loop', $e->getMessage());
-		}
+		$this->View->layout = false;
+		$this->View->render('extend_loop');
 	}
 
 /**
@@ -1742,34 +1389,25 @@ TEXT;
 /**
  * Extending an element which doesn't exist should throw a missing view exception
  *
+ * @expectedException LogicException
  * @return void
  */
 	public function testExtendMissingElement() {
-		try {
-			$this->View->layout = false;
-			$this->View->render('extend_missing_element');
-			$this->fail('No exception');
-		} catch (LogicException $e) {
-			ob_end_clean();
-			ob_end_clean();
-			$this->assertContains('element', $e->getMessage());
-		}
+		$this->View->layout = false;
+		$this->View->render('extend_missing_element');
 	}
 
 /**
- * Test extend() preceeded by an element()
+ * Test that setting arbitrary properties still works.
  *
  * @return void
  */
-	public function testExtendWithElementBeforeExtend() {
-		$this->View->layout = false;
-		$result = $this->View->render('extend_with_element');
-		$expected = <<<TEXT
-Parent View.
-this is the test elementThe view
-
-TEXT;
-		$this->assertEquals($expected, $result);
+	public function testPropertySetting() {
+		$this->assertFalse(isset($this->View->pageTitle));
+		$this->View->pageTitle = 'test';
+		$this->assertTrue(isset($this->View->pageTitle));
+		$this->assertTrue(!empty($this->View->pageTitle));
+		$this->assertEquals('test', $this->View->pageTitle);
 	}
 
 /**
@@ -1786,7 +1424,7 @@ TEXT;
 	}
 
 /**
- * Test memory leaks that existed in _paths at one point.
+ * test memory leaks that existed in _paths at one point.
  *
  * @return void
  */
@@ -1806,45 +1444,5 @@ TEXT;
 		}
 		$end = memory_get_usage();
 		$this->assertLessThanOrEqual($start + 5000, $end);
-	}
-
-/**
- * Tests that a view block uses default value when not assigned and uses assigned value when it is
- *
- * @return void
- */
-	public function testBlockDefaultValue() {
-		$default = 'Default';
-		$result = $this->View->fetch('title', $default);
-		$this->assertEquals($default, $result);
-
-		$expected = 'My Title';
-		$this->View->assign('title', $expected);
-		$result = $this->View->fetch('title', $default);
-		$this->assertEquals($expected, $result);
-	}
-
-/**
- * Tests that a view variable uses default value when not assigned and uses assigned value when it is
- *
- * @return void
- */
-	public function testViewVarDefaultValue() {
-		$default = 'Default';
-		$result = $this->View->get('title', $default);
-		$this->assertEquals($default, $result);
-
-		$expected = 'Back to the Future';
-		$this->View->set('title', $expected);
-		$result = $this->View->get('title', $default);
-		$this->assertEquals($expected, $result);
-	}
-
-	protected function _checkException($message) {
-		if (version_compare(PHP_VERSION, '7.4', '>=')) {
-			$this->setExpectedException('Error', $message);
-		} else {
-			$this->setExpectedException('PHPUnit_Framework_Error', $message);
-		}
 	}
 }

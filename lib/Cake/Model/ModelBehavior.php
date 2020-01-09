@@ -2,71 +2,72 @@
 /**
  * Model behaviors base class.
  *
- * Adds methods and automagic functionality to CakePHP Models.
+ * Adds methods and automagic functionality to Cake Models.
  *
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Model
  * @since         CakePHP(tm) v 1.2.0.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 /**
  * Model behavior base class.
  *
- * Defines the Behavior interface, and contains common model interaction functionality. Behaviors
+ * Defines the Behavior interface, and contains common model interaction functionality.  Behaviors
  * allow you to simulate mixins, and create reusable blocks of application logic, that can be reused across
- * several models. Behaviors also provide a way to hook into model callbacks and augment their behavior.
+ * several models.  Behaviors also provide a way to hook into model callbacks and augment their behavior.
  *
  * ### Mixin methods
  *
- * Behaviors can provide mixin like features by declaring public methods. These methods should expect
+ * Behaviors can provide mixin like features by declaring public methods.  These methods should expect
  * the model instance to be shifted onto the parameter list.
  *
- * ```
+ * {{{
  * function doSomething(Model $model, $arg1, $arg2) {
  *		//do something
  * }
- * ```
+ * }}}
  *
  * Would be called like `$this->Model->doSomething($arg1, $arg2);`.
  *
  * ### Mapped methods
  *
- * Behaviors can also define mapped methods. Mapped methods use pattern matching for method invocation. This
- * allows you to create methods similar to Model::findAllByXXX methods on your behaviors. Mapped methods need to
- * be declared in your behaviors `$mapMethods` array. The method signature for a mapped method is slightly different
+ * Behaviors can also define mapped methods.  Mapped methods use pattern matching for method invocation. This
+ * allows you to create methods similar to Model::findAllByXXX methods on your behaviors.  Mapped methods need to
+ * be declared in your behaviors `$mapMethods` array.  The method signature for a mapped method is slightly different
  * than a normal behavior mixin method.
  *
- * ```
+ * {{{
  * public $mapMethods = array('/do(\w+)/' => 'doSomething');
  *
  * function doSomething(Model $model, $method, $arg1, $arg2) {
  *		//do something
  * }
- * ```
+ * }}}
  *
- * The above will map every doXXX() method call to the behavior. As you can see, the model is
- * still the first parameter, but the called method name will be the 2nd parameter. This allows
+ * The above will map every doXXX() method call to the behavior.  As you can see, the model is
+ * still the first parameter, but the called method name will be the 2nd parameter.  This allows
  * you to munge the method name for additional information, much like Model::findAllByXX.
  *
  * @package       Cake.Model
  * @see Model::$actsAs
  * @see BehaviorCollection::load()
  */
-class ModelBehavior extends CakeObject {
+class ModelBehavior extends Object {
 
 /**
- * Contains configuration settings for use with individual model objects. This
+ * Contains configuration settings for use with individual model objects.  This
  * is used because if multiple models use this Behavior, each will use the same
- * object instance. Individual model settings should be stored as an
+ * object instance.  Individual model settings should be stored as an
  * associative array, keyed off of the model name.
  *
  * @var array
@@ -77,7 +78,7 @@ class ModelBehavior extends CakeObject {
 /**
  * Allows the mapping of preg-compatible regular expressions to public or
  * private methods in this class, where the array key is a /-delimited regular
- * expression, and the value is a class method. Similar to the functionality of
+ * expression, and the value is a class method.  Similar to the functionality of
  * the findBy* / findAllBy* magic methods.
  *
  * @var array
@@ -95,7 +96,7 @@ class ModelBehavior extends CakeObject {
 	}
 
 /**
- * Clean up any initialization this behavior has done on a model. Called when a behavior is dynamically
+ * Clean up any initialization this behavior has done on a model.  Called when a behavior is dynamically
  * detached from a model using Model::detach().
  *
  * @param Model $model Model using this behavior
@@ -110,12 +111,12 @@ class ModelBehavior extends CakeObject {
 
 /**
  * beforeFind can be used to cancel find operations, or modify the query that will be executed.
- * By returning null/false you can abort a find. By returning an array you can modify/replace the query
+ * By returning null/false you can abort a find.  By returning an array you can modify/replace the query
  * that is going to be run.
  *
  * @param Model $model Model using this behavior
  * @param array $query Data used to execute this query, i.e. conditions, order, etc.
- * @return bool|array False or null will abort the operation. You can return an array to replace the
+ * @return boolean|array False or null will abort the operation. You can return an array to replace the
  *   $query that will be eventually run.
  */
 	public function beforeFind(Model $model, $query) {
@@ -127,23 +128,21 @@ class ModelBehavior extends CakeObject {
  *
  * @param Model $model Model using this behavior
  * @param mixed $results The results of the find operation
- * @param bool $primary Whether this model is being queried directly (vs. being queried as an association)
+ * @param boolean $primary Whether this model is being queried directly (vs. being queried as an association)
  * @return mixed An array value will replace the value of $results - any other value will be ignored.
  */
-	public function afterFind(Model $model, $results, $primary = false) {
+	public function afterFind(Model $model, $results, $primary) {
 	}
 
 /**
  * beforeValidate is called before a model is validated, you can use this callback to
- * add behavior validation rules into a models validate array. Returning false
+ * add behavior validation rules into a models validate array.  Returning false
  * will allow you to make the validation fail.
  *
  * @param Model $model Model using this behavior
- * @param array $options Options passed from Model::save().
  * @return mixed False or null will abort the operation. Any other result will continue.
- * @see Model::save()
  */
-	public function beforeValidate(Model $model, $options = array()) {
+	public function beforeValidate(Model $model) {
 		return true;
 	}
 
@@ -159,15 +158,13 @@ class ModelBehavior extends CakeObject {
 	}
 
 /**
- * beforeSave is called before a model is saved. Returning false from a beforeSave callback
+ * beforeSave is called before a model is saved.  Returning false from a beforeSave callback
  * will abort the save operation.
  *
  * @param Model $model Model using this behavior
- * @param array $options Options passed from Model::save().
  * @return mixed False if the operation should abort. Any other result will continue.
- * @see Model::save()
  */
-	public function beforeSave(Model $model, $options = array()) {
+	public function beforeSave(Model $model) {
 		return true;
 	}
 
@@ -175,21 +172,19 @@ class ModelBehavior extends CakeObject {
  * afterSave is called after a model is saved.
  *
  * @param Model $model Model using this behavior
- * @param bool $created True if this save created a new record
- * @param array $options Options passed from Model::save().
- * @return bool
- * @see Model::save()
+ * @param boolean $created True if this save created a new record
+ * @return boolean
  */
-	public function afterSave(Model $model, $created, $options = array()) {
+	public function afterSave(Model $model, $created) {
 		return true;
 	}
 
 /**
  * Before delete is called before any delete occurs on the attached model, but after the model's
- * beforeDelete is called. Returning false from a beforeDelete will abort the delete.
+ * beforeDelete is called.  Returning false from a beforeDelete will abort the delete.
  *
  * @param Model $model Model using this behavior
- * @param bool $cascade If true records that depend on this record will also be deleted
+ * @param boolean $cascade If true records that depend on this record will also be deleted
  * @return mixed False if the operation should abort. Any other result will continue.
  */
 	public function beforeDelete(Model $model, $cascade = true) {
@@ -218,7 +213,7 @@ class ModelBehavior extends CakeObject {
 /**
  * If $model's whitelist property is non-empty, $field will be added to it.
  * Note: this method should *only* be used in beforeValidate or beforeSave to ensure
- * that it only modifies the whitelist for the current save operation. Also make sure
+ * that it only modifies the whitelist for the current save operation.  Also make sure
  * you explicitly set the value of the field which you are allowing.
  *
  * @param Model $model Model using this behavior
@@ -238,3 +233,4 @@ class ModelBehavior extends CakeObject {
 	}
 
 }
+

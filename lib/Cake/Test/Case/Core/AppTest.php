@@ -2,18 +2,19 @@
 /**
  * AppTest file.
  *
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Test.Case.Core
  * @since         CakePHP(tm) v 2.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 /**
@@ -95,7 +96,7 @@ class AppTest extends CakeTestCase {
 	}
 
 /**
- * tests that it is possible to set up paths using the CakePHP 1.3 notation for them (models, behaviors, controllers...)
+ * tests that it is possible to set up paths using the cake 1.3 notation for them (models, behaviors, controllers...)
  *
  * @return void
  */
@@ -301,7 +302,7 @@ class AppTest extends CakeTestCase {
  * @return void
  */
 	public function testListObjects() {
-		$result = App::objects('class', CAKE . 'Routing', false);
+		$result = App::objects('class',  CAKE . 'Routing', false);
 		$this->assertTrue(in_array('Dispatcher', $result));
 		$this->assertTrue(in_array('Router', $result));
 
@@ -346,7 +347,7 @@ class AppTest extends CakeTestCase {
 		$this->assertEquals($expected, $result);
 
 		$result = App::objects('NonExistingType');
-		$this->assertSame(array(), $result);
+		$this->assertEquals(array(), $result);
 
 		App::build(array(
 			'plugins' => array(
@@ -362,8 +363,6 @@ class AppTest extends CakeTestCase {
 
 /**
  * Make sure that .svn and friends are excluded from App::objects('plugin')
- *
- * @return void
  */
 	public function testListObjectsIgnoreDotDirectories() {
 		$path = CAKE . 'Test' . DS . 'test_app' . DS . 'Plugin' . DS;
@@ -415,9 +414,9 @@ class AppTest extends CakeTestCase {
 		$this->assertTrue(in_array('OtherComponent', $result));
 
 		$result = App::objects('TestPluginTwo.behavior');
-		$this->assertSame(array(), $result);
+		$this->assertEquals(array(), $result);
 		$result = App::objects('TestPluginTwo.Model/Behavior');
-		$this->assertSame(array(), $result);
+		$this->assertEquals(array(), $result);
 
 		$result = App::objects('model', null, false);
 		$this->assertTrue(in_array('Comment', $result));
@@ -427,6 +426,27 @@ class AppTest extends CakeTestCase {
 		$this->assertTrue(in_array('Comment', $result));
 		$this->assertTrue(in_array('Post', $result));
 
+		App::build();
+	}
+
+/**
+ * test that pluginPath can find paths for plugins.
+ *
+ * @return void
+ */
+	public function testPluginPath() {
+		App::build(array(
+			'plugins' => array(CAKE . 'Test' . DS . 'test_app' . DS . 'Plugin' . DS)
+		));
+		CakePlugin::load(array('TestPlugin', 'TestPluginTwo'));
+
+		$path = App::pluginPath('TestPlugin');
+		$expected = CAKE . 'Test' . DS . 'test_app' . DS . 'Plugin' . DS . 'TestPlugin' . DS;
+		$this->assertEquals($expected, $path);
+
+		$path = App::pluginPath('TestPluginTwo');
+		$expected = CAKE . 'Test' . DS . 'test_app' . DS . 'Plugin' . DS . 'TestPluginTwo' . DS;
+		$this->assertEquals($expected, $path);
 		App::build();
 	}
 
@@ -576,6 +596,7 @@ class AppTest extends CakeTestCase {
  * test that building helper paths actually works.
  *
  * @return void
+ * @link http://cakephp.lighthouseapp.com/projects/42648/tickets/410
  */
 	public function testImportingHelpersFromAlternatePaths() {
 		$this->assertFalse(class_exists('BananaHelper', false), 'BananaHelper exists, cannot test importing it.');
@@ -728,7 +749,7 @@ class AppTest extends CakeTestCase {
 		$result = App::import('Vendor', 'css/TestAsset', array('ext' => 'css'));
 		$text = ob_get_clean();
 		$this->assertTrue($result);
-		$this->assertEquals('/* this is the test asset css file */', trim($text));
+		$this->assertEquals('this is the test asset css file', $text);
 
 		$result = App::import('Vendor', 'TestPlugin.sample/SamplePlugin');
 		$this->assertTrue($result);
@@ -773,7 +794,6 @@ class AppTest extends CakeTestCase {
  * Tests that the automatic class loader will also find in "libs" folder for both
  * app and plugins if it does not find the class in other configured paths
  *
- * @return void
  */
 	public function testLoadClassInLibs() {
 		App::build(array(
@@ -788,11 +808,11 @@ class AppTest extends CakeTestCase {
 
 		$this->assertFalse(class_exists('TestUtilityClass', false));
 		App::uses('TestUtilityClass', 'Utility');
-		$this->assertTrue(class_exists('TestUtilityClass'));
+		$this->assertTrue(class_exists('CustomLibClass'));
 	}
 
 /**
- * Tests that App::location() returns the defined path for a class
+ * Tests that  App::location() returns the defined path for a class
  *
  * @return void
  */
@@ -827,37 +847,5 @@ class AppTest extends CakeTestCase {
 		$this->assertFalse(class_exists('TestPluginOtherLibrary', false));
 		App::uses('TestPluginOtherLibrary', 'TestPlugin.Lib');
 		$this->assertTrue(class_exists('TestPluginOtherLibrary'));
-	}
-
-/**
- * Test that increaseMemoryLimit increases the maximum amount of memory actually
- *
- * @dataProvider memoryVariationProvider
- * @return void
- */
-	public function testIncreaseMemoryLimit($memoryLimit, $additionalKb, $expected) {
-		$this->skipIf(!function_exists('ini_set'));
-
-		$originalMemoryLimit = ini_get('memory_limit');
-
-		ini_set('memory_limit', $memoryLimit);
-		App::increaseMemoryLimit($additionalKb);
-		$this->assertEquals($expected, ini_get('memory_limit'));
-
-		ini_set('memory_limit', $originalMemoryLimit);
-	}
-
-/**
- * Data provider function for testIncreaseMemoryLimit 
- *
- * @return void
- */
-	public function memoryVariationProvider() {
-		return array(
-			array('131072K', 100000, '231072K'),
-			array('256M', 1, '262145K'),
-			array('1G', 1, '1048577K'),
-			array('-1', 100000, '-1')
-		);
 	}
 }

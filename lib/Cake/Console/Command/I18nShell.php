@@ -2,17 +2,18 @@
 /**
  * Internationalization Management Shell
  *
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
  * @since         CakePHP(tm) v 1.2.0.5669
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 App::uses('AppShell', 'Console/Command');
@@ -51,7 +52,7 @@ class I18nShell extends AppShell {
 
 		if ($this->command && !in_array($this->command, array('help'))) {
 			if (!config('database')) {
-				$this->out(__d('cake_console', 'Your database configuration was not found. Take a moment to create one.'));
+				$this->out(__d('cake_console', 'Your database configuration was not found. Take a moment to create one.'), true);
 				return $this->DbConfig->execute();
 			}
 		}
@@ -74,15 +75,16 @@ class I18nShell extends AppShell {
 		switch ($choice) {
 			case 'e':
 				$this->Extract->execute();
-				break;
+			break;
 			case 'i':
 				$this->initdb();
-				break;
+			break;
 			case 'h':
 				$this->out($this->OptionParser->help());
-				break;
+			break;
 			case 'q':
-				return $this->_stop();
+				exit(0);
+			break;
 			default:
 				$this->out(__d('cake_console', 'You have made an invalid selection. Please choose a command to execute by entering E, I, H, or Q.'));
 		}
@@ -100,23 +102,20 @@ class I18nShell extends AppShell {
 	}
 
 /**
- * Gets the option parser instance and configures it.
+ * Get and configure the Option parser
  *
  * @return ConsoleOptionParser
  */
 	public function getOptionParser() {
 		$parser = parent::getOptionParser();
-
-		$parser->description(
+		return $parser->description(
 			__d('cake_console', 'I18n Shell initializes i18n database table for your application and generates .pot files(s) with translations.')
-		)->addSubcommand('initdb', array(
-			'help' => __d('cake_console', 'Initialize the i18n table.')
-		))->addSubcommand('extract', array(
-			'help' => __d('cake_console', 'Extract the po translations from your application'),
-			'parser' => $this->Extract->getOptionParser()
-		));
-
-		return $parser;
+			)->addSubcommand('initdb', array(
+				'help' => __d('cake_console', 'Initialize the i18n table.')
+			))->addSubcommand('extract', array(
+				'help' => __d('cake_console', 'Extract the po translations from your application'),
+				'parser' => $this->Extract->getOptionParser()
+			));
 	}
 
 }

@@ -2,31 +2,43 @@
 /**
  * Short description for file.
  *
- * CakePHP(tm) Tests <https://book.cakephp.org/2.0/en/development/testing.html>
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP versions 5
  *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
+ * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
+ * Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
- * @package       Cake.Test.Fixture
+ *  Licensed under The Open Group Test Suite License
+ *  Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright 2005-2010, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
+ * @package       cake
+ * @subpackage    cake.tests.fixtures
  * @since         CakePHP(tm) v 2.1
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       http://www.opensource.org/licenses/opengroup.php The Open Group Test Suite License
  */
 
 /**
  * Short description for class.
  *
- * @package       Cake.Test.Fixture
+ * @package       cake
+ * @subpackage    cake.tests.fixtures
  */
 class DomainFixture extends CakeTestFixture {
+
+/**
+ * name property
+ *
+ * @var string 'Domain'
+ * @access public
+ */
+	public $name = 'Domain';
 
 /**
  * fields property
  *
  * @var array
+ * @access public
  */
 	public $fields = array(
 		'id' => array('type' => 'integer', 'key' => 'primary'),
@@ -39,6 +51,7 @@ class DomainFixture extends CakeTestFixture {
  * records property
  *
  * @var array
+ * @access public
  */
 	public $records = array(
 		array('domain' => 'cakephp.org', 'created' => '2007-03-17 01:16:23', 'updated' => '2007-03-17 01:18:31'),

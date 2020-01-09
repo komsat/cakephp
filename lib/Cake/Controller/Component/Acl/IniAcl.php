@@ -1,28 +1,26 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
- * @package       Cake.Controller.Component.Acl
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       Cake.Controller.Component
  * @since         CakePHP(tm) v 0.10.0.1076
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
 App::uses('AclInterface', 'Controller/Component/Acl');
 
 /**
- * IniAcl implements an access control system using an INI file. An example
+ * IniAcl implements an access control system using an INI file.  An example
  * of the ini file used can be found in /config/acl.ini.php.
  *
- * @package       Cake.Controller.Component.Acl
+ * @package       Cake.Controller.Component
  */
-class IniAcl extends CakeObject implements AclInterface {
+class IniAcl extends Object implements AclInterface {
 
 /**
  * Array with configuration, parsed from ini file
@@ -33,7 +31,7 @@ class IniAcl extends CakeObject implements AclInterface {
 
 /**
  * The Hash::extract() path to the user/aro identifier in the
- * acl.ini file. This path will be used to extract the string
+ * acl.ini file.  This path will be used to extract the string
  * representation of a user used in the ini file.
  *
  * @var string
@@ -43,7 +41,7 @@ class IniAcl extends CakeObject implements AclInterface {
 /**
  * Initialize method
  *
- * @param Component $component The AclComponent instance.
+ * @param AclBase $component
  * @return void
  */
 	public function initialize(Component $component) {
@@ -55,7 +53,7 @@ class IniAcl extends CakeObject implements AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
- * @return bool Success
+ * @return boolean Success
  */
 	public function allow($aro, $aco, $action = "*") {
 	}
@@ -66,7 +64,7 @@ class IniAcl extends CakeObject implements AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
- * @return bool Success
+ * @return boolean Success
  */
 	public function deny($aro, $aco, $action = "*") {
 	}
@@ -77,7 +75,7 @@ class IniAcl extends CakeObject implements AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
- * @return bool Success
+ * @return boolean Success
  */
 	public function inherit($aro, $aco, $action = "*") {
 	}
@@ -90,11 +88,11 @@ class IniAcl extends CakeObject implements AclInterface {
  * @param string $aro ARO
  * @param string $aco ACO
  * @param string $action Action
- * @return bool Success
+ * @return boolean Success
  */
 	public function check($aro, $aco, $action = null) {
-		if (!$this->config) {
-			$this->config = $this->readConfigFile(CONFIG . 'acl.ini.php');
+		if ($this->config == null) {
+			$this->config = $this->readConfigFile(APP . 'Config' . DS . 'acl.ini.php');
 		}
 		$aclConfig = $this->config;
 
@@ -145,7 +143,7 @@ class IniAcl extends CakeObject implements AclInterface {
 	}
 
 /**
- * Parses an INI file and returns an array that reflects the
+ * Parses an INI file and returns an array that reflects the 
  * INI file's section structure. Double-quote friendly.
  *
  * @param string $filename File

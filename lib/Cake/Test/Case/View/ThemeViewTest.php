@@ -2,23 +2,24 @@
 /**
  * ThemeViewTest file
  *
- * CakePHP(tm) Tests <https://book.cakephp.org/2.0/en/development/testing.html>
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP 5
+ *
+ * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
  * @package       Cake.Test.Case.View
  * @since         CakePHP(tm) v 1.2.0.4206
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
 App::uses('View', 'View');
 App::uses('ThemeView', 'View');
 App::uses('Controller', 'Controller');
+
 
 /**
  * ThemePosts2Controller class
@@ -30,7 +31,7 @@ class ThemePosts2Controller extends Controller {
 /**
  * name property
  *
- * @var string
+ * @var string 'ThemePosts'
  */
 	public $name = 'ThemePosts';
 
@@ -198,6 +199,7 @@ class ThemeViewTest extends CakeTestCase {
 /**
  * testMissingView method
  *
+ * @expectedException MissingViewException
  * @return void
  */
 	public function testMissingView() {
@@ -210,18 +212,17 @@ class ThemeViewTest extends CakeTestCase {
 		$this->Controller->params['pass'] = array('home');
 
 		$View = new TestTheme2View($this->Controller);
-
-		try {
-			$View->getViewFileName('does_not_exist');
-			$this->fail('No exception');
-		} catch (MissingViewException $e) {
-			$this->assertContains('Pages' . DS . 'does_not_exist.ctp', $e->getMessage());
-		}
+		ob_start();
+		$result = $View->getViewFileName('does_not_exist');
+		$expected = ob_get_clean();
+		$this->assertRegExp("/PagesController::/", $expected);
+		$this->assertRegExp("/views(\/|\\\)themed(\/|\\\)my_theme(\/|\\\)pages(\/|\\\)does_not_exist.ctp/", $expected);
 	}
 
 /**
  * testMissingLayout method
  *
+ * @expectedException MissingLayoutException
  * @return void
  */
 	public function testMissingLayout() {
@@ -232,13 +233,11 @@ class ThemeViewTest extends CakeTestCase {
 		$this->Controller->theme = 'my_theme';
 
 		$View = new TestTheme2View($this->Controller);
-
-		try {
-			$View->getLayoutFileName();
-			$this->fail('No exception');
-		} catch (MissingLayoutException $e) {
-			$this->assertContains('Layouts' . DS . 'whatever.ctp', $e->getMessage());
-		}
+		ob_start();
+		$result = $View->getLayoutFileName();
+		$expected = ob_get_clean();
+		$this->assertRegExp("/Missing Layout/", $expected);
+		$this->assertRegExp("/views(\/|\\\)themed(\/|\\\)my_theme(\/|\\\)layouts(\/|\\\)whatever.ctp/", $expected);
 	}
 
 /**

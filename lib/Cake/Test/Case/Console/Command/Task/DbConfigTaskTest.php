@@ -2,18 +2,19 @@
 /**
  * DBConfigTask Test Case
  *
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Test.Case.Console.Command.Task
  * @since         CakePHP(tm) v 1.3
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 App::uses('ShellDispatcher', 'Console');
@@ -44,7 +45,7 @@ class DbConfigTaskTest extends CakeTestCase {
 			array($out, $out, $in)
 		);
 
-		$this->Task->path = CONFIG;
+		$this->Task->path = APP . 'Config' . DS;
 	}
 
 /**
@@ -79,7 +80,7 @@ class DbConfigTaskTest extends CakeTestCase {
 	public function testInitialize() {
 		$this->Task->initialize();
 		$this->assertFalse(empty($this->Task->path));
-		$this->assertEquals(CONFIG, $this->Task->path);
+		$this->assertEquals(APP . 'Config' . DS, $this->Task->path);
 	}
 
 /**
@@ -100,7 +101,7 @@ class DbConfigTaskTest extends CakeTestCase {
 		$this->Task->expects($this->once())->method('_stop');
 		$this->Task->expects($this->at(0))->method('in')->will($this->returnValue('default')); //name
 		$this->Task->expects($this->at(1))->method('in')->will($this->returnValue('mysql')); //db type
-		$this->Task->expects($this->at(2))->method('in')->will($this->returnValue('n')); //persistent
+		$this->Task->expects($this->at(2))->method('in')->will($this->returnValue('n')); //persistant
 		$this->Task->expects($this->at(3))->method('in')->will($this->returnValue('localhost')); //server
 		$this->Task->expects($this->at(4))->method('in')->will($this->returnValue('n')); //port
 		$this->Task->expects($this->at(5))->method('in')->will($this->returnValue('root')); //user
@@ -127,6 +128,6 @@ class DbConfigTaskTest extends CakeTestCase {
 				)
 			));
 
-		$this->Task->execute();
+		$result = $this->Task->execute();
 	}
 }

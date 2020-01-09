@@ -2,18 +2,19 @@
 /**
  * CakeValidationSetTest file
  *
- * CakePHP(tm) Tests <https://book.cakephp.org/view/1196/Testing>
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * PHP 5
+ *
+ * CakePHP(tm) Tests <http://book.cakephp.org/view/1196/Testing>
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://book.cakephp.org/view/1196/Testing CakePHP(tm) Tests
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://book.cakephp.org/view/1196/Testing CakePHP(tm) Tests
  * @package       Cake.Test.Case.Model.Validator
  * @since         CakePHP(tm) v 2.2.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 App::uses('CakeValidationSet', 'Model/Validator');
@@ -23,17 +24,7 @@ App::uses('CakeValidationSet', 'Model/Validator');
  *
  * @package       Cake.Test.Case.Model.Validator
  */
-class CakeValidationSetTest extends CakeTestCase {
-
-/**
- * override locale to the default (eng).
- *
- * @return void
- */
-	public function setUp() {
-		parent::setUp();
-		Configure::write('Config.language', 'eng');
-	}
+class CakeValidationSetTest  extends CakeTestCase {
 
 /**
  * testValidate method
@@ -41,7 +32,7 @@ class CakeValidationSetTest extends CakeTestCase {
  * @return void
  */
 	public function testValidate() {
-		$Field = new CakeValidationSet('title', 'notBlank');
+		$Field = new CakeValidationSet('title', 'notEmpty');
 		$data = array(
 			'title' => '',
 			'body' => 'a body'
@@ -51,20 +42,20 @@ class CakeValidationSetTest extends CakeTestCase {
 		$expected = array('This field cannot be left blank');
 		$this->assertEquals($expected, $result);
 
-		$Field = new CakeValidationSet('body', 'notBlank');
+		$Field = new CakeValidationSet('body', 'notEmpty');
 
 		$result = $Field->validate($data);
 		$this->assertEmpty($result);
 
 		$Field = new CakeValidationSet('nothere', array(
-			'notBlank' => array(
-				'rule' => 'notBlank',
+			'notEmpty' => array(
+				'rule' => 'notEmpty',
 				'required' => true
 			)
 		));
 
 		$result = $Field->validate($data);
-		$expected = array('notBlank');
+		$expected = array('notEmpty');
 		$this->assertEquals($expected, $result);
 
 		$Field = new CakeValidationSet('body', array(
@@ -83,11 +74,16 @@ class CakeValidationSetTest extends CakeTestCase {
  * @return void
  */
 	public function testGetRule() {
-		$rules = array('notBlank' => array('rule' => 'notBlank', 'message' => 'Can not be empty'));
+		$rules = array('notEmpty' => array('rule' => 'notEmpty', 'message' => 'Can not be empty'));
 		$Field = new CakeValidationSet('title', $rules);
-		$result = $Field->getRule('notBlank');
+		$data = array(
+			'title' => '',
+			'body' => 'a body'
+		);
+
+		$result = $Field->getRule('notEmpty');
 		$this->assertInstanceOf('CakeValidationRule', $result);
-		$this->assertEquals('notBlank', $result->rule);
+		$this->assertEquals('notEmpty', $result->rule);
 		$this->assertEquals(null, $result->required);
 		$this->assertEquals(false, $result->allowEmpty);
 		$this->assertEquals(null, $result->on);
@@ -101,12 +97,12 @@ class CakeValidationSetTest extends CakeTestCase {
  * @return void
  */
 	public function testGetRules() {
-		$rules = array('notBlank' => array('rule' => 'notBlank', 'message' => 'Can not be empty'));
+		$rules = array('notEmpty' => array('rule' => 'notEmpty', 'message' => 'Can not be empty'));
 		$Field = new CakeValidationSet('title', $rules);
 
 		$result = $Field->getRules();
-		$this->assertEquals(array('notBlank'), array_keys($result));
-		$this->assertInstanceOf('CakeValidationRule', $result['notBlank']);
+		$this->assertEquals(array('notEmpty'), array_keys($result));
+		$this->assertInstanceOf('CakeValidationRule', $result['notEmpty']);
 	}
 
 /**
@@ -115,23 +111,23 @@ class CakeValidationSetTest extends CakeTestCase {
  * @return void
  */
 	public function testSetRule() {
-		$rules = array('notBlank' => array('rule' => 'notBlank', 'message' => 'Can not be empty'));
+		$rules = array('notEmpty' => array('rule' => 'notEmpty', 'message' => 'Can not be empty'));
 		$Field = new CakeValidationSet('title', $rules);
-		$Rule = new CakeValidationRule($rules['notBlank']);
+		$Rule = new CakeValidationRule($rules['notEmpty']);
 
-		$this->assertEquals($Rule, $Field->getRule('notBlank'));
+		$this->assertEquals($Rule, $Field->getRule('notEmpty'));
 
 		$rules = array('validEmail' => array('rule' => 'email', 'message' => 'Invalid email'));
 		$Rule = new CakeValidationRule($rules['validEmail']);
 		$Field->setRule('validEmail', $Rule);
 		$result = $Field->getRules();
-		$this->assertEquals(array('notBlank', 'validEmail'), array_keys($result));
+		$this->assertEquals(array('notEmpty', 'validEmail'), array_keys($result));
 
 		$rules = array('validEmail' => array('rule' => 'email', 'message' => 'Other message'));
 		$Rule = new CakeValidationRule($rules['validEmail']);
 		$Field->setRule('validEmail', $Rule);
 		$result = $Field->getRules();
-		$this->assertEquals(array('notBlank', 'validEmail'), array_keys($result));
+		$this->assertEquals(array('notEmpty', 'validEmail'), array_keys($result));
 		$result = $Field->getRule('validEmail');
 		$this->assertInstanceOf('CakeValidationRule', $result);
 		$this->assertEquals('email', $result->rule);
@@ -148,9 +144,9 @@ class CakeValidationSetTest extends CakeTestCase {
  * @return void
  */
 	public function testSetRules() {
-		$rule = array('notBlank' => array('rule' => 'notBlank', 'message' => 'Can not be empty'));
+		$rule = array('notEmpty' => array('rule' => 'notEmpty', 'message' => 'Can not be empty'));
 		$Field = new CakeValidationSet('title', $rule);
-		$RuleEmpty = new CakeValidationRule($rule['notBlank']);
+		$RuleEmpty = new CakeValidationRule($rule['notEmpty']);
 
 		$rule = array('validEmail' => array('rule' => 'email', 'message' => 'Invalid email'));
 		$RuleEmail = new CakeValidationRule($rule['validEmail']);
@@ -160,22 +156,10 @@ class CakeValidationSetTest extends CakeTestCase {
 		$result = $Field->getRules();
 		$this->assertEquals(array('validEmail'), array_keys($result));
 
-		$Field->setRules(array('validEmail' => $rule), false);
-		$result = $Field->getRules();
-		$this->assertEquals(array('validEmail'), array_keys($result));
-		$this->assertTrue(array_pop($result) instanceof CakeValidationRule);
-
-		$rules = array('notBlank' => $RuleEmpty);
+		$rules = array('notEmpty' => $RuleEmpty);
 		$Field->setRules($rules, true);
 		$result = $Field->getRules();
-		$this->assertEquals(array('validEmail', 'notBlank'), array_keys($result));
-
-		$rules = array('notBlank' => array('rule' => 'notBlank'));
-		$Field->setRules($rules, true);
-		$result = $Field->getRules();
-		$this->assertEquals(array('validEmail', 'notBlank'), array_keys($result));
-		$this->assertTrue(array_pop($result) instanceof CakeValidationRule);
-		$this->assertTrue(array_pop($result) instanceof CakeValidationRule);
+		$this->assertEquals(array('validEmail', 'notEmpty'), array_keys($result));
 	}
 
 /**
@@ -185,14 +169,14 @@ class CakeValidationSetTest extends CakeTestCase {
  */
 	public function testArrayAccessGet() {
 		$Set = new CakeValidationSet('title', array(
-			'notBlank' => array('rule' => 'notBlank', 'required' => true),
+			'notEmpty' => array('rule' => 'notEmpty', 'required' => true),
 			'numeric' => array('rule' => 'numeric'),
 			'other' => array('rule' => array('other', 1)),
 		));
 
-		$rule = $Set['notBlank'];
+		$rule = $Set['notEmpty'];
 		$this->assertInstanceOf('CakeValidationRule', $rule);
-		$this->assertEquals('notBlank', $rule->rule);
+		$this->assertEquals('notEmpty', $rule->rule);
 
 		$rule = $Set['numeric'];
 		$this->assertInstanceOf('CakeValidationRule', $rule);
@@ -210,12 +194,12 @@ class CakeValidationSetTest extends CakeTestCase {
  */
 	public function testArrayAccessExists() {
 		$Set = new CakeValidationSet('title', array(
-			'notBlank' => array('rule' => 'notBlank', 'required' => true),
+			'notEmpty' => array('rule' => 'notEmpty', 'required' => true),
 			'numeric' => array('rule' => 'numeric'),
 			'other' => array('rule' => array('other', 1)),
 		));
 
-		$this->assertTrue(isset($Set['notBlank']));
+		$this->assertTrue(isset($Set['notEmpty']));
 		$this->assertTrue(isset($Set['numeric']));
 		$this->assertTrue(isset($Set['other']));
 		$this->assertFalse(isset($Set['fail']));
@@ -228,7 +212,7 @@ class CakeValidationSetTest extends CakeTestCase {
  */
 	public function testArrayAccessSet() {
 		$Set = new CakeValidationSet('title', array(
-			'notBlank' => array('rule' => 'notBlank', 'required' => true),
+			'notEmpty' => array('rule' => 'notEmpty', 'required' => true),
 		));
 
 		$this->assertFalse(isset($Set['other']));
@@ -251,19 +235,19 @@ class CakeValidationSetTest extends CakeTestCase {
  */
 	public function testArrayAccessUnset() {
 		$Set = new CakeValidationSet('title', array(
-			'notBlank' => array('rule' => 'notBlank', 'required' => true),
+			'notEmpty' => array('rule' => 'notEmpty', 'required' => true),
 			'numeric' => array('rule' => 'numeric'),
 			'other' => array('rule' => array('other', 1)),
 		));
 
-		unset($Set['notBlank']);
-		$this->assertFalse(isset($Set['notBlank']));
+		unset($Set['notEmpty']);
+		$this->assertFalse(isset($Set['notEmpty']));
 
 		unset($Set['numeric']);
-		$this->assertFalse(isset($Set['notBlank']));
+		$this->assertFalse(isset($Set['notEmpty']));
 
 		unset($Set['other']);
-		$this->assertFalse(isset($Set['notBlank']));
+		$this->assertFalse(isset($Set['notEmpty']));
 	}
 
 /**
@@ -273,7 +257,7 @@ class CakeValidationSetTest extends CakeTestCase {
  */
 	public function testIterator() {
 		$Set = new CakeValidationSet('title', array(
-			'notBlank' => array('rule' => 'notBlank', 'required' => true),
+			'notEmpty' => array('rule' => 'notEmpty', 'required' => true),
 			'numeric' => array('rule' => 'numeric'),
 			'other' => array('rule' => array('other', 1)),
 		));
@@ -281,7 +265,7 @@ class CakeValidationSetTest extends CakeTestCase {
 		$i = 0;
 		foreach ($Set as $name => $rule) {
 			if ($i === 0) {
-				$this->assertEquals('notBlank', $name);
+				$this->assertEquals('notEmpty', $name);
 			}
 			if ($i === 1) {
 				$this->assertEquals('numeric', $name);
@@ -302,7 +286,7 @@ class CakeValidationSetTest extends CakeTestCase {
  */
 	public function testCount() {
 		$Set = new CakeValidationSet('title', array(
-			'notBlank' => array('rule' => 'notBlank', 'required' => true),
+			'notEmpty' => array('rule' => 'notEmpty', 'required' => true),
 			'numeric' => array('rule' => 'numeric'),
 			'other' => array('rule' => array('other', 1)),
 		));
@@ -319,13 +303,13 @@ class CakeValidationSetTest extends CakeTestCase {
  */
 	public function testRemoveRule() {
 		$Set = new CakeValidationSet('title', array(
-			'notBlank' => array('rule' => 'notBlank', 'required' => true),
+			'notEmpty' => array('rule' => 'notEmpty', 'required' => true),
 			'numeric' => array('rule' => 'numeric'),
 			'other' => array('rule' => array('other', 1)),
 		));
 
-		$Set->removeRule('notBlank');
-		$this->assertFalse(isset($Set['notBlank']));
+		$Set->removeRule('notEmpty');
+		$this->assertFalse(isset($Set['notEmpty']));
 
 		$Set->removeRule('numeric');
 		$this->assertFalse(isset($Set['numeric']));

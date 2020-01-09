@@ -1,17 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP Project
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP Project
  * @package       Cake.Console.Command
  * @since         CakePHP v 2.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 App::uses('AppShell', 'Console/Command');
@@ -23,13 +22,6 @@ App::uses('Inflector', 'Utility');
  * @package       Cake.Console.Command
  */
 class CommandListShell extends AppShell {
-
-/**
- * Contains tasks to load and instantiate
- *
- * @var array
- */
-	public $tasks = array('Command');
 
 /**
  * startup
@@ -54,16 +46,15 @@ class CommandListShell extends AppShell {
 			$this->out(" -working: " . rtrim(APP, DS));
 			$this->out(" -root: " . rtrim(ROOT, DS));
 			$this->out(" -core: " . rtrim(CORE_PATH, DS));
-			$this->out(" -webroot: " . rtrim(WWW_ROOT, DS));
 			$this->out("");
 			$this->out(__d('cake_console', "<info>Changing Paths:</info>"), 2);
-			$this->out(__d('cake_console', "Your working path should be the same as your application path. To change your path use the '-app' param."));
-			$this->out(__d('cake_console', "Example: %s or %s", '-app relative/path/to/myapp', '-app /absolute/path/to/myapp'), 2);
+			$this->out(__d('cake_console', "Your working path should be the same as your application path to change your path use the '-app' param."));
+			$this->out(__d('cake_console', "Example: -app relative/path/to/myapp or -app /absolute/path/to/myapp"), 2);
 
 			$this->out(__d('cake_console', "<info>Available Shells:</info>"), 2);
 		}
 
-		$shellList = $this->Command->getShellList();
+		$shellList = $this->_getShellList();
 		if (empty($shellList)) {
 			return;
 		}
@@ -76,9 +67,51 @@ class CommandListShell extends AppShell {
 	}
 
 /**
+ * Gets the shell command listing.
+ *
+ * @return array
+ */
+	protected function _getShellList() {
+		$skipFiles = array('AppShell');
+
+		$plugins = CakePlugin::loaded();
+		$shellList = array_fill_keys($plugins, null) + array('CORE' => null, 'app' => null);
+
+		$corePath = App::core('Console/Command');
+		$shells = App::objects('file', $corePath[0]);
+		$shells = array_diff($shells, $skipFiles);
+		$this->_appendShells('CORE', $shells, $shellList);
+
+		$appShells = App::objects('Console/Command', null, false);
+		$appShells = array_diff($appShells, $shells, $skipFiles);
+		$this->_appendShells('app', $appShells, $shellList);
+
+		foreach ($plugins as $plugin) {
+			$pluginShells = App::objects($plugin . '.Console/Command');
+			$this->_appendShells($plugin, $pluginShells, $shellList);
+		}
+
+		return array_filter($shellList);
+	}
+
+/**
+ * Scan the provided paths for shells, and append them into $shellList
+ *
+ * @param string $type
+ * @param array $shells
+ * @param array $shellList
+ * @return array
+ */
+	protected function _appendShells($type, $shells, &$shellList) {
+		foreach ($shells as $shell) {
+			$shellList[$type][] = Inflector::underscore(str_replace('Shell', '', $shell));
+		}
+	}
+
+/**
  * Output text.
  *
- * @param array $shellList The shell list.
+ * @param array $shellList
  * @return void
  */
 	protected function _asText($shellList) {
@@ -96,7 +129,7 @@ class CommandListShell extends AppShell {
 /**
  * Output as XML
  *
- * @param array $shellList The shell list.
+ * @param array $shellList
  * @return void
  */
 	protected function _asXml($shellList) {
@@ -121,24 +154,21 @@ class CommandListShell extends AppShell {
 	}
 
 /**
- * Gets the option parser instance and configures it.
+ * get the option parser
  *
- * @return ConsoleOptionParser
+ * @return void
  */
 	public function getOptionParser() {
 		$parser = parent::getOptionParser();
-
-		$parser->description(
-			__d('cake_console', 'Get the list of available shells for this CakePHP application.')
-		)->addOption('sort', array(
-			'help' => __d('cake_console', 'Does nothing (deprecated)'),
-			'boolean' => true
-		))->addOption('xml', array(
-			'help' => __d('cake_console', 'Get the listing as XML.'),
-			'boolean' => true
-		));
-
-		return $parser;
+		return $parser->description(__d('cake_console', 'Get the list of available shells for this CakePHP application.'))
+			->addOption('sort', array(
+				'help' => __d('cake_console', 'Does nothing (deprecated)'),
+				'boolean' => true
+			))
+			->addOption('xml', array(
+				'help' => __d('cake_console', 'Get the listing as XML.'),
+				'boolean' => true
+			));
 	}
 
 }
