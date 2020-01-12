@@ -87,12 +87,17 @@
                         <img src="http://localhost/cakephp/app/webroot/img/imagesLogin.png" alt="Avatar" class="avatar">
                     </div>
                     <?php
-                        echo $this->Form->create('User',array('url' => array('action' => 'login')));
+                        echo $this->Session->flash('auth');
+                        echo $this->Form->create('User'); //,array('url' => array('action' => 'login'))
                         echo $this->Form->input('username', array('label' => 'Username'));
                         echo $this->Form->input('password'); // No div, no label has a label element
                         echo $this->Form->end('Login');
-                        echo "New User?";
 //                        echo $this->Html->link('users', '/register');
+                        
+                        echo $this->Html->link('Forgot Password?', '/forgotPassword', array('class' => 'button'));
+                        echo '<br>';
+                        echo '<br>';
+                        echo "New User?";
                         echo $this->Html->link('Register', '/register', array('class' => 'button'));
                     ?>
 		</div>

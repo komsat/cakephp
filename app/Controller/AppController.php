@@ -32,4 +32,31 @@ App::uses('Controller', 'Controller');
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+    public $components = array(
+        'DebugKit.Toolbar',
+        'Session',
+        'Auth' => array(
+            'loginRedirect' => array(
+                'controller' => 'dashboards',
+                'action' => 'dashboard'
+            ),
+            'logoutRedirect' => array(
+                'controller' => 'users',
+                'action' => 'login',
+                'home'
+            ),
+            'authError' => 'You must be logged in to view this page.',
+            'loginError' => 'Invalid Username or Password entered, please try again.'
+//            ,'authenticate' => array(
+//                'Form' => array(
+//                    'passwordHasher' => 'Blowfish'
+//                )
+//            )
+        )
+    );
+
+    public function beforeFilter() {
+//        Security::setHash('md5');       //store password in MD5 format
+        $this->Auth->allow('login');
+    }
 }

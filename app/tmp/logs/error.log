@@ -1310,3 +1310,1095 @@
 #8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
 #9 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #10 {main}
+2020-01-10 12:56:20 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 67]
+2020-01-10 12:56:20 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 67)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 67, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 67, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 12:58:50 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 68]
+2020-01-10 12:58:50 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 68)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 68, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 68, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 12:59:48 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 68]
+2020-01-10 12:59:48 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 68)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 68, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 68, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:00:27 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 68]
+2020-01-10 13:00:27 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 68)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 68, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 68, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:00:58 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 65]
+2020-01-10 13:00:58 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 65)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 65, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 65, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:02:21 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 66]
+2020-01-10 13:02:21 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:03:05 Error: [MissingHelperException] Helper class ImageHelper could not be found.
+#0 /var/www/html/cakephp/lib/Cake/View/HelperCollection.php(62): HelperCollection->load('Image')
+#1 /var/www/html/cakephp/lib/Cake/View/View.php(812): HelperCollection->__isset('Image')
+#2 /var/www/html/cakephp/app/View/Dashboard/dashboard.ctp(67): View->__get('Image')
+#3 /var/www/html/cakephp/lib/Cake/View/View.php(920): include('/var/www/html/c...')
+#4 /var/www/html/cakephp/lib/Cake/View/View.php(883): View->_evaluate('/var/www/html/c...', Array)
+#5 /var/www/html/cakephp/lib/Cake/View/View.php(475): View->_render('/var/www/html/c...')
+#6 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#7 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2020-01-10 13:03:28 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 66]
+2020-01-10 13:03:28 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:17:56 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 66]
+2020-01-10 13:17:56 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:22:52 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 66]
+2020-01-10 13:22:52 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:23:24 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 66]
+2020-01-10 13:23:24 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:23:32 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 66]
+2020-01-10 13:23:32 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:23:44 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 66]
+2020-01-10 13:23:44 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:24:49 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 66]
+2020-01-10 13:24:49 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:25:44 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 66]
+2020-01-10 13:25:44 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:26:06 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 66]
+2020-01-10 13:26:06 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:30:00 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 66]
+2020-01-10 13:30:00 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:31:33 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 66]
+2020-01-10 13:31:33 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:32:20 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 66]
+2020-01-10 13:32:20 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 66, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 13:36:12 Error: Fatal Error (4): syntax error, unexpected 'px' (T_STRING), expecting ')' in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 68]
+2020-01-10 13:36:12 Error: [FatalErrorException] syntax error, unexpected 'px' (T_STRING), expecting ')'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 68)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 68, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 68, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 14:00:43 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-10 14:05:27 Error: Fatal Error (1): Call to a member function user() on null in [/var/www/html/cakephp/app/Controller/DashboardsController.php, line 87]
+2020-01-10 14:05:27 Error: [FatalErrorException] Call to a member function user() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 87)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 87, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 87, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 14:06:13 Error: Fatal Error (4): syntax error, unexpected '$data' (T_VARIABLE) in [/var/www/html/cakephp/app/Controller/DashboardsController.php, line 103]
+2020-01-10 14:06:13 Error: [FatalErrorException] syntax error, unexpected '$data' (T_VARIABLE)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 103)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 103, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 103, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 14:06:41 Error: Fatal Error (1): Call to a member function user() on null in [/var/www/html/cakephp/app/Controller/DashboardsController.php, line 87]
+2020-01-10 14:06:41 Error: [FatalErrorException] Call to a member function user() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 87)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 87, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 87, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 14:07:04 Error: [MissingControllerException] Controller class LOGINController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-10 14:08:13 Error: Fatal Error (1): Call to a member function user() on null in [/var/www/html/cakephp/app/Controller/DashboardsController.php, line 87]
+2020-01-10 14:08:13 Error: [FatalErrorException] Call to a member function user() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 87)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 87, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 87, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 14:48:43 Error: Fatal Error (1): Call to a member function user() on null in [/var/www/html/cakephp/app/Controller/DashboardsController.php, line 81]
+2020-01-10 14:48:43 Error: [FatalErrorException] Call to a member function user() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 81)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 81, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 81, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 15:09:46 Error: [MissingControllerException] Controller class SearchController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-10 15:12:03 Error: [MissingControllerException] Controller class SearchController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-10 15:13:04 Error: [MissingControllerException] Controller class SearchController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-10 15:14:00 Error: [MissingControllerException] Controller class SearchController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-10 15:24:38 Error: [MissingActionException] Action DashboardController::dashboards() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-10 18:46:54 Error: [MissingComponentException] Component class FlashComponent could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Controller/ComponentCollection.php(52): ComponentCollection->load('Flash', Array)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(635): ComponentCollection->init(Object(UsersController))
+#2 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(182): Controller->constructClasses()
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-01-10 19:05:05 Error: [MissingComponentException] Component class FlashComponent could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Controller/ComponentCollection.php(52): ComponentCollection->load('Flash', Array)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(635): ComponentCollection->init(Object(UsersController))
+#2 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(182): Controller->constructClasses()
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-01-10 19:23:21 Error: [MissingPluginException] Plugin DebugKit could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Core/App.php(364): CakePlugin::path('DebugKit')
+#1 /var/www/html/cakephp/lib/Cake/Core/App.php(225): App::pluginPath('DebugKit')
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(542): App::path('Controller/Comp...', 'DebugKit')
+#3 [internal function]: App::load('ToolbarComponen...')
+#4 [internal function]: spl_autoload_call('ToolbarComponen...')
+#5 /var/www/html/cakephp/lib/Cake/Controller/ComponentCollection.php(99): class_exists('ToolbarComponen...')
+#6 /var/www/html/cakephp/lib/Cake/Controller/ComponentCollection.php(52): ComponentCollection->load('DebugKit.Toolba...', Array)
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(635): ComponentCollection->init(Object(UsersController))
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(182): Controller->constructClasses()
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-10 19:25:18 Error: [MissingPluginException] Plugin DebugKit could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Core/App.php(364): CakePlugin::path('DebugKit')
+#1 /var/www/html/cakephp/lib/Cake/Core/App.php(225): App::pluginPath('DebugKit')
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(542): App::path('Controller/Comp...', 'DebugKit')
+#3 [internal function]: App::load('ToolbarComponen...')
+#4 [internal function]: spl_autoload_call('ToolbarComponen...')
+#5 /var/www/html/cakephp/lib/Cake/Controller/ComponentCollection.php(99): class_exists('ToolbarComponen...')
+#6 /var/www/html/cakephp/lib/Cake/Controller/ComponentCollection.php(52): ComponentCollection->load('DebugKit.Toolba...', Array)
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(635): ComponentCollection->init(Object(UsersController))
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(182): Controller->constructClasses()
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-10 19:25:21 Error: [MissingPluginException] Plugin DebugKit could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Core/App.php(364): CakePlugin::path('DebugKit')
+#1 /var/www/html/cakephp/lib/Cake/Core/App.php(225): App::pluginPath('DebugKit')
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(542): App::path('Controller/Comp...', 'DebugKit')
+#3 [internal function]: App::load('ToolbarComponen...')
+#4 [internal function]: spl_autoload_call('ToolbarComponen...')
+#5 /var/www/html/cakephp/lib/Cake/Controller/ComponentCollection.php(99): class_exists('ToolbarComponen...')
+#6 /var/www/html/cakephp/lib/Cake/Controller/ComponentCollection.php(52): ComponentCollection->load('DebugKit.Toolba...', Array)
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(635): ComponentCollection->init(Object(UsersController))
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(182): Controller->constructClasses()
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-10 19:27:36 Error: [MissingViewException] View file "/var/www/html/cakephp/app/View/Users/login.ctp" is missing.
+#0 /var/www/html/cakephp/lib/Cake/View/View.php(472): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#2 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-01-10 19:27:55 Error: [MissingViewException] View file "/var/www/html/cakephp/app/View/Users/login.ctp" is missing.
+#0 /var/www/html/cakephp/lib/Cake/View/View.php(472): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#2 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-01-10 19:28:25 Error: [MissingViewException] View file "/var/www/html/cakephp/app/View/Users/login.ctp" is missing.
+#0 /var/www/html/cakephp/lib/Cake/View/View.php(472): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#2 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-01-10 19:28:30 Error: [MissingViewException] View file "/var/www/html/cakephp/app/View/Users/login.ctp" is missing.
+#0 /var/www/html/cakephp/lib/Cake/View/View.php(472): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#2 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-01-10 19:29:11 Error: [MissingHelperException] Helper class FlashHelper could not be found.
+#0 /var/www/html/cakephp/lib/Cake/View/HelperCollection.php(62): HelperCollection->load('Flash')
+#1 /var/www/html/cakephp/lib/Cake/View/View.php(812): HelperCollection->__isset('Flash')
+#2 /var/www/html/cakephp/app/View/Users/login.ctp(90): View->__get('Flash')
+#3 /var/www/html/cakephp/lib/Cake/View/View.php(920): include('/var/www/html/c...')
+#4 /var/www/html/cakephp/lib/Cake/View/View.php(883): View->_evaluate('/var/www/html/c...', Array)
+#5 /var/www/html/cakephp/lib/Cake/View/View.php(475): View->_render('/var/www/html/c...')
+#6 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#7 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2020-01-10 19:39:57 Error: [MissingActionException] Action UsersController::userTasks() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-10 19:40:03 Error: [MissingActionException] Action UsersController::userTasks() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-10 19:42:23 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.username' in 'where clause'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /var/www/html/cakephp/lib/Cake/Model/Model.php(2630): DboSource->read(Object(User), Array)
+#5 /var/www/html/cakephp/lib/Cake/Controller/Component/Auth/BaseAuthenticate.php(89): Model->find('first', Array)
+#6 /var/www/html/cakephp/lib/Cake/Controller/Component/Auth/FormAuthenticate.php(65): BaseAuthenticate->_findUser('root@edu.co', 'root')
+#7 /var/www/html/cakephp/lib/Cake/Controller/Component/AuthComponent.php(633): FormAuthenticate->authenticate(Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/html/cakephp/lib/Cake/Controller/Component/AuthComponent.php(510): AuthComponent->identify(Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/cakephp/app/Controller/UsersController.php(44): AuthComponent->login()
+#10 [internal function]: UsersController->login()
+#11 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#12 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#13 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#14 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2020-01-10 19:43:08 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.username' in 'where clause'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `User`.`...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `User`.`...', Array, Array)
+#3 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `User`.`...', false)
+#4 /var/www/html/cakephp/lib/Cake/Model/Model.php(2630): DboSource->read(Object(User), Array)
+#5 /var/www/html/cakephp/lib/Cake/Controller/Component/Auth/BaseAuthenticate.php(89): Model->find('first', Array)
+#6 /var/www/html/cakephp/lib/Cake/Controller/Component/Auth/FormAuthenticate.php(65): BaseAuthenticate->_findUser('root@edu.co', 'root')
+#7 /var/www/html/cakephp/lib/Cake/Controller/Component/AuthComponent.php(633): FormAuthenticate->authenticate(Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/html/cakephp/lib/Cake/Controller/Component/AuthComponent.php(510): AuthComponent->identify(Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/cakephp/app/Controller/UsersController.php(44): AuthComponent->login()
+#10 [internal function]: UsersController->login()
+#11 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#12 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#13 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#14 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#15 {main}
+2020-01-10 19:50:13 Error: [MissingActionException] Action UsersController::registerUser() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-10 19:51:25 Error: Fatal Error (1): Class 'BlowfishPasswordHasher' not found in [/var/www/html/cakephp/app/Model/User.php, line 15]
+2020-01-10 19:51:25 Error: [FatalErrorException] Class 'BlowfishPasswordHasher' not found
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Blowfish...', '/var/www/html/c...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Blowfish...', '/var/www/html/c...', 15, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Blowfish...', '/var/www/html/c...', 15, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 19:51:25 Error: Fatal Error (1): Class 'BlowfishPasswordHasher' not found in [/var/www/html/cakephp/app/Model/User.php, line 15]
+2020-01-10 19:51:25 Error: [FatalErrorException] Class 'BlowfishPasswordHasher' not found
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Blowfish...', '/var/www/html/c...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Blowfish...', '/var/www/html/c...', 15, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Blowfish...', '/var/www/html/c...', 15, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 20:00:42 Error: Fatal Error (1): Class 'BlowfishPasswordHasher' not found in [/var/www/html/cakephp/app/Model/User.php, line 15]
+2020-01-10 20:00:42 Error: [FatalErrorException] Class 'BlowfishPasswordHasher' not found
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Blowfish...', '/var/www/html/c...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Blowfish...', '/var/www/html/c...', 15, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Blowfish...', '/var/www/html/c...', 15, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 20:02:58 Error: Fatal Error (1): Class 'BlowfishPasswordHasher' not found in [/var/www/html/cakephp/app/Model/User.php, line 15]
+2020-01-10 20:02:58 Error: [FatalErrorException] Class 'BlowfishPasswordHasher' not found
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Blowfish...', '/var/www/html/c...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Blowfish...', '/var/www/html/c...', 15, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Blowfish...', '/var/www/html/c...', 15, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 20:03:08 Error: Fatal Error (1): Class 'BlowfishPasswordHasher' not found in [/var/www/html/cakephp/app/Model/User.php, line 15]
+2020-01-10 20:03:08 Error: [FatalErrorException] Class 'BlowfishPasswordHasher' not found
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Blowfish...', '/var/www/html/c...', 15)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Blowfish...', '/var/www/html/c...', 15, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Blowfish...', '/var/www/html/c...', 15, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 20:03:34 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'username' doesn't have a default value
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `bu...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `bu...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /var/www/html/cakephp/app/Model/User.php(49): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/UsersController.php(104): User->userRegister('SATYAM KUMAR', 'satyam@edureka....', '9382659456', 'satyam@edureka....', 'satyam@123')
+#6 [internal function]: UsersController->register()
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-10 20:25:32 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/var/www/html/cakephp/app/Controller/UsersController.php, line 103]
+2020-01-10 20:25:32 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 103)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 103, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 103, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 20:25:59 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/var/www/html/cakephp/app/Controller/UsersController.php, line 108]
+2020-01-10 20:25:59 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 108)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 108, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 108, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 20:26:00 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [/var/www/html/cakephp/app/Controller/UsersController.php, line 108]
+2020-01-10 20:26:00 Error: [FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 108)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 108, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 108, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-10 20:28:22 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'name' doesn't have a default value
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `bu...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `bu...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1730): DboSource->create(Object(User), Array, Array)
+#4 /var/www/html/cakephp/app/Controller/UsersController.php(53): Model->save(Array)
+#5 [internal function]: UsersController->login()
+#6 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2020-01-11 14:20:53 Error: Fatal Error (1): Call to undefined method AuthComponent::redirectUrl() in [/var/www/html/cakephp/app/Controller/UsersController.php, line 46]
+2020-01-11 14:20:53 Error: [FatalErrorException] Call to undefined method AuthComponent::redirectUrl()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 46)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 46, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 46, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-11 14:28:41 Error: [MissingActionException] Action UsersController::dashboard() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-11 14:30:41 Error: [MissingActionException] Action UsersController::dashboard() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-11 14:30:57 Error: [MissingActionException] Action UsersController::dashboard() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-11 14:35:12 Error: [MissingActionException] Action UsersController::dashboard() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-11 14:48:13 Error: [MissingActionException] Action UsersController::dashboard() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-11 14:52:23 Error: [MissingActionException] Action UsersController::dashboard() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-11 14:57:30 Error: [MissingActionException] Action UsersController::dashboard() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-11 14:59:03 Error: [MissingActionException] Action UsersController::dashboard() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-11 15:14:45 Error: [MissingActionException] Action UsersController::dashboard() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-11 22:33:47 Error: Fatal Error (1): Call to undefined method AuthComponent::redirectUrl() in [/var/www/html/cakephp/app/Controller/UsersController.php, line 46]
+2020-01-11 22:33:47 Error: [FatalErrorException] Call to undefined method AuthComponent::redirectUrl()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 46)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 46, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 46, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-11 22:58:04 Error: [MissingActionException] Action DashboardController::logout() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-12 00:42:19 Error: [MissingModelException] Post
+#0 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(1082): PaginatorComponent->paginate('Post', Array, Array)
+#1 /var/www/html/cakephp/app/Controller/DashboardsController.php(25): Controller->paginate('Post')
+#2 [internal function]: DashboardsController->dashboard()
+#3 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#4 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#5 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#6 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2020-01-12 00:43:13 Error: [MissingModelException] Post
+#0 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(1082): PaginatorComponent->paginate('Post', Array, Array)
+#1 /var/www/html/cakephp/app/Controller/DashboardsController.php(25): Controller->paginate('Post')
+#2 [internal function]: DashboardsController->dashboard()
+#3 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#4 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#5 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#6 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2020-01-12 00:45:00 Error: [MissingModelException] Post
+#0 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(1082): PaginatorComponent->paginate('Post', Array, Array)
+#1 /var/www/html/cakephp/app/Controller/DashboardsController.php(25): Controller->paginate('Post')
+#2 [internal function]: DashboardsController->dashboard()
+#3 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#4 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#5 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#6 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2020-01-12 00:53:48 Error: [MissingModelException] Post
+#0 /var/www/html/cakephp/app/Controller/DashboardsController.php(26): PaginatorComponent->paginate('Post')
+#1 [internal function]: DashboardsController->dashboard()
+#2 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#4 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#5 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-01-12 00:54:27 Error: [MissingModelException] Post
+#0 /var/www/html/cakephp/app/Controller/DashboardsController.php(26): PaginatorComponent->paginate('Post')
+#1 [internal function]: DashboardsController->dashboard()
+#2 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#4 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#5 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-01-12 00:55:33 Error: [MissingModelException] Post
+#0 /var/www/html/cakephp/app/Controller/DashboardsController.php(26): PaginatorComponent->paginate('Post')
+#1 [internal function]: DashboardsController->dashboard()
+#2 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#4 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#5 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-01-12 00:55:35 Error: [MissingModelException] Post
+#0 /var/www/html/cakephp/app/Controller/DashboardsController.php(26): PaginatorComponent->paginate('Post')
+#1 [internal function]: DashboardsController->dashboard()
+#2 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#4 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#5 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-01-12 00:55:37 Error: [MissingModelException] Post
+#0 /var/www/html/cakephp/app/Controller/DashboardsController.php(26): PaginatorComponent->paginate('Post')
+#1 [internal function]: DashboardsController->dashboard()
+#2 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#4 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#5 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-01-12 00:56:08 Error: [MissingModelException] Post
+#0 /var/www/html/cakephp/app/Controller/DashboardsController.php(26): PaginatorComponent->paginate('Post')
+#1 [internal function]: DashboardsController->dashboard()
+#2 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#4 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#5 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-01-12 00:56:09 Error: [MissingModelException] Post
+#0 /var/www/html/cakephp/app/Controller/DashboardsController.php(26): PaginatorComponent->paginate('Post')
+#1 [internal function]: DashboardsController->dashboard()
+#2 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#4 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#5 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2020-01-12 01:08:25 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column '$posts' in 'where clause'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Post`.`...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Post`.`...', Array, Array)
+#3 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Post`.`...', false)
+#4 /var/www/html/cakephp/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Post), Array)
+#5 /var/www/html/cakephp/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('all', Array)
+#6 /var/www/html/cakephp/app/Controller/DashboardsController.php(44): PaginatorComponent->paginate('Post', '$posts')
+#7 [internal function]: DashboardsController->dashboard()
+#8 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2020-01-12 02:30:37 Error: [MissingHelperException] Helper class AuthHelper could not be found.
+#0 /var/www/html/cakephp/lib/Cake/View/HelperCollection.php(62): HelperCollection->load('Auth')
+#1 /var/www/html/cakephp/lib/Cake/View/View.php(812): HelperCollection->__isset('Auth')
+#2 /var/www/html/cakephp/app/View/Dashboard/dashboard.ctp(66): View->__get('Auth')
+#3 /var/www/html/cakephp/lib/Cake/View/View.php(920): include('/var/www/html/c...')
+#4 /var/www/html/cakephp/lib/Cake/View/View.php(883): View->_evaluate('/var/www/html/c...', Array)
+#5 /var/www/html/cakephp/lib/Cake/View/View.php(475): View->_render('/var/www/html/c...')
+#6 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#7 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2020-01-12 02:38:35 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 67]
+2020-01-12 02:38:35 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 67)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 67, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 67, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 02:38:52 Error: [MissingHelperException] Helper class AuthHelper could not be found.
+#0 /var/www/html/cakephp/lib/Cake/View/HelperCollection.php(62): HelperCollection->load('Auth')
+#1 /var/www/html/cakephp/lib/Cake/View/View.php(812): HelperCollection->__isset('Auth')
+#2 /var/www/html/cakephp/app/View/Dashboard/dashboard.ctp(67): View->__get('Auth')
+#3 /var/www/html/cakephp/lib/Cake/View/View.php(920): include('/var/www/html/c...')
+#4 /var/www/html/cakephp/lib/Cake/View/View.php(883): View->_evaluate('/var/www/html/c...', Array)
+#5 /var/www/html/cakephp/lib/Cake/View/View.php(475): View->_render('/var/www/html/c...')
+#6 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#7 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2020-01-12 02:39:08 Error: [MissingHelperException] Helper class AuthHelper could not be found.
+#0 /var/www/html/cakephp/lib/Cake/View/HelperCollection.php(62): HelperCollection->load('Auth')
+#1 /var/www/html/cakephp/lib/Cake/View/View.php(812): HelperCollection->__isset('Auth')
+#2 /var/www/html/cakephp/app/View/Dashboard/dashboard.ctp(66): View->__get('Auth')
+#3 /var/www/html/cakephp/lib/Cake/View/View.php(920): include('/var/www/html/c...')
+#4 /var/www/html/cakephp/lib/Cake/View/View.php(883): View->_evaluate('/var/www/html/c...', Array)
+#5 /var/www/html/cakephp/lib/Cake/View/View.php(475): View->_render('/var/www/html/c...')
+#6 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#7 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2020-01-12 02:39:10 Error: [MissingHelperException] Helper class AuthHelper could not be found.
+#0 /var/www/html/cakephp/lib/Cake/View/HelperCollection.php(62): HelperCollection->load('Auth')
+#1 /var/www/html/cakephp/lib/Cake/View/View.php(812): HelperCollection->__isset('Auth')
+#2 /var/www/html/cakephp/app/View/Dashboard/dashboard.ctp(66): View->__get('Auth')
+#3 /var/www/html/cakephp/lib/Cake/View/View.php(920): include('/var/www/html/c...')
+#4 /var/www/html/cakephp/lib/Cake/View/View.php(883): View->_evaluate('/var/www/html/c...', Array)
+#5 /var/www/html/cakephp/lib/Cake/View/View.php(475): View->_render('/var/www/html/c...')
+#6 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#7 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2020-01-12 02:39:28 Error: [MissingHelperException] Helper class AuthHelper could not be found.
+#0 /var/www/html/cakephp/lib/Cake/View/HelperCollection.php(62): HelperCollection->load('Auth')
+#1 /var/www/html/cakephp/lib/Cake/View/View.php(812): HelperCollection->__isset('Auth')
+#2 /var/www/html/cakephp/app/View/Dashboard/dashboard.ctp(66): View->__get('Auth')
+#3 /var/www/html/cakephp/lib/Cake/View/View.php(920): include('/var/www/html/c...')
+#4 /var/www/html/cakephp/lib/Cake/View/View.php(883): View->_evaluate('/var/www/html/c...', Array)
+#5 /var/www/html/cakephp/lib/Cake/View/View.php(475): View->_render('/var/www/html/c...')
+#6 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#7 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2020-01-12 02:53:53 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 82]
+2020-01-12 02:53:53 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 82)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 82, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 82, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 02:54:26 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 82]
+2020-01-12 02:54:26 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 82)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 82, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 82, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 03:38:49 Error: [MissingControllerException] Controller class ForgotPasswordController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-12 03:54:33 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/html/cakephp/app/View/Users/profile.ctp, line 11]
+2020-01-12 03:54:33 Error: [FatalErrorException] syntax error, unexpected '<'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 11)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 11, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 11, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 03:55:06 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/html/cakephp/app/View/Users/profile.ctp, line 11]
+2020-01-12 03:55:06 Error: [FatalErrorException] syntax error, unexpected '<'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 11)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 11, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 11, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 03:55:08 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/html/cakephp/app/View/Users/profile.ctp, line 11]
+2020-01-12 03:55:08 Error: [FatalErrorException] syntax error, unexpected '<'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 11)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 11, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 11, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 03:55:09 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/html/cakephp/app/View/Users/profile.ctp, line 11]
+2020-01-12 03:55:09 Error: [FatalErrorException] syntax error, unexpected '<'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 11)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 11, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 11, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 03:55:19 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/html/cakephp/app/View/Users/profile.ctp, line 11]
+2020-01-12 03:55:19 Error: [FatalErrorException] syntax error, unexpected '<'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 11)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 11, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 11, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 03:56:01 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/html/cakephp/app/View/Users/profile.ctp, line 22]
+2020-01-12 03:56:01 Error: [FatalErrorException] syntax error, unexpected '<'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 22)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 22, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 22, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 03:56:03 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/html/cakephp/app/View/Users/profile.ctp, line 22]
+2020-01-12 03:56:03 Error: [FatalErrorException] syntax error, unexpected '<'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 22)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 22, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 22, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 04:09:28 Error: Fatal Error (1): Call to a member function findByEmail() on null in [/var/www/html/cakephp/app/Controller/UsersController.php, line 152]
+2020-01-12 04:09:28 Error: [FatalErrorException] Call to a member function findByEmail() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 152)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 152, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 152, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 04:11:19 Error: Fatal Error (1): Call to a member function findByEmail() on null in [/var/www/html/cakephp/app/Controller/UsersController.php, line 152]
+2020-01-12 04:11:19 Error: [FatalErrorException] Call to a member function findByEmail() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 152)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 152, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 152, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 04:14:03 Error: Fatal Error (1): Call to a member function findByEmail() on null in [/var/www/html/cakephp/app/Controller/UsersController.php, line 152]
+2020-01-12 04:14:03 Error: [FatalErrorException] Call to a member function findByEmail() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 152)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 152, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 152, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 04:14:52 Error: Fatal Error (1): Call to a member function findByEmail() on null in [/var/www/html/cakephp/app/Controller/UsersController.php, line 152]
+2020-01-12 04:14:52 Error: [FatalErrorException] Call to a member function findByEmail() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 152)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 152, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 152, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 04:18:40 Error: Fatal Error (1): Call to a member function findByEmail() on null in [/var/www/html/cakephp/app/Controller/UsersController.php, line 153]
+2020-01-12 04:18:40 Error: [FatalErrorException] Call to a member function findByEmail() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 153)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 153, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 153, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 17:18:15 Error: Fatal Error (1): Call to a member function findByEmail() on null in [/var/www/html/cakephp/app/Controller/UsersController.php, line 153]
+2020-01-12 17:18:15 Error: [FatalErrorException] Call to a member function findByEmail() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 153)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 153, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 153, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 20:27:13 Error: Fatal Error (1): Call to undefined method View::loadModel() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 99]
+2020-01-12 20:27:13 Error: [FatalErrorException] Call to undefined method View::loadModel()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 99)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 99, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 99, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 20:33:41 Error: Fatal Error (1): Call to undefined function getUsersName() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 101]
+2020-01-12 20:33:41 Error: [FatalErrorException] Call to undefined function getUsersName()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 101)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 101, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 101, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 20:35:09 Error: Fatal Error (1): Call to undefined function getUsersName() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 101]
+2020-01-12 20:35:09 Error: [FatalErrorException] Call to undefined function getUsersName()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 101)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 101, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 101, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 21:09:46 Error: Fatal Error (1): Call to undefined function getUsersName() in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 101]
+2020-01-12 21:09:46 Error: [FatalErrorException] Call to undefined function getUsersName()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 101)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 101, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 101, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 21:28:53 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Post' in 'where clause'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Post`.`...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Post`.`...', Array, Array)
+#3 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Post`.`...', false)
+#4 /var/www/html/cakephp/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Post), Array)
+#5 /var/www/html/cakephp/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('all', Array)
+#6 /var/www/html/cakephp/app/Controller/DashboardsController.php(29): PaginatorComponent->paginate(Array)
+#7 [internal function]: DashboardsController->dashboard()
+#8 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2020-01-12 21:29:04 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Post' in 'where clause'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Post`.`...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Post`.`...', Array, Array)
+#3 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Post`.`...', false)
+#4 /var/www/html/cakephp/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Post), Array)
+#5 /var/www/html/cakephp/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('all', Array)
+#6 /var/www/html/cakephp/app/Controller/DashboardsController.php(29): PaginatorComponent->paginate(Array)
+#7 [internal function]: DashboardsController->dashboard()
+#8 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2020-01-12 21:55:36 Error: [MissingControllerException] Controller class DashboardController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-12 22:37:40 Error: [MissingControllerException] Controller class DashboardController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-12 22:37:43 Error: [MissingControllerException] Controller class DashboardController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-12 22:39:59 Error: [MissingControllerException] Controller class DashboardController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-12 22:50:44 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'conditions' in 'where clause'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Post`.`...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Post`.`...', Array, Array)
+#3 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Post`.`...', false)
+#4 /var/www/html/cakephp/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Post), Array)
+#5 /var/www/html/cakephp/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('all', Array)
+#6 /var/www/html/cakephp/app/Controller/DashboardsController.php(29): PaginatorComponent->paginate('Post', Array)
+#7 [internal function]: DashboardsController->dashboard()
+#8 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2020-01-12 23:03:11 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.id' in 'where clause'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Post`.`...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Post`.`...', Array, Array)
+#3 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Post`.`...', false)
+#4 /var/www/html/cakephp/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Post), Array)
+#5 /var/www/html/cakephp/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('all', Array)
+#6 /var/www/html/cakephp/app/Controller/DashboardsController.php(30): PaginatorComponent->paginate('Post')
+#7 [internal function]: DashboardsController->dashboard()
+#8 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2020-01-12 23:04:01 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.id' in 'where clause'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Post`.`...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Post`.`...', Array, Array)
+#3 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Post`.`...', false)
+#4 /var/www/html/cakephp/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Post), Array)
+#5 /var/www/html/cakephp/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('19', Array)
+#6 /var/www/html/cakephp/app/Controller/DashboardsController.php(31): PaginatorComponent->paginate('Post')
+#7 [internal function]: DashboardsController->dashboard()
+#8 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2020-01-12 23:04:32 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'User.id' in 'where clause'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Post`.`...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Post`.`...', Array, Array)
+#3 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Post`.`...', false)
+#4 /var/www/html/cakephp/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Post), Array)
+#5 /var/www/html/cakephp/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('all', Array)
+#6 /var/www/html/cakephp/app/Controller/DashboardsController.php(31): PaginatorComponent->paginate('Post')
+#7 [internal function]: DashboardsController->dashboard()
+#8 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2020-01-12 23:35:32 Error: [MissingControllerException] Controller class ProfileController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-12 23:36:23 Error: [MissingActionException] Action DashboardController::users() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-12 23:37:15 Error: [MissingControllerException] Controller class ProfileController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-12 23:37:55 Error: [MissingControllerException] Controller class ProfileController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-12 23:38:37 Error: [MissingControllerException] Controller class ProfileController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-12 23:39:15 Error: [MissingViewException] View file "/var/www/html/cakephp/app/View/Dashboard/profile.ctp" is missing.
+#0 /var/www/html/cakephp/lib/Cake/View/View.php(472): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#2 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-01-12 23:39:49 Error: [MissingViewException] View file "/var/www/html/cakephp/app/View/Dashboard/profile.ctp" is missing.
+#0 /var/www/html/cakephp/lib/Cake/View/View.php(472): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#2 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-01-12 23:41:08 Error: [MissingViewException] View file "/var/www/html/cakephp/app/View/Users/profile.ctp" is missing.
+#0 /var/www/html/cakephp/lib/Cake/View/View.php(472): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#2 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-01-12 23:42:18 Error: Fatal Error (4): syntax error, unexpected 'Auth' (T_STRING) in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 78]
+2020-01-12 23:42:18 Error: [FatalErrorException] syntax error, unexpected 'Auth' (T_STRING)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 78)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 78, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 78, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 23:42:21 Error: Fatal Error (4): syntax error, unexpected 'Auth' (T_STRING) in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 78]
+2020-01-12 23:42:21 Error: [FatalErrorException] syntax error, unexpected 'Auth' (T_STRING)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 78)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 78, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 78, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 23:44:13 Error: Fatal Error (4): syntax error, unexpected 'name' (T_STRING) in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 78]
+2020-01-12 23:44:13 Error: [FatalErrorException] syntax error, unexpected 'name' (T_STRING)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 78)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 78, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 78, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-12 23:46:08 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 71]
+2020-01-12 23:46:08 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 71)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 71, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 71, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-13 00:41:16 Error: [MissingViewException] View file "/var/www/html/cakephp/app/View/Dashboard/disable.ctp" is missing.
+#0 /var/www/html/cakephp/lib/Cake/View/View.php(472): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#2 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-01-13 00:42:00 Error: [MissingViewException] View file "/var/www/html/cakephp/app/View/Dashboard/delete.ctp" is missing.
+#0 /var/www/html/cakephp/lib/Cake/View/View.php(472): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#2 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-01-13 00:49:20 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'disabled' doesn't have a default value
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `bu...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `bu...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1730): DboSource->create(Object(Post), Array, Array)
+#4 /var/www/html/cakephp/app/Model/Post.php(44): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/DashboardsController.php(108): Post->postUpload('19', 'My post@12:49AM', 'my post', 'post', '["238"]')
+#6 [internal function]: DashboardsController->post()
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-13 00:50:08 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'disabled' doesn't have a default value
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `bu...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `bu...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1730): DboSource->create(Object(Post), Array, Array)
+#4 /var/www/html/cakephp/app/Model/Post.php(44): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/DashboardsController.php(108): Post->postUpload('19', 'My post@12:49AM', 'my post', 'post', '["239"]')
+#6 [internal function]: DashboardsController->post()
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-13 00:50:23 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'disabled' doesn't have a default value
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `bu...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `bu...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1730): DboSource->create(Object(Post), Array, Array)
+#4 /var/www/html/cakephp/app/Model/Post.php(44): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/DashboardsController.php(108): Post->postUpload('19', 'My post@12:49AM', 'my post', 'post', '["240"]')
+#6 [internal function]: DashboardsController->post()
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-13 00:50:27 Error: [PDOException] SQLSTATE[HY000]: General error: 1364 Field 'disabled' doesn't have a default value
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `bu...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `bu...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1730): DboSource->create(Object(Post), Array, Array)
+#4 /var/www/html/cakephp/app/Model/Post.php(44): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/DashboardsController.php(108): Post->postUpload('19', 'My post@12:49AM', 'my post', 'post', '["241"]')
+#6 [internal function]: DashboardsController->post()
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-13 01:00:05 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/html/cakephp/app/View/Dashboard/profile.ctp, line 90]
+2020-01-13 01:00:05 Error: [FatalErrorException] syntax error, unexpected '<'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 90)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 90, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 90, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-13 01:14:33 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/var/www/html/cakephp/app/Model/User.php, line 89]
+2020-01-13 01:14:33 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 89)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 89, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 89, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

@@ -1,11 +1,5 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 echo $this->Form->create('User');
 //echo $this->Form->create('User', array('url' => array('action' => 'registerUser')));
 
@@ -16,22 +10,22 @@ echo $this->Form->create('User');
 echo $this->Form->input('name'); // No div, no label
 // has a label element
 echo $this->Form->input('email'); 
-echo $this->Form->input('mobile'); 
-echo $this->Form->input('password');
-//echo $this->Form->button('save',array('id'=>'save')); 
+echo $this->Form->input('mobile');
+echo $this->Form->input('username');
+echo $this->Form->input('password'); 
 echo $this->Form->end();
 ?>
 <input name="submitbtn" type="submit" value="Register" class="registerUser movedownbtn" />
 <?php 
-echo "Already a user?";
-//echo $this->Html->link('users', '/login');
-echo $this->Html->link('Login', '/login', array('class' => 'button'));
 
-//$this->redire
-//    'controller' => 'myController',
-//    'action' => 'myAction'
-//]);
-
+if($this->Session->check('Auth.User')){
+    echo $this->Html->link( "Return to Dashboard",   array('controller' => 'dashboards','action'=>'dashboard') ); 
+    echo "&#09";
+    echo $this->Html->link( "Logout",   array('action'=>'logout') ); 
+}else{
+    echo "Already a user?";
+    echo $this->Html->link( "Login",   array('action'=>'login') ); 
+}
 ?>
 <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -43,14 +37,15 @@ echo $this->Html->link('Login', '/login', array('class' => 'button'));
 //        alert('fbvdfnnd');
        $('#ajax-loader-full').show();
         $.ajax({
-            url: 'http://localhost/cakephp/users/registerUser',
+            url: 'http://localhost/cakephp/users/register',
             data: $("#UserRegisterForm").serialize(),
             type: "POST",
             dataType: 'json',
             success: function(response){
                 if(response['status'] == 1){
-                alert(response['message']);
-                window.location.href = "http://localhost/cakephp/login";
+//                alert(response['message']);
+                alert('Registered Successfully.');
+                window.location.href = "http://localhost/cakephp/dashboard";
             }else{
                 alert('Failed to register');
             }

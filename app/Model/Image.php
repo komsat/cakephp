@@ -23,7 +23,7 @@ class Image extends Model{
         }
     }
     public function getImage($img){
-        $res = findById($img);
+        $res = $this->findById($img);
         return $res['name'];
     }
 }

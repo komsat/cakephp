@@ -12,7 +12,7 @@ class Post extends Model{
 //        return $this->find('all');
 //    }
     public function dashboard(){
-        $posts = $this->find('all');
+        $posts = $this->find('all');//, array('order'=>'id desc')); //, 'limit'=>'6'
         return $posts;
     }
     
@@ -31,8 +31,9 @@ class Post extends Model{
 //        }
 //    }
     
-    public function postUpload($title, $description, $tags, $images){
+    public function postUpload($userid ,$title, $description, $tags, $images){
         $data = array();
+        $data['userid'] = $userid;
         $data['title'] = $title;
         $data['description'] = $description;
         $data['tags'] = $tags;
