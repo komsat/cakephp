@@ -25,7 +25,7 @@ class DashboardsController extends AppController {
                 $order1 = 'desc';
                 $order2 = 'desc';
                 if($id){
-                    print_r($id);
+//                    print_r($id);
                     if($id[0]==1){  //1 for sort by userid
                         if($this->Session->read('orderName') == 0){
                             $order1 = 'asc';
@@ -47,8 +47,26 @@ class DashboardsController extends AppController {
                   
 //                  print_r($this->request['url']);
                   if(isset($this->request['url']['search'])){ //$this->request->is("ajax")
+                    
+                    $options['joins'] = array(
+                        array('table' => 'users',
+                            'alias' => 'User',
+                            'type' => 'inner',
+                            'conditions' => array(
+                                'Post.userid = User.id'
+                            )
+                        )
+                    );
+                    $options['conditions'] = array(
+                        'User.email LIKE' => '%'.$this->request['url']['search'].'%'
+                    );
+                    $postsUser = $this->Post->find('all', $options);
+                    $postsUser = Hash::extract($postsUser, '{n}.Post.userid');
+//                    echo "<pre>";
+//                    print_r($postsUser);
+                      
                     $this->paginate = array(
-                        'conditions' => array('Post.disabled' => 0, 'OR'=>array(array('Post.title LIKE' => '%'.$this->request['url']['search'].'%'),array('Post.description LIKE' => '%'.$this->request['url']['search'].'%'),array('Post.tags LIKE' => '%'.$this->request['url']['search'].'%'))),
+                        'conditions' => array('Post.disabled' => 0, 'OR'=>array(array('Post.title LIKE' => '%'.$this->request['url']['search'].'%'),array('Post.description LIKE' => '%'.$this->request['url']['search'].'%'),array('Post.tags LIKE' => '%'.$this->request['url']['search'].'%'), array('Post.userid' => $postsUser))),
                         'limit' => 6,
                         'order' => array('Post.id' => $order1, 'Post.created' => $order2)
                     );
@@ -141,7 +159,7 @@ class DashboardsController extends AppController {
                 $this->autoRender = false;
                 $data = $this->request->data;
                 $response= array('status'=>0);
-                print_r($response);
+//                print_r($response);
                 if(!empty($data)){
                     
                     $imageResponse = $this->create($data['newPost']['image']);
@@ -162,18 +180,18 @@ class DashboardsController extends AppController {
                     }
 
                     }
-                    print_r($response);
+//                    print_r($response);
                     return json_encode($response);
             }
             
-            public function search(){
-                $data = $this->request->data;
-                $response= array();
-                $response['status'] = 1;
-                $response['message'] = "Hitting search func!";
-                                 
-                return json_encode($response);
-            }
+//            public function search(){
+//                $data = $this->request->data;
+//                $response= array();
+//                $response['status'] = 1;
+//                $response['message'] = "Hitting search func!";
+//                                 
+//                return json_encode($response);
+//            }
             
             public function profile(){
                 $uid = $this->Session->read('Auth.User.id');//$this->Auth->user('id');//

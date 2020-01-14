@@ -2527,3 +2527,223 @@
 #10 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
 #11 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2020-01-14 13:30:05 Error: Fatal Error (1): Call to a member function findByEmail() on null in [/var/www/html/cakephp/app/Controller/UsersController.php, line 93]
+2020-01-14 13:30:05 Error: [FatalErrorException] Call to a member function findByEmail() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 93)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 93, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 93, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 13:31:09 Error: Fatal Error (1): Call to a member function findByEmail() on null in [/var/www/html/cakephp/app/Controller/UsersController.php, line 94]
+2020-01-14 13:31:09 Error: [FatalErrorException] Call to a member function findByEmail() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 94)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 94, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 94, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 13:31:32 Error: Fatal Error (1): Call to a member function first() on boolean in [/var/www/html/cakephp/app/Controller/UsersController.php, line 94]
+2020-01-14 13:31:32 Error: [FatalErrorException] Call to a member function first() on boolean
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 94)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 94, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 94, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 13:32:01 Error: Fatal Error (1): Call to a member function error() on null in [/var/www/html/cakephp/app/Controller/UsersController.php, line 101]
+2020-01-14 13:32:01 Error: [FatalErrorException] Call to a member function error() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 101)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 101, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 101, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 14:10:49 Error: Fatal Error (1): Call to a member function success() on null in [/var/www/html/cakephp/app/Controller/UsersController.php, line 98]
+2020-01-14 14:10:49 Error: [FatalErrorException] Call to a member function success() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 98)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 98, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 98, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 14:10:59 Error: Fatal Error (1): Call to a member function success() on null in [/var/www/html/cakephp/app/Controller/UsersController.php, line 98]
+2020-01-14 14:10:59 Error: [FatalErrorException] Call to a member function success() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 98)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 98, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 98, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 14:18:28 Error: Fatal Error (4): syntax error, unexpected '}' in [/var/www/html/cakephp/app/Controller/UsersController.php, line 150]
+2020-01-14 14:18:28 Error: [FatalErrorException] syntax error, unexpected '}'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 150)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 150, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 150, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 14:18:31 Error: Fatal Error (4): syntax error, unexpected '}' in [/var/www/html/cakephp/app/Controller/UsersController.php, line 150]
+2020-01-14 14:18:31 Error: [FatalErrorException] syntax error, unexpected '}'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 150)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 150, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 150, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 14:20:57 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'root@edu.co' in 'field list'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `root@ed...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `root@ed...', Array, Array)
+#3 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `root@ed...', false)
+#4 /var/www/html/cakephp/lib/Cake/Model/Model.php(2630): DboSource->read(Object(User), Array)
+#5 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(600): Model->find('first', Array)
+#6 /var/www/html/cakephp/lib/Cake/Model/Model.php(784): DboSource->query('findByEmail', Array, Object(User))
+#7 /var/www/html/cakephp/app/Controller/UsersController.php(98): Model->__call('findByEmail', Array)
+#8 /var/www/html/cakephp/app/Controller/UsersController.php(98): User->findByEmail('first', 'root@edu.co')
+#9 [internal function]: UsersController->forgotPassword()
+#10 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#12 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2020-01-14 15:22:00 Error: Fatal Error (1): Class 'Text' not found in [/var/www/html/cakephp/app/Controller/UsersController.php, line 100]
+2020-01-14 15:22:00 Error: [FatalErrorException] Class 'Text' not found
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Text' no...', '/var/www/html/c...', 100)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Text' no...', '/var/www/html/c...', 100, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Text' no...', '/var/www/html/c...', 100, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 15:51:57 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tokenSave' at line 1
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('tokenSave', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('tokenSave', Array, Array)
+#3 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(613): DboSource->fetchAll('tokenSave', Array, Array)
+#4 /var/www/html/cakephp/lib/Cake/Model/Model.php(784): DboSource->query('tokenSave', Array, Object(User))
+#5 /var/www/html/cakephp/app/Controller/UsersController.php(114): Model->__call('tokenSave', Array)
+#6 /var/www/html/cakephp/app/Controller/UsersController.php(114): User->tokenSave(Array)
+#7 [internal function]: UsersController->forgotPassword()
+#8 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2020-01-14 15:59:26 Error: Fatal Error (1): Call to a member function findByEmail() on null in [/var/www/html/cakephp/app/Controller/UsersController.php, line 159]
+2020-01-14 15:59:26 Error: [FatalErrorException] Call to a member function findByEmail() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 159)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 159, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 159, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 16:01:08 Error: Fatal Error (1): Call to a member function first() on boolean in [/var/www/html/cakephp/app/Controller/UsersController.php, line 160]
+2020-01-14 16:01:08 Error: [FatalErrorException] Call to a member function first() on boolean
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 160)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 160, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 160, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 16:02:14 Error: Fatal Error (1): Call to a member function error() on null in [/var/www/html/cakephp/app/Controller/UsersController.php, line 184]
+2020-01-14 16:02:14 Error: [FatalErrorException] Call to a member function error() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 184)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 184, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 184, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 16:03:34 Error: Fatal Error (1): Class 'Text' not found in [/var/www/html/cakephp/app/Controller/UsersController.php, line 164]
+2020-01-14 16:03:34 Error: [FatalErrorException] Class 'Text' not found
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Class 'Text' no...', '/var/www/html/c...', 164)
+#1 [internal function]: ErrorHandler::handleError(1, 'Class 'Text' no...', '/var/www/html/c...', 164, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Class 'Text' no...', '/var/www/html/c...', 164, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 16:03:51 Error: Fatal Error (1): Call to undefined method UsersController::getMailer() in [/var/www/html/cakephp/app/Controller/UsersController.php, line 176]
+2020-01-14 16:03:51 Error: [FatalErrorException] Call to undefined method UsersController::getMailer()
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 176)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 176, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 176, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 16:17:45 Error: [SocketException] Invalid email: "<>"
+#0 /var/www/html/cakephp/lib/Cake/Network/Email/CakeEmail.php(427): CakeEmail->_setEmail('_to', Array, NULL)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Component/EmailComponent.php(294): CakeEmail->to(Array)
+#2 /var/www/html/cakephp/app/Controller/UsersController.php(136): EmailComponent->send()
+#3 [internal function]: UsersController->forgotPassword()
+#4 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#5 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2020-01-14 16:17:56 Error: [SocketException] Invalid email: "<>"
+#0 /var/www/html/cakephp/lib/Cake/Network/Email/CakeEmail.php(427): CakeEmail->_setEmail('_to', Array, NULL)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Component/EmailComponent.php(294): CakeEmail->to(Array)
+#2 /var/www/html/cakephp/app/Controller/UsersController.php(136): EmailComponent->send()
+#3 [internal function]: UsersController->forgotPassword()
+#4 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#5 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2020-01-14 16:20:03 Error: [MissingViewException] View file "/var/www/html/cakephp/app/View/Emails/html/resetpw.ctp" is missing.
+#0 /var/www/html/cakephp/lib/Cake/View/View.php(472): View->_getViewFileName('resetpw')
+#1 /var/www/html/cakephp/lib/Cake/Network/Email/CakeEmail.php(1551): View->render('resetpw', 'default')
+#2 /var/www/html/cakephp/lib/Cake/Network/Email/CakeEmail.php(1418): CakeEmail->_renderTemplates('\n')
+#3 /var/www/html/cakephp/lib/Cake/Network/Email/CakeEmail.php(1057): CakeEmail->_render(Array)
+#4 /var/www/html/cakephp/lib/Cake/Controller/Component/EmailComponent.php(345): CakeEmail->send(NULL)
+#5 /var/www/html/cakephp/app/Controller/UsersController.php(136): EmailComponent->send()
+#6 [internal function]: UsersController->forgotPassword()
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-14 16:20:38 Error: [MissingViewException] View file "/var/www/html/cakephp/app/View/Emails/html/resetpw.ctp" is missing.
+#0 /var/www/html/cakephp/lib/Cake/View/View.php(472): View->_getViewFileName('resetpw')
+#1 /var/www/html/cakephp/lib/Cake/Network/Email/CakeEmail.php(1551): View->render('resetpw', 'default')
+#2 /var/www/html/cakephp/lib/Cake/Network/Email/CakeEmail.php(1418): CakeEmail->_renderTemplates('\n')
+#3 /var/www/html/cakephp/lib/Cake/Network/Email/CakeEmail.php(1057): CakeEmail->_render(Array)
+#4 /var/www/html/cakephp/lib/Cake/Controller/Component/EmailComponent.php(345): CakeEmail->send(NULL)
+#5 /var/www/html/cakephp/app/Controller/UsersController.php(136): EmailComponent->send()
+#6 [internal function]: UsersController->forgotPassword()
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-14 16:22:25 Error: [SocketException] php_network_getaddresses: getaddrinfo failed: Name or service not known
+#0 /var/www/html/cakephp/lib/Cake/Network/Email/SmtpTransport.php(95): CakeSocket->connect()
+#1 /var/www/html/cakephp/lib/Cake/Network/Email/SmtpTransport.php(60): SmtpTransport->_connect()
+#2 /var/www/html/cakephp/lib/Cake/Network/Email/CakeEmail.php(1059): SmtpTransport->send(Object(CakeEmail))
+#3 /var/www/html/cakephp/lib/Cake/Controller/Component/EmailComponent.php(345): CakeEmail->send(NULL)
+#4 /var/www/html/cakephp/app/Controller/UsersController.php(136): EmailComponent->send()
+#5 [internal function]: UsersController->forgotPassword()
+#6 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2020-01-14 17:02:53 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'username' cannot be null
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('UPDATE `bulleti...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/Database/Mysql.php(357): DboSource->execute('UPDATE `bulleti...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1715): Mysql->update(Object(User), Array, Array)
+#4 /var/www/html/cakephp/app/Controller/UsersController.php(179): Model->save(Array)
+#5 [internal function]: UsersController->reset('ee5e79f3190661c...', '61436a9e52c11cc...')
+#6 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#9 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2020-01-14 18:09:55 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/var/www/html/cakephp/app/Controller/DashboardsController.php, line 72]
+2020-01-14 18:09:55 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 72)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 72, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 72, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

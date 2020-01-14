@@ -56,7 +56,7 @@ class AppController extends Controller {
     );
 
     public function beforeFilter() {
-//        Security::setHash('md5');       //store password in MD5 format
+        Security::setHash('md5');       //store password in MD5 format
         $this->Auth->allow('login');
     }
 }

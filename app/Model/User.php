@@ -1,56 +1,56 @@
 <?php
 
-
 App::uses('Model', 'Model');
 App::uses('AuthComponent', 'Controller/Component/Auth');
 class User extends Model{
     
     public $validate = array(
+        'email' => array(
+            'rule1' => array(
+                'rule' => 'email',
+                'required' => true, 
+                'message' => 'Please provide a valid email address.'   
+            ),
+//            'rule2' => array(
+//                'rule'    => 'isUnique',
+//                'message' => 'This email is already in use',
+//            ),
+            'rule3' => array( 
+                'rule' => array('between', 6, 60), 
+                'message' => 'Usernames must be between 6 to 60 characters'
+            )
+        ),
         'username' => array(
-            'nonEmpty' => array(
-                'rule' => array('notEmpty'),
+            'rule1' => array(
+                'rule' => 'notEmpty',
                 'message' => 'A username is required',
+                'required' => true, 
                 'allowEmpty' => false
             ),
-            'between' => array( 
-                'rule' => array('lengthBetween', 5, 15), 
-                'required' => true, 
+            'rule2' => array( 
+                'rule' => array('between', 5, 15), 
                 'message' => 'Usernames must be between 5 to 15 characters'
             ),
-             'unique' => array(
-                'rule'    => 'isUnique',
-                'message' => 'This username is already in use'
-            ),
-            'alphaNumeric' => array(
+//            'rule3' => array(
+//                'rule'    => 'isUnique',
+//                'message' => 'This username is already in use'
+//            ),
+            'rule4' => array(
                 'rule'    => 'alphaNumeric',
                 'message' => 'Username can only be letters, numbers'
             ),
         ),
+         
         'password' => array(
-            'required' => array(
-                'rule' => array('notEmpty'),
+            'rule1' => array(
+                'rule' => 'notEmpty',
                 'message' => 'A password is required'
             ),
-            'min_length' => array(
+            'rule2' => array(
                 'rule' => array('minLength', '6'),  
                 'message' => 'Password must have a mimimum of 6 characters'
             )
-        ),
-         
-        'email' => array(
-            'required' => array(
-                'rule' => array('email', true),    
-                'message' => 'Please provide a valid email address.'   
-            ),
-             'unique' => array(
-                'rule'    => 'isUnique',
-                'message' => 'This email is already in use',
-            ),
-            'between' => array( 
-                'rule' => array('lengthBetween', 6, 60), 
-                'message' => 'Usernames must be between 6 to 60 characters'
-            )
-        )      
+        )
     );
     
     
@@ -70,11 +70,7 @@ class User extends Model{
     
     public function validateUser($username,$password){
         $userDetails = $this->find('first',
-                array(
-                    'conditions'=>array(
-                    'username' => $username,
-                    'password' =>$password),
-                )
+                array('conditions'=>array('username' => $username, 'password' =>$password),)
                 );
         if(!empty($userDetails)){
             return true;
