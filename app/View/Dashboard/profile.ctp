@@ -22,9 +22,12 @@
         color: #fff;
         opacity: 0.8;
     }
+    h3{
+        font-size: 18px;
+    }
 
 </style>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <?php
 
@@ -39,6 +42,9 @@ echo '<br>';
 ?>
 <fieldset>
         <legend><?php echo __('Profile');?></legend>
+    <!--<h3>Edit<i class="fa fa-edit"></i></h3>-->
+        <?php echo $this->Html->link('Edit', '/editProfile', array('class' => 'button'));?>
+        <br><br>
         
 <?php
 echo "Name: ",$this->Session->read('Auth.User.name');       //."✅"

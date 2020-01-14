@@ -2747,3 +2747,152 @@
 #3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2020-01-14 18:55:27 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/html/cakephp/app/View/Dashboard/profile.ctp, line 46]
+2020-01-14 18:55:27 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 46)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 18:56:47 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/html/cakephp/app/View/Dashboard/profile.ctp, line 46]
+2020-01-14 18:56:47 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 46)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 18:56:49 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/html/cakephp/app/View/Dashboard/profile.ctp, line 46]
+2020-01-14 18:56:49 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 46)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 18:57:04 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/html/cakephp/app/View/Dashboard/profile.ctp, line 46]
+2020-01-14 18:57:04 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 46)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 18:57:17 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/html/cakephp/app/View/Dashboard/profile.ctp, line 46]
+2020-01-14 18:57:17 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 46)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 18:57:40 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/html/cakephp/app/View/Dashboard/profile.ctp, line 46]
+2020-01-14 18:57:40 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 46)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 18:57:42 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/html/cakephp/app/View/Dashboard/profile.ctp, line 46]
+2020-01-14 18:57:42 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 46)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 18:59:07 Error: Fatal Error (4): syntax error, unexpected '?>' in [/var/www/html/cakephp/app/View/Dashboard/profile.ctp, line 46]
+2020-01-14 18:59:07 Error: [FatalErrorException] syntax error, unexpected '?>'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 46)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 46, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 19:06:06 Error: [MissingViewException] View file "/var/www/html/cakephp/app/View/Dashboard/edit_profile.ctp" is missing.
+#0 /var/www/html/cakephp/lib/Cake/View/View.php(472): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#2 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-01-14 19:19:20 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `bu...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `bu...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1730): DboSource->create(Object(Post), Array, Array)
+#4 /var/www/html/cakephp/app/Model/Post.php(44): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/DashboardsController.php(308): Post->postEdit(NULL, NULL, NULL, '2')
+#6 [internal function]: DashboardsController->editProfile()
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-14 19:20:25 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `bu...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `bu...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1730): DboSource->create(Object(Post), Array, Array)
+#4 /var/www/html/cakephp/app/Model/Post.php(44): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/DashboardsController.php(309): Post->postEdit(NULL, NULL, NULL, '2')
+#6 [internal function]: DashboardsController->editProfile()
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-14 19:22:43 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `bu...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `bu...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1730): DboSource->create(Object(Post), Array, Array)
+#4 /var/www/html/cakephp/app/Model/Post.php(44): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/DashboardsController.php(310): Post->postEdit(NULL, NULL, NULL, '2')
+#6 [internal function]: DashboardsController->editProfile()
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-14 19:23:13 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `bu...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `bu...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1730): DboSource->create(Object(Post), Array, Array)
+#4 /var/www/html/cakephp/app/Model/Post.php(44): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/DashboardsController.php(310): Post->postEdit(NULL, NULL, NULL, '2')
+#6 [internal function]: DashboardsController->editProfile()
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-14 19:23:51 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'title' cannot be null
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `bu...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `bu...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1730): DboSource->create(Object(Post), Array, Array)
+#4 /var/www/html/cakephp/app/Model/Post.php(44): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/DashboardsController.php(310): Post->postEdit(NULL, NULL, NULL, '2')
+#6 [internal function]: DashboardsController->editProfile()
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-14 19:25:40 Error: [PDOException] SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'demouser' for column 'id' at row 1
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('INSERT INTO `bu...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1009): DboSource->execute('INSERT INTO `bu...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1730): DboSource->create(Object(Post), Array, Array)
+#4 /var/www/html/cakephp/app/Model/Post.php(44): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/DashboardsController.php(310): Post->postEdit('demo user - edi...', 'demouser@edu.co', '9072346921', 'demouser')
+#6 [internal function]: DashboardsController->editProfile()
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}

@@ -36,6 +36,7 @@
         Router::connect('/forgotPassword', array('controller' => 'users', 'action' => 'forgotPassword'));
         Router::connect('/profile', array('controller' => 'dashboards', 'action' => 'profile'));
         Router::connect('/edit', array('controller' => 'dashboards', 'action' => 'edit'));
+        Router::connect('/editProfile', array('controller' => 'dashboards', 'action' => 'editProfile'));
         
 /**
  * ...and connect the rest of 'Pages' controller's urls.

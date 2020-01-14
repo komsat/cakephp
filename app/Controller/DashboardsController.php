@@ -68,7 +68,7 @@ class DashboardsController extends AppController {
                     $this->paginate = array(
                         'conditions' => array('Post.disabled' => 0, 'OR'=>array(array('Post.title LIKE' => '%'.$this->request['url']['search'].'%'),array('Post.description LIKE' => '%'.$this->request['url']['search'].'%'),array('Post.tags LIKE' => '%'.$this->request['url']['search'].'%'), array('Post.userid' => $postsUser))),
                         'limit' => 6,
-                        'order' => array('Post.id' => $order1, 'Post.created' => $order2)
+                        'order' => array('OR'=>array('Post.id' => $order1, 'Post.created' => $order2))
                     );
                       
                   }else{
@@ -287,4 +287,40 @@ class DashboardsController extends AppController {
                 $this->Session->setFlash(__('The post has been deleted.'));
                 $this->redirect(array('controller' => 'dashboards','action' => 'profile'));      
             }
+            
+            public function editProfile(){
+//                $this->autoRender = false;
+                 $this->loadModel('User');
+                 $id = $this->Auth->user('id');
+//                  print_r($id);
+                $user = $this->User->findById($id);
+//                print_r($user);
+                $this->set('user', $user);
+                
+                if ($this->request->is('post') || $this->request->is('put') || $this->request->is('get')) {  //alternatively use: is(array('post', 'put'))
+                    if($this->request->data){
+                        $data = $this->request->data;
+//                        print_r($data);
+                        $response= array('status'=>0);
+    //                    $this->Post->id = $id;
+                        if(!empty($data)){
+
+                        $data['editProfile']['id']=$id;
+                        print_r($data);
+                        $success = $this->User->profileEdit($data['editProfile']['name'], $data['editProfile']['email'], $data['editProfile']['mobile'], $data['editProfile']['username'], $data['editProfile']['id']);
+                        if($success){
+                            $this->Session->setFlash(__('The Post has been edited.'));
+                            $response['status'] = 1;
+                            $response['message'] = "Registered successfully";
+                        }else {
+                            $this->Session->setFlash(__('The Post could not be edited. Please, try again.'));
+                        }
+
+                        }
+                        return json_encode($response);
+                    }
+                }
+                
+            }    
+            
 }

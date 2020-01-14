@@ -94,4 +94,20 @@ class User extends Model{
             return false;
         }
     }
+    
+    public function profileEdit($name, $email, $mobile, $username, $id){
+        $data = array();
+        $data['id'] = $id;
+        $data['name'] = $name;
+        $data['email'] = $email;
+        $data['mobile'] = $mobile;
+        $data['username'] = $username;
+        
+        $userDetails = $this->save($data);
+        if(!empty($userDetails)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
