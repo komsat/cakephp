@@ -33,38 +33,31 @@
             #right-side{
                 text-align: right;
             }
+            .postSearch {
+              line-height: 35px;
+              padding: 0 10px;
+              background: #009b80;
+              color: #fff;
+              display: inline-block;
+              font-family: roboto;
+              text-decoration: none;
+              font-size: 18px;
+            }
+
+            .postSearch:hover,
+            .postSearch:visited {
+              background: #006cba;
+              color: #fff;
+              opacity: 0.8;
+            }
         </style>
         <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
-        
-        <script>
-            $('.postSearch').on('click',function(){
-
-               $('#ajax-loader-full').show();
-                $.ajax({
-                    url: 'http://localhost/cakephp/dashboards/search',
-                    data: $("#searchBox").serialize(),
-                    type: "POST",
-                    dataType: 'json',
-                    success: function(response){
-                        
-                        alert(response['message']);
-                        
-                    },
-                    error: function(){
-                        alert('Something went wrong!');
-                    }
-                });
-            });
-
-        </script>
-
-        
+       
     </head>
     <body>
-        <h2>Bulletin Board</h2>
-        <!--<div id = "message">Welcome</div>-->
+        <h2><a href="http://localhost/cakephp/dashboard">Bulletin Board</a></h2>
         <div id = 'right-side'>
             <?php
             echo 'User: ';
@@ -80,19 +73,25 @@
                 
                 ?>
                 <div id='right-side'>
-                <input name="searchBox" type="text" id="searchBox" placeholder="Type title/email/tag to search posts">
-                <input name="searchbtn" type="submit" value="Search" class="postSearch" />
-<!--                <div id='right-side'>-->
                     <?php
-                    echo $this->Html->link('Logout', array('controller' => 'users', 'action'=>'logout'), array('class' => 'button'));
+                        echo $this->Html->link('Logout', array('controller' => 'users', 'action'=>'logout'), array('class' => 'button'));
                     ?>
+                    <input name="searchBox" type="text" id="searchBox" placeholder="Type to search posts">
+                    <input name="searchbtn" type="submit" value="Search" class="postSearch" />
+                    <?php
+//                        echo $this->Form->create('searchPost');
+//                        echo $this->Form->input('searchBox');
+//                        echo $this->Html->link('Search', array('controller' => 'dashboards', 'action'=>'dashboard'), array('class' => 'postSearch'));
+//                        echo $this->Form->end();   
+                    ?>
+
                 </div>
         </div>
         <div id="content-part">
         <table>
         <tr>
-            <td>User</td>
-            <td>Date created</td>
+            <td><?php echo $this->Html->link('User', array('controller' => 'dashboards', 'action'=>'/dashboard/1')); //?sort=user?></td>
+            <td><?php echo $this->Html->link('Date created', array('controller' => 'dashboards', 'action'=>'/dashboard/0'));?></td>
             <td>Title</td>
             <td>Description</td>
             <td>Tags</td>
@@ -102,7 +101,7 @@
 //        echo '<pre>';print_r($posts);exit;
             foreach ($posts as $row):
 //                echo "<td>".$row->title."</td>";
-                echo "<tr><td>".$row["userid"]."</td>";
+                echo "<tr><td>".$row["username"]."</td>";
                 echo "<td>".$row["created"]."</td>";
                 echo "<td>".$row["title"]."</td>";
                 echo "<td>".$row["description"]."</td>";
@@ -124,3 +123,37 @@
         </div>
     </body>
 </html>
+ 
+<!--        <script>
+            $('.postSearch').on('click',function(){
+                
+               $('#ajax-loader-full').show();
+                $.ajax({
+                    url: 'http://localhost/cakephp/dashboard',
+                    data: {searchCondition : $("#searchBox").val()},
+                    type: "POST",
+//                    dataType: 'json',
+                    success: function(response){
+//                        location.reload(true);
+//                        window.location.reload();
+//                        window.location.href = "http://localhost/cakephp/dashboard";
+//                        alert(response['message']);
+                        
+                    },
+                    error: function(){
+                        alert('Something went wrong!');
+                    }
+                });
+            });
+
+        </script>-->
+        <script>
+            $('.postSearch').on("click", function(){
+//                alert(document.getElementById("searchBox").value);
+                var a = document.getElementById("searchBox").value;
+//                alert("http://localhost/cakephp/dashboard/" + a);
+                window.location.href = "http://localhost/cakephp/dashboard?search=" + a;
+            });
+        </script>
+
+        

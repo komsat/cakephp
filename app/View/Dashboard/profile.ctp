@@ -22,7 +22,10 @@
         color: #fff;
         opacity: 0.8;
     }
+
 </style>
+
+
 <?php
 
 /* 
@@ -83,15 +86,22 @@ echo $this->Html->link('Logout', array('controller' => 'users', 'action'=>'logou
                 endforeach;
                 echo "</tr></table></td>";
                 ?><td>
-                <?php echo $this->Html->link('Edit', array('controller' => 'dashboards', 'action'=>'edit'), array('class' => 'button'));?><br>
-                <?php echo $this->Html->link('Disable', array('controller' => 'dashboards', 'action'=>'disable'), array('class' => 'button'));?><br>
-                <?php echo $this->Html->link('Delete', array('controller' => 'dashboards', 'action'=>'delete'), array('class' => 'button'));
-
+                <?php echo $this->Html->link('Edit', array('controller' => 'dashboards', 'action'=>'edit/'.$row["id"]), array('class' => 'button', 'id' => 'editBtn'));?><br>
+                <?php
+                    if($row["disabled"] == 0){ 
+                        echo $this->Html->link('Disable', array('controller' => 'dashboards', 'action'=>'disable/'.$row["id"]), array('class' => 'button'));
+                    }else{
+                        echo $this->Html->link('Enable', array('controller' => 'dashboards', 'action'=>'enable/'.$row["id"]), array('class' => 'button'));
+                    }
+                ?><br>
+                <?php echo $this->Html->link('Delete', array('controller' => 'dashboards', 'action'=>'delete/'.$row["id"]), array('class' => 'button'));
+//                print_r($row);
             endforeach;
             ?>
 
         </td></tr>
         </table>
+
         <?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
         <?php echo $this->Paginator->numbers(array(   'class' => 'numbers'     ));?>
         <?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>

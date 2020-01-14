@@ -1,14 +1,10 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 App::uses('AppController', 'Controller');
 
 class UsersController extends AppController{
-    
+//    public $helpers = array('Html', 'Form', 'Session');
     public $paginate = array(
         'limit' => 25,
         'conditions' => array('status' => '1'),
@@ -21,8 +17,7 @@ class UsersController extends AppController{
     }
     
 //    public function index() {
-//        $this->User->recursive = 0;
-//        $this->set('users', $this->paginate());
+
 //    }
     
 //    public function view($id = null) {
@@ -51,45 +46,6 @@ class UsersController extends AppController{
         }
     }    
         
-        
-        
-//        $data = $this->request->data;
-////        echo '<pre>';
-////        print_r($data);
-//        $this->theme = false;
-////        $this->autoLayout =false;
-//        $this->autoRender =false;   //if ctp is not required for the function
-//        $this->loadModel('User');
-//        $users = $this->User->validateUser($data['User']['username'],$data['User']['password']);
-//        if($users){
-//        echo 'Welcome';
-////        create session for logged-in user.
-//        CakeSession::write('Message', $data['User']['name']);
-////        $this->Session->setFlash('Your stuff has been saved.');
-////        $this->Session->write('user', $data['User']['username']);
-////        $this->redirect(array('controller' => 'dashboards', 'action' => 'dashboard'));
-//        $this->redirect('http://localhost/cakephp/dashboard');
-//        
-//        Configure::write('Session', array(
-//            'defaults' => 'php',
-//            'timeout' => 2160, // 36 hours
-//            'ini' => array(
-//                'session.gc_maxlifetime' => 129600 // 36 hours
-//            )
-//        ));
-//        }else{
-//            echo 'invalid user or password';
-//        }
-        
-//    }
-    
-//    public function userRegister(){
-//        $this->autoLayout =false;
-////        $this->loadModel('User');
-////        $users = $this->User->getAllUsers();
-////        echo 'All Users Fetched<pre>';
-////        print_r($users);
-//    }
     
     public function logout() {
         return $this->redirect($this->Auth->logout());
@@ -118,29 +74,8 @@ class UsersController extends AppController{
         }
     }
     
-//    public function registerUser(){
-//        $data = $this->request->data;
-//        $response= array('status'=>0);
-//        if(!empty($data)){
-//        $this->autoRender = false;
-//        $this->loadModel('User');
-//        $success = $this->User->userRegister($data['User']['name'], $data['User']['email'], $data['User']['mobile'], $data['User']['password']);
-//        if($success){
-//            $response['status'] = 1;
-//            $response['message'] = "Registered successfully";
-//        }
-//        
-//        }
-//        return json_encode($response);
-//    }
-    
     public function profile(){
-//        $this->loadModel('User');
-//        if ($this->Auth->login()) {
-//            
-//        } else {
-//           
-//        }
+
     }
     
     public function forgotPassword(){
@@ -154,19 +89,6 @@ class UsersController extends AppController{
                 print_r($email);
                 if (!empty($user))
                 {
-                    $password = sha1(Text::uuid());
-                    $password_token = Security::hash($password, 'sha256', true);
-                    $hashval = sha1($user->username . rand(O, 100));
-
-                    $user->password_reset_token = $password_token;
-                    $user->hashval = $hashval;
-                    
-                    $reset_token_link = Router::url(['controller' => 'Users', 'action' => 'resetPassword'], TRUE) . '/' . $password_token . '#' . $hashval;
-                    
-                    $emaildata = [$user->email, $reset_token_link];
-                    $this->getMailer('SendEmail')->send('forgotPasswordEmail', [$emaildata]);
-                    
-                    $this->Users->save($user);
                     $this->Flash->success('Please click on password reset link, sent in your email address to reset password.');
                 }else
                 {

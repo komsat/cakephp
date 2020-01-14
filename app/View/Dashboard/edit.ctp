@@ -1,38 +1,29 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-echo $this->Form->create('newPost',array('enctype' => 'multipart/form-data'));
-echo $this->Form->input('title');
-echo $this->Form->input('description');
-echo $this->Form->input('tags');
-echo $this->Form->input('image.', array('type' => 'file', 'multiple'));
+echo $this->Form->create('editPost',array('enctype' => 'multipart/form-data'));
+echo $this->Form->input('title', array('value' => $posts["Post"]["title"]));
+echo $this->Form->input('description', array('value' => $posts["Post"]["description"]));
+echo $this->Form->input('tags', array('value' => $posts["Post"]["tags"]));
+//echo $this->Form->input('id', array('type' => 'hidden'));
+//echo $this->Form->input('image.', array('type' => 'file', 'multiple'));
 echo $this->Form->end();
 ?>
-<input name="submitbtn" type="submit" value="Post" class="postUpload" />
+<input name="submitbtn" type="submit" value="Done" class="editDone" />
 <?php
-//echo "Cancel";
-//echo $this->Html->link('users', '/login');
-echo $this->Html->link('Cancel', '/dashboard', array('class' => 'button'));
-
+echo $this->Html->link('Cancel', '/profile', array('class' => 'button'));
 
 ?>
 <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
 <script>
-    $('.postUpload').on('click',function(){
+    $('.editDone').on('click',function(){
 //        alert('fbvdfnnd');
-       var form = $('#newPostCreateForm')[0];
+       var form = $('#editPostEditForm')[0];
        var fd = new FormData(form);
 
        $('#ajax-loader-full').show();
         $.ajax({
-            url: 'http://localhost/cakephp/dashboards/post',
+//            url: 'http://localhost/cakephp/edit',
             processData: false,
             contentType: false,
 //            data: $("#newPostCreateForm").serialize(),
@@ -46,9 +37,9 @@ echo $this->Html->link('Cancel', '/dashboard', array('class' => 'button'));
 //                  alert("Please select maximum 5 images!!!");
 //                  
 //                }else{
-////                alert(response);
-                alert('Post created successfully.');
-                window.location.href = "http://localhost/cakephp/dashboard";
+//                alert(response);
+                alert('Edit Done');
+                window.location.href = "http://localhost/cakephp/profile";
 //            }
 //            }else{
 //                alert('Post failed!!!');

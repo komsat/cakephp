@@ -52,17 +52,17 @@
         input[type=submit]:hover {
             opacity: 0.8;
         }
-        .imgcontainer {
+        .imgcontainer{
             text-align: center;
             /*margin: 24px 0 12px 0;*/
-            width: 40%;
+            /*width: 40%;*/
             border-radius: 50%;
             /*height: 400px;*/
         }
-        .avatar {
+/*        .avatar {
             width: 40%;
             border-radius: 50%;
-        }
+        }*/
         #content {
             padding: 16px;
         }
@@ -75,6 +75,13 @@
             /*margin: 24px 0 12px 0;*/
             width: 40%;
         }
+/*        #container{
+            width: 200px; 
+            height: 200px;
+            margin: 5% auto 15% auto;
+            overflow: auto;
+            overflow:hidden;
+        }*/
     </style>
 </head>
 <body>
@@ -84,7 +91,7 @@
 		</div>
 		<div id="content">
                     <div class="imgcontainer">
-                        <img src="http://localhost/cakephp/app/webroot/img/imagesLogin.png" alt="Avatar" class="avatar">
+                        <img src="http://localhost/cakephp/app/webroot/img/imagesLogin.png" width="200px" height="200px" alt="Avatar" class="avatar">
                     </div>
                     <?php
                         echo $this->Session->flash('auth');

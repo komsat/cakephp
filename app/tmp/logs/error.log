@@ -2402,3 +2402,128 @@
 #3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2020-01-13 10:38:33 Error: Fatal Error (4): syntax error, unexpected '$row' (T_VARIABLE), expecting ')' in [/var/www/html/cakephp/app/View/Dashboard/profile.ctp, line 87]
+2020-01-13 10:38:33 Error: [FatalErrorException] syntax error, unexpected '$row' (T_VARIABLE), expecting ')'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 87)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 87, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 87, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-13 10:59:43 Error: [MissingActionException] Action DashboardController::index() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-13 10:59:57 Error: [MissingActionException] Action DashboardController::index() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-13 11:00:18 Error: [MissingActionException] Action DashboardController::index() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-13 11:00:20 Error: [MissingActionException] Action DashboardController::index() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-13 12:40:37 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'loadModel' at line 1
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('loadModel', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('loadModel', Array, Array)
+#3 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(613): DboSource->fetchAll('loadModel', Array, Array)
+#4 /var/www/html/cakephp/lib/Cake/Model/Model.php(784): DboSource->query('loadModel', Array, Object(Post))
+#5 /var/www/html/cakephp/app/Model/Post.php(43): Model->__call('loadModel', Array)
+#6 /var/www/html/cakephp/app/Model/Post.php(43): Post->loadModel('Post')
+#7 /var/www/html/cakephp/app/Controller/DashboardsController.php(173): Post->postEdit('MyEditedPost', 'post-edited', 'post', Array)
+#8 [internal function]: DashboardsController->edit()
+#9 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#10 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#11 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#12 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2020-01-13 12:55:20 Error: Fatal Error (4): syntax error, unexpected '[' in [/var/www/html/cakephp/app/Controller/DashboardsController.php, line 161]
+2020-01-13 12:55:20 Error: [FatalErrorException] syntax error, unexpected '['
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 161)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 161, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 161, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-13 15:45:12 Error: Fatal Error (4): syntax error, unexpected 'else' (T_ELSE) in [/var/www/html/cakephp/app/View/Dashboard/profile.ctp, line 94]
+2020-01-13 15:45:12 Error: [FatalErrorException] syntax error, unexpected 'else' (T_ELSE)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 94)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 94, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 94, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-13 16:46:27 Error: [MissingControllerException] Controller class SortController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-13 16:48:09 Error: [MissingControllerException] Controller class SortController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-13 16:52:02 Error: [MissingControllerException] Controller class SortController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-13 16:52:50 Error: [MissingControllerException] Controller class SortController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-13 16:54:36 Error: Fatal Error (4): syntax error, unexpected ';' in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 94]
+2020-01-13 16:54:36 Error: [FatalErrorException] syntax error, unexpected ';'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 94)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 94, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 94, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-13 16:54:51 Error: [MissingControllerException] Controller class DashboardController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-13 16:55:06 Error: [MissingControllerException] Controller class DashboardController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-13 18:09:03 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/html/cakephp/app/View/Layouts/default.ctp, line 19]
+2020-01-13 18:09:03 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 19)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 19, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 19, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-13 18:38:07 Error: [MissingViewException] View file "/var/www/html/cakephp/app/View/Dashboard/search.ctp" is missing.
+#0 /var/www/html/cakephp/lib/Cake/View/View.php(472): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(957): View->render(NULL, NULL)
+#2 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#3 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2020-01-13 23:10:39 Error: Fatal Error (1): Call to a member function findByEmail() on null in [/var/www/html/cakephp/app/Controller/UsersController.php, line 88]
+2020-01-13 23:10:39 Error: [FatalErrorException] Call to a member function findByEmail() on null
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/html/c...', 88)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/html/c...', 88, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/html/c...', 88, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-14 01:42:35 Error: [MissingControllerException] Controller class DashboardController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-14 02:08:09 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Post.tag' in 'where clause'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('SELECT `Post`.`...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(671): DboSource->execute('SELECT `Post`.`...', Array, Array)
+#3 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(1082): DboSource->fetchAll('SELECT `Post`.`...', false)
+#4 /var/www/html/cakephp/lib/Cake/Model/Model.php(2630): DboSource->read(Object(Post), Array)
+#5 /var/www/html/cakephp/lib/Cake/Controller/Component/PaginatorComponent.php(173): Model->find('all', Array)
+#6 /var/www/html/cakephp/app/Controller/DashboardsController.php(66): PaginatorComponent->paginate('Post')
+#7 [internal function]: DashboardsController->dashboard()
+#8 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#11 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
