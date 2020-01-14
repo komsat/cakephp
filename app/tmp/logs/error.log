@@ -2896,3 +2896,6 @@
 #9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
 #10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #11 {main}
+2020-01-14 19:59:51 Error: [MissingControllerException] Controller class ResetController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

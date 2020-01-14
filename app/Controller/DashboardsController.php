@@ -194,6 +194,12 @@ class DashboardsController extends AppController {
 //            }
             
             public function profile(){
+                $this->loadModel('User');
+                 $id = $this->Auth->user('id');
+                $user = $this->User->findById($id);
+                $this->set('user', $user);
+                
+                
                 $uid = $this->Session->read('Auth.User.id');//$this->Auth->user('id');//
                   $this->paginate = array(
                     'conditions' => array('Post.userid' => $uid),

@@ -47,13 +47,13 @@ echo '<br>';
         <br><br>
         
 <?php
-echo "Name: ",$this->Session->read('Auth.User.name');       //."✅"
+echo "Name: ".$user['User']['name'];//$this->Session->read('Auth.User.name');
 echo '<br>';
-echo "Username: ".$this->Session->read('Auth.User.username');
+echo "Username: ".$user['User']['username'];//.$this->Session->read('Auth.User.username');
 echo '<br>';
-echo "Mobile ✆: ".$this->Session->read('Auth.User.mobile');
+echo "Mobile ✆: ".$user['User']['mobile'];//$this->Session->read('Auth.User.mobile');
 echo '<br>';
-echo "Email ✉: ".$this->Session->read('Auth.User.email');
+echo "Email ✉: ".$user['User']['email'];//$this->Session->read('Auth.User.email');
 ?>
 </fieldset>
 <div id="button-logout">
