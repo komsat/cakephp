@@ -8,7 +8,6 @@ class DashboardsController extends AppController {
             var $uses = array('Post');
             public $paginate = array(
               'limit' => 25,
-//              'conditions' => array('status' => '1'),
               'order' => array('Post.id' => 'desc') 
             );
 
@@ -46,6 +45,7 @@ class DashboardsController extends AppController {
                 }
                   
 //                  print_r($this->request['url']);
+                $search = null;
                   if(isset($this->request['url']['search'])){ //$this->request->is("ajax")
                     
                     $options['joins'] = array(
@@ -60,6 +60,8 @@ class DashboardsController extends AppController {
                     $options['conditions'] = array(
                         'User.email LIKE' => '%'.$this->request['url']['search'].'%'
                     );
+                    $this->set('search', $this->request['url']['search']);     //search keyword is set in search
+                    
                     $postsUser = $this->Post->find('all', $options);
                     $postsUser = Hash::extract($postsUser, '{n}.Post.userid');
 //                    echo "<pre>";
@@ -82,12 +84,7 @@ class DashboardsController extends AppController {
                   $this->Paginator->settings = $this->paginate;
                   
                   $data = $this->Paginator->paginate('Post');
-//                
-//                  $this->autoLayout = false;
-//                  $this->loadModel ('Post');
-//                  $posts = $this->Post->dashboard();  // query all posts
-//                  echo "<pre>";
-//                  print_r($data);
+
                   $imgCount=0;
                   $this->loadModel('Image');
 
@@ -111,24 +108,19 @@ class DashboardsController extends AppController {
                   $this->set('posts', $posts);   // save posts inside view
             }
             
-            
-            
-//            public function sort(){
-
-//            }
           
           
             public function create($param=null){
                 $formData = $param;
 //                print_r($data);
                 $count = 0;
-                $response= array('status'=>0);
+                $response['status']=0;
                 $this->loadModel('Image');
                 if(!empty($formData)){
 
 //  Check whether form has more than 5  elments!
                         if(count($formData) > 5){
-                            return $response;
+                            return 0;//$response;
                         }
                         
                         foreach($formData as $data){
@@ -158,19 +150,20 @@ class DashboardsController extends AppController {
             public function post(){
                 $this->autoRender = false;
                 $data = $this->request->data;
-                $response= array('status'=>0);
-//                print_r($response);
+                $response['status'] = 0;
+
                 if(!empty($data)){
                     
                     $imageResponse = $this->create($data['newPost']['image']);
+                    
                     $this->loadModel('Post');
-                    if($imageResponse['status'] == 0){
+                    if($imageResponse['status']==0){
                        
                         return json_encode($response);
                     }
                     $data['newPost']['images'] = json_encode($imageResponse['imageId']);
                     $data['newPost']['userid'] = $this->Auth->user('id'); //$this->Session->read('Auth.User.name');
-//                    print_r($data['newPost']['userid']);
+
                     $success = $this->Post->postUpload($data['newPost']['userid'], $data['newPost']['title'], $data['newPost']['description'], $data['newPost']['tags'], $data['newPost']['images']);
                     if($success){
                         
@@ -184,14 +177,7 @@ class DashboardsController extends AppController {
                     return json_encode($response);
             }
             
-//            public function search(){
-//                $data = $this->request->data;
-//                $response= array();
-//                $response['status'] = 1;
-//                $response['message'] = "Hitting search func!";
-//                                 
-//                return json_encode($response);
-//            }
+
             
             public function profile(){
                 $this->loadModel('User');
@@ -227,22 +213,55 @@ class DashboardsController extends AppController {
             }
     
             public function edit(){
-//                $this->autoRender = false;
                   $this->loadModel('Post');
                   $id = $this->request->params['pass'];
-//                  print_r($id);
+
                 $posts = $this->Post->findById($id);
+                
+                //for fetching images
+                
+                  $this->loadModel('Image');
+                  
+                  $imageIds= json_decode($posts['Post']['images']);
+                  
+                  $imgCount = 0;
+                  $imgId = 0;
+                  foreach ($imageIds as $index=>$value){
+                      $imgData =  $this->Image->findById($value);
+                      $posts['Post']['img']['name'][$imgCount++]['imgName'] = $imgData['Image']['name'];
+                      $posts['Post']['img']['name'][$imgId++]['imgId'] = $imgData['Image']['id'];
+                  }
+    
+                //image fetch ends here
+                  
                 $this->set('posts', $posts);
                
                 if ($this->request->is('post') || $this->request->is('put') || $this->request->is('get')) {  //alternatively use: is(array('post', 'put'))
                     $data = $this->request->data;
+
                     $response= array('status'=>0);
-//                    $this->Post->id = $id;
+
                     if(!empty($data)){
                     
-                    $data['editPost']['id']=$id[0];//$posts['Post']["id"];
-//                    print_r($data);
-                    $success = $this->Post->postEdit($data['editPost']['title'], $data['editPost']['description'], $data['editPost']['tags'], $data['editPost']['id']);
+                    $data['editPost']['id']=$id[0];
+
+                    //image delete starts
+                    
+                    $imgId = $data['imageId'];
+                    $this->loadModel('Post');
+                    $posts = $this->Post->findById($id);
+                    $imageIds = json_decode($posts['Post']['images']);
+                    $imageIds = \array_diff($imageIds, [$imgId]);
+                    $imageIds = array_values($imageIds);
+//                    print_r($imageIds);
+                    $data['editPost']['images'] = json_encode($imageIds);
+                    
+                    $this->loadModel('Image');
+                    $this->Image->id = $imgId;
+
+                    //image delete ends
+                    
+                    $success = ($this->Post->postEdit($data['editPost']['title'], $data['editPost']['description'], $data['editPost']['tags'], $data['editPost']['images'],$data['editPost']['id']) && $this->Image->delete());
                     if($success){
                         $this->Session->setFlash(__('The Post has been edited.'));
                         $response['status'] = 1;

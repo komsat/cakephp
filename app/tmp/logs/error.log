@@ -2899,3 +2899,136 @@
 2020-01-14 19:59:51 Error: [MissingControllerException] Controller class ResetController could not be found.
 #0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2020-01-16 11:27:35 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 79]
+2020-01-16 11:27:35 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 79)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 79, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 79, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-16 11:29:34 Error: Fatal Error (4): syntax error, unexpected '?>' in [/var/www/html/cakephp/app/View/Dashboard/dashboard.ctp, line 79]
+2020-01-16 11:29:34 Error: [FatalErrorException] syntax error, unexpected '?>'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 79)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 79, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 79, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-16 12:05:05 Error: [MissingActionException] Action DashboardController::profile() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-16 12:35:34 Error: [MissingActionException] Action DashboardController::index() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-16 12:45:12 Error: [MissingActionException] Action DashboardController::index() could not be found.
+#0 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-01-16 13:32:44 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-16 13:32:44 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-16 13:32:44 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-16 13:33:32 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-16 13:34:32 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-16 13:34:51 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-01-16 13:35:59 Error: Fatal Error (4): syntax error, unexpected '++' (T_INC), expecting ']' in [/var/www/html/cakephp/app/View/Dashboard/edit.ctp, line 20]
+2020-01-16 13:35:59 Error: [FatalErrorException] syntax error, unexpected '++' (T_INC), expecting ']'
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 20)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 20, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 20, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-16 13:53:52 Error: Fatal Error (1): Cannot use object of type stdClass as array in [/var/www/html/cakephp/app/Controller/DashboardsController.php, line 171]
+2020-01-16 13:53:52 Error: [FatalErrorException] Cannot use object of type stdClass as array
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot use obje...', '/var/www/html/c...', 171)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', '/var/www/html/c...', 171, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', '/var/www/html/c...', 171, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-16 13:54:33 Error: Fatal Error (1): Cannot use object of type stdClass as array in [/var/www/html/cakephp/app/Controller/DashboardsController.php, line 171]
+2020-01-16 13:54:33 Error: [FatalErrorException] Cannot use object of type stdClass as array
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot use obje...', '/var/www/html/c...', 171)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', '/var/www/html/c...', 171, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', '/var/www/html/c...', 171, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-16 13:55:58 Error: Fatal Error (1): Cannot use object of type stdClass as array in [/var/www/html/cakephp/app/Controller/DashboardsController.php, line 171]
+2020-01-16 13:55:58 Error: [FatalErrorException] Cannot use object of type stdClass as array
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Cannot use obje...', '/var/www/html/c...', 171)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', '/var/www/html/c...', 171, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', '/var/www/html/c...', 171, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2020-01-16 17:09:07 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'field list'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('UPDATE `bulleti...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/Database/Mysql.php(357): DboSource->execute('UPDATE `bulleti...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1715): Mysql->update(Object(Post), Array, Array)
+#4 /var/www/html/cakephp/app/Model/Post.php(42): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/DashboardsController.php(273): Post->postEdit('sadvb', 'dvshb', 'vcwqdbvq', Array, '176')
+#6 [internal function]: DashboardsController->edit('176')
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-16 17:09:34 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'field list'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('UPDATE `bulleti...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/Database/Mysql.php(357): DboSource->execute('UPDATE `bulleti...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1715): Mysql->update(Object(Post), Array, Array)
+#4 /var/www/html/cakephp/app/Model/Post.php(42): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/DashboardsController.php(273): Post->postEdit('sadvb', 'dvshb', 'vcwqdbvq', Array, '176')
+#6 [internal function]: DashboardsController->edit('176')
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-16 17:10:02 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'field list'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('UPDATE `bulleti...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/Database/Mysql.php(357): DboSource->execute('UPDATE `bulleti...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1715): Mysql->update(Object(Post), Array, Array)
+#4 /var/www/html/cakephp/app/Model/Post.php(42): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/DashboardsController.php(273): Post->postEdit('My screenshots', 'screenshots', 'screenshots', Array, '176')
+#6 [internal function]: DashboardsController->edit('176')
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2020-01-16 17:10:37 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'field list'
+#0 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(461): PDOStatement->execute(Array)
+#1 /var/www/html/cakephp/lib/Cake/Model/Datasource/DboSource.php(427): DboSource->_execute('UPDATE `bulleti...', Array)
+#2 /var/www/html/cakephp/lib/Cake/Model/Datasource/Database/Mysql.php(357): DboSource->execute('UPDATE `bulleti...')
+#3 /var/www/html/cakephp/lib/Cake/Model/Model.php(1715): Mysql->update(Object(Post), Array, Array)
+#4 /var/www/html/cakephp/app/Model/Post.php(42): Model->save(Array)
+#5 /var/www/html/cakephp/app/Controller/DashboardsController.php(273): Post->postEdit('imageIds', 'imageIds', 'imageIds', Array, '176')
+#6 [internal function]: DashboardsController->edit('176')
+#7 /var/www/html/cakephp/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(DashboardsController), Array)
+#8 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/cakephp/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(DashboardsController), Object(CakeRequest), Object(CakeResponse))
+#10 /var/www/html/cakephp/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}

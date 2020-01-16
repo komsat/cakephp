@@ -8,7 +8,7 @@
         border: 2px solid black;
         line-height: 25px;
         padding: 0 10px;
-        background: #009b80;
+        background: #006cba;
         color: #fff;
         display: inline-block;
         font-family: roboto;
@@ -16,8 +16,22 @@
         font-size: 12px;
         border: 2px solid black;
     }
+    .editButton{
+        /*text-align: right;*/
+        border: 2px solid black;
+        line-height: 25px;
+        padding: 0 10px;
+        background: #009b80;
+        color: #fff;
+        display: inline-block;
+        font-family: roboto;
+        text-decoration: none;
+        font-size: 10px;
+        border: 2px solid black;
+    }
+    
     .button:hover,
-    .button:visited {
+    .button:visited, .editButton:hover {
         background: #006cba;
         color: #fff;
         opacity: 0.8;
@@ -43,7 +57,7 @@ echo '<br>';
 <fieldset>
         <legend><?php echo __('Profile');?></legend>
     <!--<h3>Edit<i class="fa fa-edit"></i></h3>-->
-        <?php echo $this->Html->link('Edit', '/editProfile', array('class' => 'button'));?>
+        <?php echo $this->Html->link('Edit Profile', '/editProfile', array('class' => 'editButton'));?>
         <br><br>
         
 <?php

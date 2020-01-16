@@ -9,7 +9,7 @@
             .button {
               line-height: 35px;
               padding: 0 10px;
-              background: #009b80;
+              background: #006cba;
               color: #fff;
               display: inline-block;
               font-family: roboto;
@@ -36,7 +36,7 @@
             .postSearch {
               line-height: 35px;
               padding: 0 10px;
-              background: #009b80;
+              background: #006cba;
               color: #fff;
               display: inline-block;
               font-family: roboto;
@@ -76,7 +76,7 @@
                     <?php
                         echo $this->Html->link('Logout', array('controller' => 'users', 'action'=>'logout'), array('class' => 'button'));
                     ?>
-                    <input name="searchBox" type="text" id="searchBox" placeholder="Type to search posts">
+                    <input name="searchBox" type="text" id="searchBox" placeholder="Type keyword to search posts " value="<?php if(!empty($search)){ echo $search;}else{ echo "";} ?>">
                     <input name="searchbtn" type="submit" value="Search" class="postSearch" />
                     <?php
 //                        echo $this->Form->create('searchPost');
@@ -124,33 +124,11 @@
     </body>
 </html>
  
-<!--        <script>
-            $('.postSearch').on('click',function(){
-                
-               $('#ajax-loader-full').show();
-                $.ajax({
-                    url: 'http://localhost/cakephp/dashboard',
-                    data: {searchCondition : $("#searchBox").val()},
-                    type: "POST",
-//                    dataType: 'json',
-                    success: function(response){
-//                        location.reload(true);
-//                        window.location.reload();
-//                        window.location.href = "http://localhost/cakephp/dashboard";
-//                        alert(response['message']);
-                        
-                    },
-                    error: function(){
-                        alert('Something went wrong!');
-                    }
-                });
-            });
-
-        </script>-->
         <script>
             $('.postSearch').on("click", function(){
 //                alert(document.getElementById("searchBox").value);
                 var a = document.getElementById("searchBox").value;
+                
 //                alert("http://localhost/cakephp/dashboard/" + a);
                 window.location.href = "http://localhost/cakephp/dashboard?search=" + a;
             });

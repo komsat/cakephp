@@ -21,7 +21,6 @@ echo $this->Html->link('Cancel', '/dashboard', array('class' => 'button'));
 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
 <script>
     $('.postUpload').on('click',function(){
-//        alert('fbvdfnnd');
        var form = $('#newPostCreateForm')[0];
        var fd = new FormData(form);
 
@@ -33,21 +32,15 @@ echo $this->Html->link('Cancel', '/dashboard', array('class' => 'button'));
 //            data: $("#newPostCreateForm").serialize(),
             data: fd,
             type: "POST",
-            dataType: 'text',
+            dataType: 'json',
             success: function(response){
-//                var res = $.parseJSON(response);
-//                if(res.status == 0){
-////                alert(response['message']);
-//                  alert("Please select maximum 5 images!!!");
-//                  
-//                }else{
-////                alert(response);
+                if(response.status=== 0){
+                  alert("Please select maximum 5 images!!!");
+                  
+                }else{
                 alert('Post created successfully.');
                 window.location.href = "http://localhost/cakephp/dashboard";
-//            }
-//            }else{
-//                alert('Post failed!!!');
-//            }
+                }
             },
             error: function(){
                 alert('Something went wrong!');

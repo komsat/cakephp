@@ -31,16 +31,14 @@ class Post extends Model{
         }
     }
     
-    public function postEdit($title, $description, $tags, $id){
+    public function postEdit($title, $description, $tags, $images, $id){
         $data = array();
         $data['title'] = $title;
         $data['description'] = $description;
         $data['tags'] = $tags;
+        $data['images'] = $images;
         $data['id'] = $id;
-//        print_r($id);
-
-//        $this->Post->id = $id;
-//        $data1 = array('id' => $id, $data);
+        
         $editDetails = $this->save($data);
         
         if(!empty($editDetails)){
